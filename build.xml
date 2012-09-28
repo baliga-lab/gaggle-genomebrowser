@@ -7,7 +7,7 @@
 	<!-- set global properties for this build -->
 	<property name="src.dir"       location="${basedir}/src/main/java"/>
 	<property name="test.dir"      location="${basedir}/src/test/java"/>
-	<property name="resource.dir"  location="${basedir}/src/resources"/>
+	<property name="resource.dir"  location="${basedir}/src/main/resources"/>
 	<property name="script.dir"    location="${basedir}/src/scripts"/>
 	<property name="lib.dir"       location="${basedir}/lib"/>
 	<property name="build.dir"     location="${basedir}/temp"/>
