@@ -12,7 +12,7 @@ http://gaggle.systemsbiology.net/docs/geese/genomebrowser/
 
 ## Running
 
-	java -cp lib/log4j-1.2.14.jar:dist/genomebrowser.jar org.systemsbiology.genomebrowser.GenomeBrowser
+	./genomebrowser.sh
 
 
 ## Dependencies
