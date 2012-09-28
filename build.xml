@@ -46,7 +46,7 @@
 
 	<target name="increment-build-number" depends="init">
 		<propertyfile
-		    file="src/resources/buildNumber.properties"
+		    file="${resource.dir}/buildNumber.properties"
 		    comment="My properties">
 		  <entry  key="major.version" value="${major.version}"/>
 		  <entry  key="minor.version" value="${minor.version}"/>
