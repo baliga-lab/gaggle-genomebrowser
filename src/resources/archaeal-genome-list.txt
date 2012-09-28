@@ -1,0 +1,352 @@
+dbName	organism	scientificName	clade	taxId
+acidBact_ELLIN345	Acidobacteria bacterium Ellin345	Acidobacteria bacterium Ellin345	bacteria-other	204669
+acidBott_VIRUS	Acidianus bottle-shaped virus	Acidianus bottle-shaped virus	viruses-other	437444
+acidCell_11B	Acidothermus cellulolyticus 11B	Acidothermus cellulolyticus 11B	bacteria-actinobacteria	351607
+acidCryp_JF_5	Acidiphilium cryptum JF-5	Acidiphilium cryptum JF-5	bacteria-alphaproteobacteria	349163
+acidFila_VIRUS_1	Acidianus filamentous virus 1	Acidianus filamentous virus 1	viruses-other	235266
+acidFila_VIRUS_2	Acidianus filamentous virus 2	Acidianus filamentous virus 2	viruses-other	300186
+acidFila_VIRUS_3	Acidianus filamentous virus 3	Acidianus filamentous virus 3	viruses-other	346881
+acidFila_VIRUS_6	Acidianus filamentous virus 6	Acidianus filamentous virus 6	viruses-other	346882
+acidFila_VIRUS_7	Acidianus filamentous virus 7	Acidianus filamentous virus 7	viruses-other	346883
+acidFila_VIRUS_8	Acidianus filamentous virus 8	Acidianus filamentous virus 8	viruses-other	346884
+acidFila_VIRUS_9	Acidianus filamentous virus 9	Acidianus filamentous virus 9	viruses-other	512792
+acidJS42	Acidovorax JS42	Acidovorax sp. JS42	bacteria-betaproteobacteria	232721
+acidRods_VIRUS_1	Acidianus rod-shaped virus 1	Acidianus rod-shaped virus 1	viruses-other	309181
+acidTwot_VIRUS	Acidianus two-tailed virus	Acidianus two-tailed virus	viruses-other	315953
+acinSp_ADP1	Acinetobacter sp ADP1	Acinetobacter sp. ADP1	bacteria-gammaproteobacteria	62977
+actiPleu_L20	Actinobacillus pleuropneumoniae L20	Actinobacillus pleuropneumoniae L20	bacteria-gammaproteobacteria	416269
+aerPer1	Aeropyrum pernix	Aeropyrum pernix K1	archaea-crenarchaeota	272557
+aeroHydr_ATCC7966	Aeromonas hydrophila ATCC 7966	Aeromonas hydrophila subsp. hydrophila ATCC 7966	bacteria-gammaproteobacteria	380703
+agroTume_C58_UWASH	Agrobacterium tumefaciens C58 UWash	Agrobacterium tumefaciens str. C58	bacteria-alphaproteobacteria	176299
+alcaBork_SK2	Alcanivorax borkumensis SK2	Alcanivorax borkumensis SK2	bacteria-gammaproteobacteria	393595
+alkaEhrl_MLHE_1	Alkalilimnicola ehrlichei MLHE-1	Alkalilimnicola ehrlichei MLHE-1	bacteria-gammaproteobacteria	187272
+alkaMeta_QYMF	Alkaliphilus metalliredigens QYMF	Alkaliphilus metalliredigens QYMF	bacteria-firmicutes	293826
+anabVari_ATCC29413	Anabaena variabilis ATCC 29413	Anabaena variabilis ATCC 29413	bacteria-cyanobacteria	240292
+anaeDeha_2CP_C	Anaeromyxobacter dehalogenans 2CP-C	Anaeromyxobacter dehalogenans 2CP-C	bacteria-deltaproteobacteria	290397
+anapMarg_ST_MARIES	Anaplasma marginale St Maries	Anaplasma marginale str. St. Maries	bacteria-alphaproteobacteria	234826
+aquiAeol	Aquifex aeolicus	Aquifex aeolicus VF5	bacteria-aquificae	224324
+archBJ1_VIRUS	Archaeal BJ1 virus	Archaeal BJ1 virus	viruses-other	416419
+archFulg1	Archaeoglobus fulgidus	Archaeoglobus fulgidus DSM 4304	archaea-euryarchaeota	224325
+arthFB24	Arthrobacter FB24	Arthrobacter sp. FB24	bacteria-actinobacteria	290399
+azoaSp_EBN1	Azoarcus sp EbN1	Aromatoleum aromaticum EbN1	bacteria-betaproteobacteria	76114
+azorCaul2	Azorhizobium caulinodans ORS 571	Azorhizobium caulinodans ORS 571	bacteria-alphaproteobacteria	438753
+baciAnth_AMES	Bacillus anthracis Ames	Bacillus anthracis str. Ames	bacteria-firmicutes	198094
+baciHalo	Bacillus halodurans	Bacillus halodurans C-125	bacteria-firmicutes	272558
+baciSubt	Bacillus subtilis	Bacillus subtilis subsp. subtilis str. 168	bacteria-firmicutes	224308
+bactThet_VPI_5482	Bacteroides thetaiotaomicron VPI-5482	Bacteroides thetaiotaomicron VPI-5482	bacteria-bacteroidetes	226186
+bartHens_HOUSTON_1	Bartonella henselae Houston-1	Bartonella henselae str. Houston-1	bacteria-alphaproteobacteria	283166
+baumCica_HOMALODISCA	Baumannia cicadellinicola Homalodisca coagulata	Baumannia cicadellinicola str. Hc (Homalodisca coagulata)	bacteria-gammaproteobacteria	374463
+bdelBact	Bdellovibrio bacteriovorus	Bdellovibrio bacteriovorus HD100	bacteria-deltaproteobacteria	264462
+bifiLong	Bifidobacterium longum	Bifidobacterium longum NCC2705	bacteria-actinobacteria	206672
+blocFlor	Blochmannia floridanus	Candidatus Blochmannia floridanus	bacteria-gammaproteobacteria	203907
+bordBron	Bordetella bronchiseptica	Bordetella bronchiseptica RB50	bacteria-betaproteobacteria	257310
+borrBurg	Borrelia burgdorferi	Borrelia burgdorferi B31	bacteria-spirochaetes	224326
+bradJapo	Bradyrhizobium japonicum	Bradyrhizobium japonicum USDA 110	bacteria-alphaproteobacteria	224911
+brucMeli	Brucella melitensis	Brucella melitensis 16M	bacteria-alphaproteobacteria	224914
+buchSp	Buchnera sp	Buchnera aphidicola str. APS (Acyrthosiphon pisum)	bacteria-gammaproteobacteria	107806
+burk383	Burkholderia 383	Burkholderia sp. 383	bacteria-betaproteobacteria	269483
+burkCeno_AU_1054	Burkholderia cenocepacia AU 1054	Burkholderia cenocepacia AU 1054	bacteria-betaproteobacteria	331271
+burkCeno_HI2424	Burkholderia cenocepacia HI2424	Burkholderia cenocepacia HI2424	bacteria-betaproteobacteria	331272
+burkCepa_AMMD	Burkholderia cepacia AMMD	Burkholderia ambifaria AMMD	bacteria-betaproteobacteria	339670
+burkMall_ATCC23344	Burkholderia mallei ATCC 23344	Burkholderia mallei ATCC 23344	bacteria-betaproteobacteria	243160
+burkPseu_1106A	Burkholderia pseudomallei 1106a	Burkholderia pseudomallei 1106a	bacteria-betaproteobacteria	357348
+burkThai_E264	Burkholderia thailandensis E264	Burkholderia thailandensis E264	bacteria-betaproteobacteria	271848
+burkViet_G4	Burkholderia vietnamiensis G4	Burkholderia vietnamiensis G4	bacteria-betaproteobacteria	269482
+burkXeno_LB400	Burkholderia xenovorans LB400	Burkholderia xenovorans LB400	bacteria-betaproteobacteria	266265
+caldMaqu1	Caldivirga maquilingensis	Caldivirga maquilingensis IC-167	archaea-crenarchaeota	397948
+caldSacc_DSM8903	Caldicellulosiruptor saccharolyticus DSM 8903	Caldicellulosiruptor saccharolyticus DSM 8903	bacteria-firmicutes	351627
+campFetu_82_40	Campylobacter fetus 82-40	Campylobacter fetus subsp. fetus 82-40	bacteria-epsilonproteobacteria	360106
+campJeju	Campylobacter jejuni	Campylobacter jejuni subsp. jejuni NCTC 11168	bacteria-epsilonproteobacteria	192222
+campJeju_81_176	Campylobacter jejuni 81-176	Campylobacter jejuni subsp. jejuni 81-176	bacteria-epsilonproteobacteria	354242
+campJeju_RM1221	Campylobacter jejuni RM1221	Campylobacter jejuni RM1221	bacteria-epsilonproteobacteria	195099
+candBloc_FLORIDANUS	Candidatus Blochmannia floridanus	Candidatus Blochmannia floridanus	bacteria-gammaproteobacteria	203907
+candCars_RUDDII	Candidatus Carsonella ruddii	Candidatus Carsonella ruddii PV	bacteria-gammaproteobacteria	387662
+candPela_UBIQUE_HTCC1	Candidatus Pelagibacter ubique HTCC1062	Candidatus Pelagibacter ubique HTCC1062	bacteria-alphaproteobacteria	335992
+carbHydrZ2901	Carboxydothermus hydrogenoformans	Carboxydothermus hydrogenoformans Z-2901	bacteria-firmicutes	246194
+caulCres	Caulobacter crescentus	Caulobacter crescentus CB15	bacteria-alphaproteobacteria	190650
+cenaSymb1	Cenarchaeum symbiosum	Cenarchaeum symbiosum	archaea-crenarchaeota	46770
+chlaPneu_CWL029	Chlamydophila pneumoniae CWL029	Chlamydophila pneumoniae CWL029	bacteria-other	115713
+chlaTrac	Chlamydia trachomatis	Chlamydia trachomatis D/UW-3/CX	bacteria-other	272561
+chloChlo_CAD3	Chlorobium chlorochromatii CaD3	Chlorobium chlorochromatii CaD3	bacteria-other	340177
+chloTepi_TLS	Chlorobium tepidum TLS	Chlorobium tepidum TLS	bacteria-other	194439
+chroSale_DSM3043	Chromohalobacter salexigens DSM 3043	Chromohalobacter salexigens DSM 3043	bacteria-gammaproteobacteria	290398
+chroViol	Chromobacterium violaceum	Chromobacterium violaceum ATCC 12472	bacteria-betaproteobacteria	243365
+clavMich_NCPPB_382	Clavibacter michiganensis NCPPB 382	Clavibacter michiganensis subsp. michiganensis NCPPB 382	bacteria-actinobacteria	443906
+closDiff_630	Clostridium difficile 630	Clostridium difficile 630	bacteria-firmicutes	272563
+colwPsyc_34H	Colwellia psychrerythraea 34H	Colwellia psychrerythraea 34H	bacteria-gammaproteobacteria	167879
+coryEffi_YS_314	Corynebacterium efficiens YS-314	Corynebacterium efficiens YS-314	bacteria-actinobacteria	196164
+coxiBurn	Coxiella burnetii	Coxiella burnetii RSA 493	bacteria-gammaproteobacteria	227377
+crocWats_WH8501_0	Crocosphaera watsonii WH8501	Crocosphaera watsonii WH 8501	bacteria-cyanobacteria	165597
+cytoHutc_ATCC33406	Cytophaga hutchinsonii ATCC 33406	Cytophaga hutchinsonii ATCC 33406	bacteria-bacteroidetes	269798
+dechArom_RCB	Dechloromonas aromatica RCB	Dechloromonas aromatica RCB	bacteria-betaproteobacteria	159087
+dehaEthe_195	Dehalococcoides ethenogenes 195	Dehalococcoides ethenogenes 195	bacteria-other	243164
+deinGeot_DSM11300	Deinococcus geothermalis DSM 11300	Deinococcus geothermalis DSM 11300	bacteria-deinococcusthermus	319795
+deinRadi	Deinococcus radiodurans	Deinococcus radiodurans R1	bacteria-deinococcusthermus	243230
+desuAuda	Candidatus Desulforudis audaxviator MP104C	Candidatus Desulforudis audaxviator MP104C	bacteria-firmicutes	477974
+desuHafn_Y51	Desulfitobacterium hafniense Y51	Desulfitobacterium hafniense Y51	bacteria-firmicutes	138119
+desuPsyc_LSV54	Desulfotalea psychrophila LSv54	Desulfotalea psychrophila LSv54	bacteria-deltaproteobacteria	177439
+desuRedu_MI_1	Desulfotomaculum reducens MI-1	Desulfotomaculum reducens MI-1	bacteria-firmicutes	349161
+desuVulg_HILDENBOROUG	Desulfovibrio vulgaris Hildenborough	Desulfovibrio vulgaris subsp. vulgaris str. Hildenborough	bacteria-deltaproteobacteria	882
+dichNodo_VCS1703A	Dichelobacter nodosus VCS1703A	Dichelobacter nodosus VCS1703A	bacteria-gammaproteobacteria	246195
+ehrlRumi_WELGEVONDEN	Ehrlichia ruminantium Welgevonden UPSA	Ehrlichia ruminantium str. Welgevonden	bacteria-alphaproteobacteria	254945
+ente638	Enterobacter 638	Enterobacter sp. 638	bacteria-gammaproteobacteria	399742
+enteFaec_V583	Enterococcus faecalis V583	Enterococcus faecalis V583	bacteria-firmicutes	226185
+erwiCaro_ATROSEPTICA	Erwinia carotovora atroseptica SCRI1043	Pectobacterium atrosepticum SCRI1043	bacteria-gammaproteobacteria	218491
+erytLito_HTCC2594	Erythrobacter litoralis HTCC2594	Erythrobacter litoralis HTCC2594	bacteria-alphaproteobacteria	314225
+eschColi_536	Escherichia coli 536	Escherichia coli 536	bacteria-gammaproteobacteria	362663
+eschColi_APEC_O1	Escherichia coli APEC O1	Escherichia coli APEC O1	bacteria-gammaproteobacteria	405955
+eschColi_CFT073	Escherichia coli CFT073	Escherichia coli CFT073	bacteria-gammaproteobacteria	199310
+eschColi_K12	Escherichia coli K12	Escherichia coli MG1655	bacteria-gammaproteobacteria	511145
+eschColi_O157H7	Escherichia coli O157H7	Escherichia coli O157:H7 str. Sakai	bacteria-gammaproteobacteria	386585
+eschColi_O157H7_EDL93	Escherichia coli O157H7 EDL933	Escherichia coli O157:H7 EDL933	bacteria-gammaproteobacteria	155864
+eschColi_UTI89	Escherichia coli UTI89	Escherichia coli UTI89	bacteria-gammaproteobacteria	364106
+eschColi_W3110	Escherichia coli W3110	Escherichia coli str. K12 substr. W3110	bacteria-gammaproteobacteria	316407
+ferrAcid1	Ferroplasma acidarmanus	Ferroplasma acidarmanus Fer1	archaea-euryarchaeota	333146
+flavJohn_UW101	Flavobacterium johnsoniae UW101	Flavobacterium johnsoniae UW101	bacteria-bacteroidetes	376686
+franCcI3	Frankia CcI3	Frankia sp. CcI3	bacteria-actinobacteria	106370
+franTula_TULARENSIS	Francisella tularensis tularensis	Francisella tularensis subsp. tularensis SCHU S4	bacteria-gammaproteobacteria	177416
+fusoNucl	Fusobacterium nucleatum	Fusobacterium nucleatum subsp. nucleatum ATCC 25586	bacteria-other	190304
+geobBemi0	Geobacter bemidjiensis	Geobacter bemidjiensis Bem	bacteria-deltaproteobacteria	404380
+geobKaus_HTA426	Geobacillus kaustophilus HTA426	Geobacillus kaustophilus HTA426	bacteria-firmicutes	235909
+geobLovl0	Geobacter lovleyi	Geobacter lovleyi SZ	bacteria-deltaproteobacteria	398767
+geobMeta_GS15	Geobacter metallireducens	Geobacter metallireducens GS-15	bacteria-deltaproteobacteria	269799
+geobSp_FRC32_0	Geobacter sp FRC32	Geobacter sp FRC32	bacteria-deltaproteobacteria	316067
+geobSulf	Geobacter sulfurreducens	Geobacter sulfurreducens PCA	bacteria-deltaproteobacteria	243231
+geobTher_NG80_2	Geobacillus thermodenitrificans NG80-2	Geobacillus thermodenitrificans NG80-2	bacteria-firmicutes	420246
+geobUran_RF4	Geobacter uraniumreducens	Geobacter uraniireducens Rf4	bacteria-deltaproteobacteria	351605
+gloeViol	Gloeobacter violaceus	Gloeobacter violaceus PCC 7421	bacteria-cyanobacteria	251221
+glucOxyd_621H	Gluconobacter oxydans 621H	Gluconobacter oxydans 621H	bacteria-alphaproteobacteria	290633
+gramFors_KT0803	Gramella forsetii KT0803	Gramella forsetii KT0803	bacteria-bacteroidetes	411154
+granBeth_CGDNIH1	Granulobacter bethesdensis CGDNIH1	Granulibacter bethesdensis CGDNIH1	bacteria-alphaproteobacteria	391165
+haemInfl_KW20	Haemophilus influenzae Rd KW20	Haemophilus influenzae Rd KW20	bacteria-gammaproteobacteria	71421
+haemSomn_129PT	Haemophilus somnus 129PT	Haemophilus somnus 129PT	bacteria-gammaproteobacteria	205914
+haheChej_KCTC_2396	Hahella chejuensis KCTC 2396	Hahella chejuensis KCTC 2396	bacteria-gammaproteobacteria	349521
+halMar1	Haloarcula marismortui	Haloarcula marismortui ATCC 43049	archaea-euryarchaeota	272569
+haloHF1	Halovirus HF1	Halovirus HF1	viruses-other	222645
+haloHalo1	Halobacterium sp	Halobacterium sp. NRC-1	archaea-euryarchaeota	64091
+haloHalo_SL1	Halorhodospira halophila SL1	Halorhodospira halophila SL1	bacteria-gammaproteobacteria	349124
+haloPhag_HF2	Halorubrum phage HF2	Halorubrum phage HF2	viruses-other	33771
+haloPhag_SH1	Haloarcula phage SH1	Haloarcula phage SH1	viruses-other	326574
+haloSali1	Halobacterium salinarum R1	Halobacterium salinarum R1	archaea-euryarchaeota	478009
+haloVolc1	Haloferax volcanii	Haloferax volcanii DS2	archaea-euryarchaeota	309800
+haloWals1	Haloquadratum walsbyi	Haloquadratum walsbyi DSM 16790	archaea-euryarchaeota	362976
+heliAcin_SHEEBA	Helicobacter acinonychis Sheeba	Helicobacter acinonychis str. Sheeba	bacteria-epsilonproteobacteria	382638
+heliHepa	Helicobacter hepaticus	Helicobacter hepaticus ATCC 51449	bacteria-epsilonproteobacteria	235279
+heliPylo_26695	Helicobacter pylori 26695	Helicobacter pylori 26695	bacteria-epsilonproteobacteria	85962
+heliPylo_G27	Helicobacter pylori G27	Helicobacter pylori G27	bacteria-epsilonproteobacteria	563041
+heliPylo_HPAG1	Helicobacter pylori HPAG1	Helicobacter pylori HPAG1	bacteria-epsilonproteobacteria	357544
+heliPylo_J99	Helicobacter pylori J99	Helicobacter pylori J99	bacteria-epsilonproteobacteria	85963
+heliPylo_SHI470	Helicobacter pylori Shi470	Helicobacter pylori Shi470	bacteria-epsilonproteobacteria	512562
+hermArse	Herminiimonas arsenicoxydans	Herminiimonas arsenicoxydans	bacteria-betaproteobacteria	204773
+his1Viru	His1 virus	His1 virus	viruses-other	128708
+his2Viru	His2 virus	His2 virus	viruses-other	128710
+hydrSp_128_5R1	Hydrogenivirga sp. 128-5-R1-1	Hydrogenivirga sp	bacteria-aquificae	392423
+hydrY04A	Hydrogenobaculum Y04AAS1	Hydrogenobaculum sp. Y04AAS1	bacteria-aquificae	380749
+hypeButy1	Hyperthermus butylicus	Hyperthermus butylicus DSM 5456	archaea-crenarchaeota	415426
+hyphNept_ATCC15444	Hyphomonas neptunium ATCC 15444	Hyphomonas neptunium ATCC 15444	bacteria-alphaproteobacteria	228405
+idioLoih_L2TR	Idiomarina loihiensis L2TR	Idiomarina loihiensis L2TR	bacteria-gammaproteobacteria	283942
+igniHosp1	Ignicoccus hospitalis	Ignicoccus hospitalis KIN4/I	archaea-crenarchaeota	453591
+jannCCS1	Jannaschia CCS1	Jannaschia sp. CCS1	bacteria-alphaproteobacteria	290400
+koraCryp1	Korarchaeum cryptofilum OPF8	Candidatus Korarchaeum cryptofilum OPF8	archaea-other	374847
+lactLact	Lactococcus lactis	Lactococcus lactis subsp. lactis Il1403	bacteria-firmicutes	272623
+lactPlan	Lactobacillus plantarum	Lactobacillus plantarum WCFS1	bacteria-firmicutes	220668
+lactSali_UCC118	Lactobacillus salivarius UCC118	Lactobacillus salivarius subsp. salivarius UCC118	bacteria-firmicutes	362948
+lawsIntr_PHE_MN1_00	Lawsonia intracellularis PHE MN1-00	Lawsonia intracellularis PHE/MN1-00	bacteria-deltaproteobacteria	363253
+legiPneu_PHILADELPHIA	Legionella pneumophila Philadelphia 1	Legionella pneumophila subsp. pneumophila str. Philadelphia 1	bacteria-gammaproteobacteria	272624
+leifXyli_XYLI_CTCB0	Leifsonia xyli xyli CTCB0	Leifsonia xyli subsp. xyli str. CTCB07	bacteria-actinobacteria	281090
+leptInte	Leptospira interrogans	Leptospira interrogans serovar Lai str. 56601	bacteria-spirochaetes	189518
+leucMese_ATCC8293	Leuconostoc mesenteroides ATCC 8293	Leuconostoc mesenteroides subsp. mesenteroides ATCC 8293	bacteria-firmicutes	203120
+listInno	Listeria innocua	Listeria innocua Clip11262	bacteria-firmicutes	272626
+magnMC1	Magnetococcus MC-1	Magnetococcus sp. MC-1	bacteria-other	156889
+magnMagn_AMB_1	Magnetospirillum magneticum AMB-1	Magnetospirillum magneticum AMB-1	bacteria-alphaproteobacteria	342108
+mannSucc_MBEL55E	Mannheimia succiniciproducens MBEL55E	Mannheimia succiniciproducens MBEL55E	bacteria-gammaproteobacteria	221988
+mariAqua_VT8	Marinobacter aquaeolei VT8	Marinobacter aquaeolei VT8	bacteria-gammaproteobacteria	351348
+mariMari_MCS10	Maricaulis maris MCS10	Maricaulis maris MCS10	bacteria-alphaproteobacteria	394221
+mculMari1	Methanoculleus marisnigri JR1	Methanoculleus marisnigri JR1	archaea-euryarchaeota	368407
+mesoFlor_L1	Mesoplasma florum L1	Mesoplasma florum L1	bacteria-other	265311
+mesoLoti	Mesorhizobium loti	Mesorhizobium loti MAFF303099	bacteria-alphaproteobacteria	266835
+metAce1	Methanosarcina acetivorans	Methanosarcina acetivorans C2A	archaea-euryarchaeota	188937
+metMar1	Methanococcus maripaludis S2	Methanococcus maripaludis S2	archaea-euryarchaeota	267377
+metaSedu	Metallosphaera sedula	Metallosphaera sedula DSM 5348	archaea-crenarchaeota	399549
+methAeol1	Methanococcus aeolicus	Methanococcus aeolicus Nankai-3	archaea-euryarchaeota	419665
+methBark1	Methanosarcina barkeri	Methanosarcina barkeri str. Fusaro	archaea-euryarchaeota	269797
+methBoon1	Methanoregula boonei	Candidatus Methanoregula boonei 6A8	archaea-euryarchaeota	456442
+methBurt2	Methanococcoides burtonii	Methanococcoides burtonii DSM 6242	archaea-euryarchaeota	259564
+methCaps_BATH	Methylococcus capsulatus Bath	Methylococcus capsulatus str. Bath	bacteria-gammaproteobacteria	243233
+methFlag_KT	Methylobacillus flagellatus KT	Methylobacillus flagellatus KT	bacteria-betaproteobacteria	265072
+methHung1	Methanospirillum hungatei	Methanospirillum hungatei JF-1	archaea-euryarchaeota	323259
+methJann1	Methanococcus jannaschii	Methanocaldococcus jannaschii DSM 2661	archaea-euryarchaeota	243232
+methKand1	Methanopyrus kandleri	Methanopyrus kandleri AV19	archaea-euryarchaeota	190192
+methLabrZ_1	Methanocorpusculum labreanum Z	Methanocorpusculum labreanum Z	archaea-euryarchaeota	410358
+methMari_C5_1	Methanococcus maripaludis C5	Methanococcus maripaludis C5	archaea-euryarchaeota	402880
+methMari_C6	Methanococcus maripaludis C6	Methanococcus maripaludis C6	archaea-euryarchaeota	444158
+methMari_C7	Methanococcus maripaludis C7	Methanococcus maripaludis C7	archaea-euryarchaeota	426368
+methMaze1	Methanosarcina mazei	Methanosarcina mazei Go1	archaea-euryarchaeota	192952
+methPetr_PM1	Methylibium petroleiphilum PM1	Methylibium petroleiphilum PM1	bacteria-betaproteobacteria	420662
+methPhag_PSIM100	Methanothermobacter phage psiM100	Methanothermobacter phage psiM100	viruses-other	173824
+methPhag_PSIM2	Methanobacterium phage psiM2	Methanobacterium phage psiM2	viruses-other	77048
+methSmit1	Methanobrevibacter smithii	Methanobrevibacter smithii ATCC 35061	archaea-euryarchaeota	420247
+methStad1	Methanosphaera stadtmanae	Methanosphaera stadtmanae DSM 3091	archaea-euryarchaeota	339860
+methTher1	Methanobacterium thermoautotrophicum	Methanothermobacter thermautotrophicus str. Delta H	archaea-euryarchaeota	187420
+methTherPT1	Methanosaeta thermophila	Methanosaeta thermophila PT	archaea-euryarchaeota	349307
+methVann1	Methanococcus vannielii SB	Methanococcus vannielii SB	archaea-euryarchaeota	406327
+moorTher_ATCC39073	Moorella thermoacetica ATCC 39073	Moorella thermoacetica ATCC 39073	bacteria-firmicutes	264732
+mycoGeni	Mycoplasma genitalium	Mycoplasma genitalium G37	bacteria-other	243273
+mycoTube_H37RV	Mycobacterium tuberculosis H37Rv	Mycobacterium tuberculosis H37Rv	bacteria-actinobacteria	83332
+myxoXant_DK_1622	Myxococcus xanthus DK 1622	Myxococcus xanthus DK 1622	bacteria-deltaproteobacteria	246197
+nanEqu1	Nanoarchaeum equitans	Nanoarchaeum equitans Kin4-M	archaea-other	228908
+natrPhag_PHICH1	Natrialba phage PhiCh1	Natrialba phage PhiCh1	viruses-other	114777
+natrPhar1	Natronomonas pharaonis	Natronomonas pharaonis DSM 2160	archaea-euryarchaeota	348780
+neisGono_FA1090_1	Neisseria gonorrhoeae FA 1090	Neisseria gonorrhoeae FA 1090	bacteria-betaproteobacteria	242231
+neisMeni_FAM18_1	Neisseria meningitidis FAM18	Neisseria meningitidis FAM18	bacteria-betaproteobacteria	272831
+neisMeni_MC58_1	Neisseria meningitidis MC58	Neisseria meningitidis MC58	bacteria-betaproteobacteria	122586
+neisMeni_Z2491_1	Neisseria meningitidis Z2491	Neisseria meningitidis Z2491	bacteria-betaproteobacteria	122587
+neorSenn_MIYAYAMA	Neorickettsia sennetsu Miyayama	Neorickettsia sennetsu str. Miyayama	bacteria-alphaproteobacteria	222891
+nitrEuro	Nitrosomonas europaea	Nitrosomonas europaea ATCC 19718	bacteria-betaproteobacteria	228410
+nitrMari1	Nitrosopumilus maritimus	Nitrosopumilus maritimus SCM1	archaea-crenarchaeota	436308
+nitrMult_ATCC25196	Nitrosospira multiformis ATCC 25196	Nitrosospira multiformis ATCC 25196	bacteria-betaproteobacteria	323848
+nitrOcea_ATCC19707	Nitrosococcus oceani ATCC 19707	Nitrosococcus oceani ATCC 19707	bacteria-gammaproteobacteria	323261
+nitrWino_NB_255	Nitrobacter winogradskyi Nb-255	Nitrobacter winogradskyi Nb-255	bacteria-alphaproteobacteria	323098
+nocaFarc_IFM10152	Nocardia farcinica IFM10152	Nocardia farcinica IFM 10152	bacteria-actinobacteria	247156
+nocaJS61	Nocardioides JS614	Nocardioides sp. JS614	bacteria-actinobacteria	196162
+nostSp	Nostoc sp	Nostoc sp. PCC 7120	bacteria-cyanobacteria	103690
+novoArom_DSM12444	Novosphingobium aromaticivorans DSM 12444	Novosphingobium aromaticivorans DSM 12444	bacteria-alphaproteobacteria	279238
+oceaIhey	Oceanobacillus iheyensis	Oceanobacillus iheyensis HTE831	bacteria-firmicutes	221109
+oenoOeni_PSU_1	Oenococcus oeni PSU-1	Oenococcus oeni PSU-1	bacteria-firmicutes	203123
+onioYell_PHYTOPLASMA	Onion yellows phytoplasma	Onion yellows phytoplasma OY-M	bacteria-other	262768
+orieTsut_BORYONG	Orientia tsutsugamushi Boryong	Orientia tsutsugamushi str. Boryong	bacteria-alphaproteobacteria	357244
+paraDeni_PD1222	Paracoccus denitrificans PD1222	Paracoccus denitrificans PD1222	bacteria-alphaproteobacteria	318586
+paraSp_UWE25	Parachlamydia sp UWE25	Candidatus Protochlamydia amoebophila UWE25	bacteria-other	264201
+pastMult	Pasteurella multocida	Pasteurella multocida subsp. multocida str. Pm70	bacteria-gammaproteobacteria	272843
+pediPent_ATCC25745	Pediococcus pentosaceus ATCC 25745	Pediococcus pentosaceus ATCC 25745	bacteria-firmicutes	278197
+peloCarb	Pelobacter carbinolicus	Pelobacter carbinolicus DSM 2380	bacteria-deltaproteobacteria	338963
+peloLute_DSM273	Pelodictyon luteolum DSM 273	Pelodictyon luteolum DSM 273	bacteria-other	319225
+peloProp_DSM2379	Pelobacter propionicus	Pelobacter propionicus DSM 2379	bacteria-deltaproteobacteria	338966
+peloTher_SI	Pelotomaculum thermopropionicum SI	Pelotomaculum thermopropionicum SI	bacteria-firmicutes	370438
+photLumi	Photorhabdus luminescens	Photorhabdus luminescens subsp. laumondii TTO1	bacteria-gammaproteobacteria	243265
+photProf_SS9	Photobacterium profundum SS9	Photobacterium profundum SS9	bacteria-gammaproteobacteria	298386
+picrTorr1	Picrophilus torridus	Picrophilus torridus DSM 9790	archaea-euryarchaeota	263820
+pireSp	Pirellula sp	Rhodopirellula baltica SH 1	bacteria-other	243090
+polaJS66	Polaromonas JS666	Polaromonas sp. JS666	bacteria-betaproteobacteria	296591
+polyQLWP	Polynucleobacter QLW-P1DMWA-1	Polynucleobacter sp. QLW-P1DMWA-1	bacteria-betaproteobacteria	312153
+porpGing_W83	Porphyromonas gingivalis W83	Porphyromonas gingivalis W83	bacteria-bacteroidetes	242619
+procMari_CCMP1375	Prochlorococcus marinus CCMP1375	Prochlorococcus marinus subsp. marinus str. CCMP1375	bacteria-cyanobacteria	167539
+propAcne_KPA171202	Propionibacterium acnes KPA171202	Propionibacterium acnes KPA171202	bacteria-actinobacteria	267747
+pseuAeru	Pseudomonas aeruginosa	Pseudomonas aeruginosa PAO1	bacteria-gammaproteobacteria	208964
+pseuHalo_TAC125	Pseudoalteromonas haloplanktis TAC125	Pseudoalteromonas haloplanktis TAC125	bacteria-gammaproteobacteria	326442
+psycArct_273_4	Psychrobacter arcticum 273-4	Psychrobacter arcticus 273-4	bacteria-gammaproteobacteria	259536
+psycIngr_37	Psychromonas ingrahamii 37	Psychromonas ingrahamii 37	bacteria-gammaproteobacteria	357804
+pyrAby1	Pyrococcus abyssi	Pyrococcus abyssi GE5	archaea-euryarchaeota	272844
+pyrAer1	Pyrobaculum aerophilum	Pyrobaculum aerophilum str. IM2	archaea-crenarchaeota	178306
+pyrFur2	Pyrococcus furiosus	Pyrococcus furiosus DSM 3638	archaea-euryarchaeota	186497
+pyrHor1	Pyrococcus horikoshii	Pyrococcus horikoshii OT3	archaea-euryarchaeota	70601
+pyroAbys_VIRUS_1	Pyrococcus abyssi virus 1	Pyrococcus abyssi virus 1	viruses-other	425386
+pyroArse1	Pyrobaculum arsenaticum	Pyrobaculum arsenaticum DSM 13514	archaea-crenarchaeota	340102
+pyroCali1	Pyrobaculum calidifontis	Pyrobaculum calidifontis JCM 11548	archaea-crenarchaeota	410359
+pyroIsla1	Pyrobaculum islandicum	Pyrobaculum islandicum DSM 4184	archaea-crenarchaeota	384616
+pyroSphe_VIRUS	Pyrobaculum spherical virus	Pyrobaculum spherical virus	viruses-other	270161
+ralsEutr_JMP134	Ralstonia eutropha JMP134	Ralstonia eutropha JMP134	bacteria-betaproteobacteria	264198
+ralsSola	Ralstonia solanacearum	Ralstonia solanacearum GMI1000	bacteria-betaproteobacteria	267608
+rhizEtli_CFN_42	Rhizobium etli CFN 42	Rhizobium etli CFN 42	bacteria-alphaproteobacteria	347834
+rhodFerr_DSM15236	Rhodoferax ferrireducens DSM 15236	Rhodoferax ferrireducens DSM 15236	bacteria-betaproteobacteria	338969
+rhodPalu_CGA009	Rhodopseudomonas palustris CGA009	Rhodopseudomonas palustris CGA009	bacteria-alphaproteobacteria	258594
+rhodRHA1	Rhodococcus RHA1	Rhodococcus sp. RHA1	bacteria-actinobacteria	101510
+rhodRubr_ATCC11170	Rhodospirillum rubrum ATCC 11170	Rhodospirillum rubrum ATCC 11170	bacteria-alphaproteobacteria	269796
+rhodSpha_2_4_1	Rhodobacter sphaeroides 2 4 1	Rhodobacter sphaeroides 2.4.1	bacteria-alphaproteobacteria	272943
+rickBell_RML369_C	Rickettsia bellii RML369-C	Rickettsia bellii RML369-C	bacteria-alphaproteobacteria	336407
+roseDeni_OCH_114	Roseobacter denitrificans OCh 114	Roseobacter denitrificans OCh 114	bacteria-alphaproteobacteria	375451
+rubrXyla_DSM9941	Rubrobacter xylanophilus DSM 9941	Rubrobacter xylanophilus DSM 9941	bacteria-actinobacteria	266117
+saccDegr_2_40	Saccharophagus degradans 2-40	Saccharophagus degradans 2-40	bacteria-gammaproteobacteria	203122
+saccEryt_NRRL_2338	Saccharopolyspora erythraea NRRL 2338	Saccharopolyspora erythraea NRRL 2338	bacteria-actinobacteria	405948
+saliRube_DSM13855	Salinibacter ruber DSM 13855	Salinibacter ruber DSM 13855	bacteria-bacteroidetes	309807
+saliTrop_CNB_440	Salinispora tropica CNB-440	Salinispora tropica CNB-440	bacteria-actinobacteria	369723
+salmEnte_CHOLERAESUIS	Salmonella enterica Choleraesuis	Salmonella enterica subsp. enterica serovar Choleraesuis str. SC-B67	bacteria-gammaproteobacteria	321314
+salmEnte_PARATYPI_ATC	Salmonella enterica Paratypi ATCC 9150	Salmonella enterica subsp. enterica serovar Paratyphi A str. ATCC 9150	bacteria-gammaproteobacteria	295319
+salmTyph	Salmonella typhi	Salmonella enterica subsp. enterica serovar Typhi str. CT18	bacteria-gammaproteobacteria	220341
+salmTyph_LT2	Salmonella typhimurium LT2	Salmonella typhimurium LT2	bacteria-gammaproteobacteria	99287
+salmTyph_TY2	Salmonella typhi Ty2	Salmonella enterica subsp. enterica serovar Typhi str. Ty2	bacteria-gammaproteobacteria	209261
+shewANA3	Shewanella ANA-3	Shewanella sp. ANA-3	bacteria-gammaproteobacteria	94122
+shewAmaz	Shewanella amazonensis SB2B	Shewanella amazonensis SB2B	bacteria-gammaproteobacteria	326297
+shewBalt	Shewanella baltica OS155	Shewanella baltica OS155	bacteria-gammaproteobacteria	325240
+shewDeni	Shewanella denitrificans OS217	Shewanella denitrificans OS217	bacteria-gammaproteobacteria	318161
+shewFrig	Shewanella frigidimarina NCIMB 400	Shewanella frigidimarina NCIMB 400	bacteria-gammaproteobacteria	318167
+shewHali	Shewanella halifaxensis HAW EB4	Shewanella halifaxensis HAW-EB4	bacteria-gammaproteobacteria	458817
+shewLoihPV4	Shewanella loihica PV-4	Shewanella loihica PV-4	bacteria-gammaproteobacteria	323850
+shewMR4	Shewanella MR-4	Shewanella sp. MR-4	bacteria-gammaproteobacteria	60480
+shewMR7	Shewanella MR-7	Shewanella sp. MR-7	bacteria-gammaproteobacteria	60481
+shewOnei	Shewanella oneidensis	Shewanella oneidensis MR-1	bacteria-gammaproteobacteria	211586
+shewPeal	Shewanella pealeana ATCC 700345	Shewanella pealeana ATCC 700345	bacteria-gammaproteobacteria	398579
+shewPutrCN32	Shewanella putrefaciens CN-32	Shewanella putrefaciens CN-32	bacteria-gammaproteobacteria	319224
+shewSedi_HAW_EB3	Shewanella sediminis HAW-EB3	Shewanella sediminis HAW-EB3	bacteria-gammaproteobacteria	425104
+shewW318	Shewanella W3-18-1	Shewanella sp. W3-18-1	bacteria-gammaproteobacteria	351745
+shewWood	Shewanella woodyi ATCC 51908	Shewanella woodyi ATCC 51908	bacteria-gammaproteobacteria	392500
+shigFlex_2A	Shigella flexneri 2a	Shigella flexneri 2a str. 301	bacteria-gammaproteobacteria	198214
+siliPome_DSS_3	Silicibacter pomeroyi DSS-3	Silicibacter pomeroyi DSS-3	bacteria-alphaproteobacteria	246200
+sinoMeli	Sinorhizobium meliloti	Sinorhizobium meliloti 1021	bacteria-alphaproteobacteria	266834
+sodaGlos_MORSITANS	Sodalis glossinidius morsitans	Sodalis glossinidius str. morsitans	bacteria-gammaproteobacteria	343509
+soliUsit_ELLIN6076	Solibacter usitatus Ellin6076	Solibacter usitatus Ellin6076	bacteria-other	234267
+sphiAlas_RB2256	Sphingopyxis alaskensis RB2256	Sphingopyxis alaskensis RB2256	bacteria-alphaproteobacteria	317655
+stapAure_MU50	Staphylococcus aureus Mu50	Staphylococcus aureus subsp. aureus Mu50	bacteria-firmicutes	158878
+stapMari1	Staphylothermus marinus F1	Staphylothermus marinus F1	archaea-crenarchaeota	399550
+streCoel	Streptomyces coelicolor	Streptomyces coelicolor A3(2)	bacteria-actinobacteria	100226
+strePyog_M1_GAS	Streptococcus pyogenes M1 GAS	Streptococcus pyogenes M1 GAS	bacteria-firmicutes	160490
+sulSol1	Sulfolobus solfataricus	Sulfolobus solfataricus P2	archaea-crenarchaeota	273057
+sulfAcid1	Sulfolobus acidocaldarius	Sulfolobus acidocaldarius DSM 639	archaea-crenarchaeota	330779
+sulfIsla_FILAMENTOUS	Sulfolobus islandicus filamentous virus	Sulfolobus islandicus filamentous virus	viruses-other	176106
+sulfIsla_ROD_SHAPED_V	Sulfolobus islandicus rod-shaped virus 1	Sulfolobus islandicus rod-shaped virus 1	viruses-other	157898
+sulfIsla_ROD_SHAPED_VIRUS_2	Sulfolobus islandicus rod-shaped virus 2	Sulfolobus islandicus rod-shaped virus 2	viruses-other	157899
+sulfSpin_VIRUS_4	Sulfolobus spindle-shaped virus 4	Sulfolobus spindle-shaped virus 4	viruses-other	459290
+sulfToko1	Sulfolobus tokodaii	Sulfolobus tokodaii str. 7	archaea-crenarchaeota	273063
+sulfTurr_ICOSAHEDRAL	Sulfolobus turreted icosahedral virus	Sulfolobus turreted icosahedral virus	viruses-other	269145
+sulfViru_1	Sulfolobus virus 1	Sulfolobus virus 1	viruses-other	244589
+sulfViru_2	Sulfolobus virus 2	Sulfolobus virus 2	viruses-other	244590
+sulfViru_KAMCHATKA_1	Sulfolobus virus Kamchatka 1	Sulfolobus virus Kamchatka 1	viruses-other	248496
+sulfViru_RAGGED_HILLS	Sulfolobus virus Ragged Hills	Sulfolobus virus Ragged Hills	viruses-other	256994
+sulfViru_STSV1	Sulfolobus virus STSV1	Sulfolobus virus STSV1	viruses-other	285013
+sulfYO3A	Sulfurihydrogenibium YO3AOP1	Sulfurihydrogenibium sp. YO3AOP1	bacteria-aquificae	436114
+symbTher_IAM14863	Symbiobacterium thermophilum IAM14863	Symbiobacterium thermophilum IAM 14863	bacteria-firmicutes	292459
+synePCC6	Synechocystis PCC6803	Synechocystis sp. PCC 6803	bacteria-cyanobacteria	1148
+syneSp_WH8102	Synechococcus sp WH8102	Synechococcus sp. WH 8102	bacteria-cyanobacteria	84588
+syntAcid_SB	Syntrophus aciditrophicus SB	Syntrophus aciditrophicus SB	bacteria-deltaproteobacteria	56780
+syntFuma_MPOB	Syntrophobacter fumaroxidans MPOB	Syntrophobacter fumaroxidans MPOB	bacteria-deltaproteobacteria	335543
+syntWolf_GOETTINGEN	Syntrophomonas wolfei Goettingen	Syntrophomonas wolfei subsp. wolfei str. Goettingen	bacteria-firmicutes	335541
+therAcid1	Thermoplasma acidophilum	Thermoplasma acidophilum DSM 1728	archaea-euryarchaeota	273075
+therElon	Thermosynechococcus elongatus	Thermosynechococcus elongatus BP-1	bacteria-cyanobacteria	197221
+therFusc_YX	Thermobifida fusca YX	Thermobifida fusca YX	bacteria-actinobacteria	269800
+therKoda1	Thermococcus kodakaraensis	Thermococcus kodakarensis KOD1	archaea-euryarchaeota	69014
+therMari	Thermotoga maritima	Thermotoga maritima MSB8	bacteria-thermotogae	243274
+therNeut1	Thermoproteus neutrophilus	Thermoproteus neutrophilus V24Sta	archaea-crenarchaeota	444157
+therPend1	Thermofilum pendens	Thermofilum pendens Hrk 5	archaea-crenarchaeota	368408
+therPetr_RKU_1	Thermotoga petrophila RKU-1	Thermotoga petrophila RKU-1	bacteria-thermotogae	390874
+therTena_SPHERICAL_VI	Thermoproteus tenax spherical virus 1	Thermoproteus tenax spherical virus 1	viruses-other	292639
+therTeng	Thermoanaerobacter tengcongensis	Thermoanaerobacter tengcongensis MB4	bacteria-firmicutes	273068
+therTher_HB27	Thermus thermophilus HB27	Thermus thermophilus HB27	bacteria-deinococcusthermus	262724
+therTher_HB8	Thermus thermophilus HB8	Thermus thermophilus HB8	bacteria-deinococcusthermus	300852
+therVolc1	Thermoplasma volcanium	Thermoplasma volcanium GSS1	archaea-euryarchaeota	273116
+thioCrun_XCL_2	Thiomicrospira crunogena XCL-2	Thiomicrospira crunogena XCL-2	bacteria-gammaproteobacteria	317025
+thioDeni_ATCC25259	Thiobacillus denitrificans ATCC 25259	Thiobacillus denitrificans ATCC 25259	bacteria-betaproteobacteria	292415
+thioDeni_ATCC33889	Thiomicrospira denitrificans ATCC 33889	Sulfurimonas denitrificans DSM 1251	bacteria-epsilonproteobacteria	326298
+trepPall	Treponema pallidum	Treponema pallidum subsp. pallidum str. Nichols	bacteria-spirochaetes	243276
+tricEryt_IMS101	Trichodesmium erythraeum IMS101	Trichodesmium erythraeum IMS101	bacteria-cyanobacteria	203124
+tropWhip_TW08_27	Tropheryma whipplei TW08 27	Tropheryma whipplei TW08/27	bacteria-actinobacteria	218496
+uncuMeth_RCI	Uncultured methanogenic archaeon RC-I	Uncultured methanogenic archaeon RC-I	archaea-euryarchaeota	351160
+ureaUrea	Ureaplasma urealyticum	Ureaplasma parvum serovar 3 str. ATCC 700970	bacteria-other	273119
+vermEise_EF01_2	Verminephrobacter eiseniae EF01-2	Verminephrobacter eiseniae EF01-2	bacteria-betaproteobacteria	391735
+vibrChol1	Vibrio cholerae O1 El Tor	Vibrio cholerae O1 biovar eltor str. N16961	bacteria-gammaproteobacteria	243277
+vibrChol_MO10_1	Vibrio cholerae MO10	Vibrio cholerae MO10	bacteria-gammaproteobacteria	345072
+vibrChol_O395_1	Vibrio cholerae O395	Vibrio cholerae O395	bacteria-gammaproteobacteria	345073
+vibrFisc_ES114_1	Vibrio fischeri ES114	Vibrio fischeri ES114	bacteria-gammaproteobacteria	312309
+vibrPara1	Vibrio parahaemolyticus	Vibrio parahaemolyticus RIMD 2210633	bacteria-gammaproteobacteria	223926
+vibrVuln_CMCP6_1	Vibrio vulnificus CMCP6	Vibrio vulnificus CMCP6	bacteria-gammaproteobacteria	216895
+vibrVuln_YJ016_1	Vibrio vulnificus YJ016	Vibrio vulnificus YJ016	bacteria-gammaproteobacteria	196600
+wiggBrev	Wigglesworthia brevipalpis	Wigglesworthia glossinidia endosymbiont of Glossina brevipalpis	bacteria-gammaproteobacteria	36870
+wolbEndo_OF_DROSOPHIL	Wolbachia endosymbiont of Drosophila melanogaster	Wolbachia endosymbiont of Drosophila melanogaster	bacteria-alphaproteobacteria	163164
+woliSucc	Wolinella succinogenes	Wolinella succinogenes DSM 1740	bacteria-epsilonproteobacteria	273121
+xantAuto_PY2	Xanthobacter autotrophicus Py2	Xanthobacter autotrophicus Py2	bacteria-alphaproteobacteria	78245
+xantCamp	Xanthomonas campestris	Xanthomonas campestris pv. campestris str. ATCC 33913	bacteria-gammaproteobacteria	340
+xantOryz_MAFF_311018	Xanthomonas oryzae MAFF 311018	Xanthomonas oryzae pv. oryzae MAFF 311018	bacteria-gammaproteobacteria	342109
+xyleFast	Xylella fastidiosa	Xylella fastidiosa 9a5c	bacteria-gammaproteobacteria	160492
+yersPest_CO92	Yersinia pestis CO92	Yersinia pestis CO92	bacteria-gammaproteobacteria	214092
+yersPseu_IP31758	Yersinia pseudotuberculosis IP31758	Yersinia pseudotuberculosis IP 31758	bacteria-gammaproteobacteria	349747
+yersPseu_IP32953	Yersinia pseudotuberculosis IP32953	Yersinia pseudotuberculosis IP 32953	bacteria-gammaproteobacteria	273123
+zymoMobi_ZM4	Zymomonas mobilis ZM4	Zymomonas mobilis subsp. mobilis ZM4	bacteria-alphaproteobacteria	264203

@@ -1,0 +1,53 @@
+====================================
+ Genome Browser Development Roadmap
+====================================
+
+-- release 0.3 --------------------------------------------------------
+
+  tabbed bookmarks
+  search results in bookmarks tab
+  keep only center positions in cases where that's all that's needed
+
+-- release 0.4 --------------------------------------------------------
+
+  show whole probe when zoomed in on a ScalingTrackRenderer
+  display info for each track
+
+
+-- TODO: Major features -----------------------------------------------------
+
+  control genome browser from within R
+
+  memory management for large datasets:
+    divide tracks into chunks and build an LRU-cache for chunks
+
+  Gaggle the Genome Browser
+  broadcast search terms to bookmarks tab
+
+
+-- TODO ---------------------------------------------------------------
+
+  search for multiple terms at once
+
+  load bookmarks from within dataset
+
+  zoom down further
+
+  dynamically add/hide tracks
+  dynamically resize track (vertically)
+
+  display scale for tracks that request it
+
+  get sequence of a segment
+  manually edit segmentation
+
+  export to PDF
+
+  plug-ins
+  dynamically draw chromosomes from data
+
+  application icon
+
+  draw features with sub-structure: introns and exons
+
+

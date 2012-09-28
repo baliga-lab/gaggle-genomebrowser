@@ -1,0 +1,62 @@
+#
+# An example dataset file for the Genome Browser
+#
+
+name: Example Dataset
+species: Moose
+
+Chromosomes {
+
+	1 {
+		length: 100,000
+		sequence: moose_chrom_1.fasta
+
+		Tracks {
+
+			Genes {
+				viewer: Gene
+				reader: GeneCoordinateLoader
+				filename: genes.tsv
+				top: 0.45
+				height: 0.10
+			}
+
+			Tiling Array {
+			  	reader: SegmentDataLoader
+			  	viewer: Bubble
+				filename: tiling_array.tsv
+				length: 1000
+				top: 0.20
+				height: 0.20
+			}
+
+		}
+	}
+	
+	2 {
+		length: 50,000
+		sequence: moose_chrom_2.fasta
+
+		Tracks {
+
+			More Genes {
+				viewer: Gene
+				reader: GeneCoordinateLoader
+				filename: genes.tsv
+				top: 0.45
+				height: 0.10
+			}
+
+			Another Tiling Array {
+			  	reader: SegmentDataLoader
+			  	viewer: Bubble
+				filename: tiling_array.tsv
+				length: 1000
+				top: 0.60
+				height: 0.20
+			}
+
+		}
+	}
+
+}

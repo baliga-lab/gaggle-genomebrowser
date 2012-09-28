@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<!--
+		Ant Build file
+-->
+<project name="genomebrowser" default="all" basedir=".">
+
+	<!-- set global properties for this build -->
+	<property name="src.dir"       location="${basedir}/src/main"/>
+	<property name="test.dir"      location="${basedir}/src/test"/>
+	<property name="resource.dir"  location="${basedir}/src/resources"/>
+	<property name="script.dir"    location="${basedir}/src/scripts"/>
+	<property name="lib.dir"       location="${basedir}/lib"/>
+	<property name="build.dir"     location="${basedir}/temp"/>
+	<property name="dist.dir"      location="${basedir}/dist"/>
+	<property name="data.dir"      location="${basedir}/data"/>
+
+	<property name="app.name"      value="genomebrowser"/>
+	<property name="jar.name"      value="${app.name}.jar"/>
+
+	<property name="major.version"       value="1"/>
+	<property name="minor.version"       value="0"/>
+
+
+	<!-- Classpath -->
+	<path id="app.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="clean" description="Remove previous artifacts">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="clean-dist" description="Remove previous dist artifacts">
+		<delete dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<target name="init" description="Get setup">
+		<!-- Create the time stamp -->
+		<tstamp>
+			<format property="timestamp" pattern="yyyy-MM-dd HH:mm:ss"/>
+		</tstamp>
+	</target>
+
+	<target name="increment-build-number" depends="init">
+		<propertyfile
+		    file="src/resources/buildNumber.properties"
+		    comment="My properties">
+		  <entry  key="major.version" value="${major.version}"/>
+		  <entry  key="minor.version" value="${minor.version}"/>
+		  <entry  key="build.date"   type="date" value="now"/>
+		  <entry  key="build.number" type="int" operation="+" default="1"/>
+		</propertyfile>
+		<property file="src/resources/buildNumber.properties"/>
+		<echo message="building Genome Browser ${major.version}.${minor.version}.${build.number} ${build.date}"/>
+	</target>
+
+	<!--
+	<target name="increment-minor-version-number" depends="init">
+		<propertyfile
+		    file="src/resources/buildNumber.properties"
+		    comment="My properties">
+		  <entry  key="minor.version" type="int" operation="+" default="1"/>
+		</propertyfile>
+	</target>
+	-->
+
+	<target name="compile" depends="init, increment-build-number">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" target="1.5">
+			<classpath refid="app.classpath" />
+		</javac>
+		<copy todir="${build.dir}">
+			<fileset dir="${resource.dir}">
+				<filename name="**/*"/>
+			</fileset>
+		</copy>
+		<copy todir="${build.dir}">
+			<fileset dir="${script.dir}">
+				<filename name="**/*"/>
+			</fileset>
+		</copy>
+		<chmod file="${build.dir}/ucscgb" perm="ugo+rx"/>
+		<chmod file="${build.dir}/TextDatasetConverter" perm="ugo+rx"/>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${dist.dir}"/>
+		<jar jarfile="${dist.dir}/${jar.name}" index="true">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Built-On" value="${timestamp}" />
+				<attribute name="Main-Class" value="org.systemsbiology.genomebrowser.Main" />
+			</manifest>
+			<fileset dir="${build.dir}" />
+		</jar>
+		<signjar jar="${dist.dir}/${app.name}.jar"  keystore="/Users/cbare/.jarkey" alias="gaggle" storepass="honker"/>
+	</target>
+
+	<target name="sign-dependency-jars">
+		<signjar destDir="${dist.dir}" keystore="/Users/cbare/.jarkey" alias="gaggle" storepass="honker" lazy="true" preservelastmodified="true">
+			<path>
+				<fileset dir="${lib.dir}" includes="**/*.jar" excludes="**/junit*.jar"/>
+			</path>
+			<flattenmapper />
+		</signjar>
+	</target>
+
+	<target name="all" depends="clean,init,compile,jar,sign-dependency-jars">
+	</target>
+
+	<target name="run">
+		<java classname="org.systemsbiology.genomebrowser.Main" fork="true">
+			<jvmarg value="-Xmx1024m"/>
+			<jvmarg value="-Xms1024m"/>
+			<classpath>
+				<pathelement path="${build.dir}"/>
+				<path refid="app.classpath"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="data-jar" depends="init">
+		<mkdir dir="${dist.dir}"/>
+		<jar jarfile="${dist.dir}/HaloTilingArrayReferenceConditions.jar" index="true">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Built-On" value="${timestamp}" />
+			</manifest>
+			<fileset dir="${data.dir}/">
+				<include name="HaloTilingArrayReferenceConditions/**/*"/>
+				<exclude name="**/.*"/>
+			</fileset>
+		</jar>
+		<signjar jar="${dist.dir}/HaloTilingArrayReferenceConditions.jar"  keystore="/Users/cbare/.jarkey" alias="gaggle" storepass="honker"/>
+	</target>
+
+	<target name="doc">
+		<javadoc sourcepath="${src.dir}"
+			defaultexcludes="yes"
+			destdir="docs/api"
+			author="true"
+			version="true"
+			use="true"
+			windowtitle="Gaggle Genome Browser">
+		<doctitle><![CDATA[<h1>Test</h1>]]></doctitle>
+		<bottom><![CDATA[<i>Copyright &#169; 2010 Institute for Systems Biology. All Rights Reserved.</i>]]></bottom>
+		<tag name="todo" scope="all" description="To do:"/>
+		<link offline="true" href="http://java.sun.com/javase/6/docs/api/" packagelistLoc="C:\tmp"/>
+		<link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+		</javadoc>
+	</target>
+
+</project>
+

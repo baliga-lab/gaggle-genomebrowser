@@ -1,0 +1,79 @@
+name	description	genome	scientificName	taxid	clade
+braFlo1	Mar. 2006	Lancelet	Branchiostoma floridae	7739	deuterostome
+ci1	Dec. 2002	C. intestinalis	Ciona intestinalis	7719	deuterostome
+ci2	Mar. 2005	C. intestinalis	Ciona intestinalis	7719	deuterostome
+strPur2	Sep. 2006	S. purpuratus	Strongylocentrotus purpuratus	7668	deuterostome
+strPur1	Apr. 2005	S. purpuratus	Strongylocentrotus purpuratus	7668	deuterostome
+anoGam1	Feb. 2003	A. gambiae	Anopheles gambiae	7165	insect
+apiMel2	Jan. 2005	A. mellifera	Apis mellifera	7460	insect
+apiMel1	July 2004	A. mellifera	Apis mellifera	7460	insect
+droAna2	Aug. 2005	D. ananassae	Drosophila ananassae	7217	insect
+droAna1	July 2004	D. ananassae	Drosophila ananassae	7217	insect
+droEre1	Aug. 2005	D. erecta	Drosophila erecta	7220	insect
+droGri1	Aug. 2005	D. grimshawi	Drosophila grimshawi	7222	insect
+dm1	Jan. 2003	D. melanogaster	Drosophila melanogaster	7227	insect
+dm2	Apr. 2004	D. melanogaster	Drosophila melanogaster	7227	insect
+dm3	Apr. 2006	D. melanogaster	Drosophila melanogaster	7227	insect
+droMoj2	Aug. 2005	D. mojavensis	Drosophila mojavensis	7230	insect
+droMoj1	Aug. 2004	D. mojavensis	Drosophila mojavensis	7230	insect
+droPer1	Oct. 2005	D. persimilis	Drosophila persimilis	7234	insect
+dp3	Nov. 2004	D. pseudoobscura	Drosophila pseudoobscura	7237	insect
+dp2	Aug. 2003	D. pseudoobscura	Drosophila pseudoobscura	7237	insect
+droSec1	Oct. 2005	D. sechellia	Drosophila sechellia	7238	insect
+droSim1	Apr. 2005	D. simulans	Drosophila simulans	7240	insect
+droVir1	July 2004	D. virilis	Drosophila virilis	7244	insect
+droVir2	Aug. 2005	D. virilis	Drosophila virilis	7244	insect
+droYak2	Nov. 2005	D. yakuba	Drosophila yakuba	7245	insect
+droYak1	Apr. 2004	D. yakuba	Drosophila yakuba	7245	insect
+bosTau2	Mar. 2005	Cow	Bos taurus	9913	mammal
+bosTau4	Oct. 2007	Cow	Bos taurus	9913	mammal
+bosTau3	Aug. 2006	Cow	Bos taurus	9913	mammal
+calJac1	June 2007	Marmoset	Callithrix jacchus	9483	mammal
+canFam1	July 2004	Dog	Canis lupus familiaris	9615	mammal
+canFam2	May 2005	Dog	Canis lupus familiaris	9615	mammal
+cavPor3	Feb. 2008	Guinea Pig	Cavia porcellus	10141	mammal
+equCab2	Sep. 2007	Horse	Equus caballus	9796	mammal
+equCab1	Jan. 2007	Horse	Equus caballus	9796	mammal
+felCat3	Mar. 2006	Cat	Felis catus	9685	mammal
+hg16	July 2003	Human	Homo sapiens	9606	mammal
+hg17	May 2004	Human	Homo sapiens	9606	mammal
+hg18	Mar. 2006	Human	Homo sapiens	9606	mammal
+rheMac2	Jan. 2006	Rhesus	Macaca mulatta	9544	mammal
+monDom1	Oct. 2004	Opossum	Monodelphis domestica	13616	mammal
+monDom4	Jan. 2006	Opossum	Monodelphis domestica	13616	mammal
+mm9	July 2007	Mouse	Mus musculus	10090	mammal
+mm7	Aug. 2005	Mouse	Mus musculus	10090	mammal
+mm8	Feb. 2006	Mouse	Mus musculus	10090	mammal
+ornAna1	Mar. 2007	Platypus	Ornithorhynchus anatinus	9258	mammal
+panTro1	Nov. 2003	Chimp	Pan troglodytes	9598	mammal
+panTro2	Mar. 2006	Chimp	Pan troglodytes	9598	mammal
+ponAbe2	July 2007	Orangutan	Pongo pygmaeus abelii	9601	mammal
+rn3	June 2003	Rat	Rattus norvegicus	10116	mammal
+rn4	Nov. 2004	Rat	Rattus norvegicus	10116	mammal
+sacCer1	Oct. 2003	S. cerevisiae	Saccharomyces cerevisiae	4932	other
+anoCar1	Feb. 2007	Lizard	Anolis carolinensis	28377	vertebrate
+danRer3	May 2005	Zebrafish	Danio rerio	7955	vertebrate
+danRer5	July 2007	Zebrafish	Danio rerio	7955	vertebrate
+danRer4	Mar. 2006	Zebrafish	Danio rerio	7955	vertebrate
+galGal3	May 2006	Chicken	Gallus gallus	9031	vertebrate
+galGal2	Feb. 2004	Chicken	Gallus gallus	9031	vertebrate
+gasAcu1	Feb. 2006	Stickleback	Gasterosteus aculeatus	69293	vertebrate
+oryLat2	Oct. 2005	Medaka	Oryzias latipes	8090	vertebrate
+petMar1	Mar. 2007	Lamprey	Petromyzon marinus	7757	vertebrate
+taeGut1	Jul. 2008	Zebra finch	Taeniopygia guttata	59729	vertebrate
+fr2	Oct. 2004	Fugu	Takifugu rubripes	31033	vertebrate
+fr1	Aug. 2002	Fugu	Takifugu rubripes	31033	vertebrate
+tetNig1	Feb. 2004	Tetraodon	Tetraodon nigroviridis	99883	vertebrate
+xenTro1	Oct. 2004	X. tropicalis	Xenopus tropicalis	8364	vertebrate
+xenTro2	Aug. 2005	X. tropicalis	Xenopus tropicalis	8364	vertebrate
+caePb2	Feb. 2008	C. brenneri	Caenorhabditis brenneri	135651	worm
+caePb1	Jan. 2007	C. brenneri	Caenorhabditis brenneri	135651	worm
+cb3	Jan. 2007	C. briggsae	Caenorhabditis briggsae	6238	worm
+cb1	July 2002	C. briggsae	Caenorhabditis briggsae	6238	worm
+ce2	Mar. 2004	C. elegans	Caenorhabditis elegans	6239	worm
+ce4	Jan. 2007	C. elegans	Caenorhabditis elegans	6239	worm
+ce6	May 2008	C. elegans	Caenorhabditis elegans	6239	worm
+caeJap1	Mar. 2008	C. japonica	Caenorhabditis japonica	281687	worm
+caeRem3	May 2007	C. remanei	Caenorhabditis remanei	31234	worm
+caeRem2	Mar. 2006	C. remanei	Caenorhabditis remanei	31234	worm
+priPac1	Feb. 2007	P. pacificus	Pristionchus pacificus	54126	worm

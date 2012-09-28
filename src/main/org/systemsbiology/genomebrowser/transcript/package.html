@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head></head>
+
+<body>
+
+<p>Adds a specialized bookmark dialog for annotating transcript start and termination sites.</p>
+
+<p>Bookmark files signal that they are transcript annotation with the following tag in the header:</p>
+
+<pre>&gt;type: transcripts</pre>
+
+<p>Attributes were added to bookmarks so that we'd have somewhere to put extra properties. Originally,
+I used ambiguous3Prime and ambiguousOverall. SungHo suggested some much more sensible options ok3Prime, ok5Prime
+and okOverall. If there are old bookmark files, the old properties will be ignored. This can easily be dealt with
+by loading the bookmark file into an editor and searching and replacing.</p>
+
+@see org.systemsbiology.genomebrowser.bookmarks
+@see org.systemsbiology.genomebrowser.bookmarks.Bookmark
+@see org.systemsbiology.genomebrowser.ui.BookmarkDialog
+@see org.systemsbiology.genomebrowser.ui.BookmarkFileDialogs
+@see org.systemsbiology.genomebrowser.ui.BookmarksPanel
+
+</body>
+</html>

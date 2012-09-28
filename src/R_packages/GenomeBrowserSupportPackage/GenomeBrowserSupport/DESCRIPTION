@@ -1,0 +1,13 @@
+Package: GenomeBrowserSupport
+Version: 0.9
+Date: 2010-02-22
+Title: Broadcast data between the Gaggle Genome Browser and R
+Author: Christopher Bare <cbare@systemsbiology.org>
+Maintainer: Christopher Bare <cbare@systemsbiology.org>
+Depends: R (>= 2.3.0), rJava (>= 0.4), gaggle (>= 1.13.0), RSQLite (>= 0.7-3)
+Description: This package contains functions for exchanging data between the
+  Gaggle Genome Browser and R. R can be used to add tracks to a genome browser
+  data set.
+License: GPL (>= 2)
+URL: http://gaggle.systemsbiology.org
+LazyData: yes

@@ -1,0 +1,1 @@
+scp ./dist/genomebrowser.jar bragi:/local/apache2/docs/gaggle/cbare/genomebrowser/

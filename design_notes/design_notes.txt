@@ -1,0 +1,72 @@
+=============================
+ Genome Browser Design Notes
+=============================
+
+
+==== Dataset loading with progress
+ Use a FutureTask with progress support to load datasets.
+ Remove the mess that's in ApplicationController currently.
+
+==== Model
+ Track and Attributes: Can we ditch or hide all track subtypes and TrackMetaData?
+ Trade sequences for chromosomes.
+ Dataset has tracks and sequences. Filter tracks by sequence and window.
+ Feature: a superset? how to handle subtypes?
+
+==== Application
+ dataset
+ bookmarks
+ selections
+ search
+ plugins
+ options?
+ visualization?
+ 
+==== TrackVisualization
+ package to contain renderers, TrackManager, and maintain the state of the visualization that appears in the UI.
+ we should be able to hand the visualization to a PDF writer, for example
+ most state in ApplicationController belongs here
+
+==== TrackManager responsibilities
+ maintain list of visible tracks
+ associate renderer instance w/ each track
+ iterate renderers for drawing
+ get tracks at a position
+ maintain overlay groups and pairings
+
+===== Groups
+ a group of tracks that share certain visual properties
+
+
+
+==== External API (for plugins)
+ newDataset()
+ loadDataset(filename/url)
+ addTrack(track)
+ removeTrack(track)
+ addSequence(...)
+
+ === for Gaggle
+  addMenu(...)
+  addToolbar(...)
+  getSelection() ?
+  getSelectedGeneNames()
+  setSelection()
+  getSpecies()
+  reportException(msg, ex)
+  +track data
+  +sequence data
+  
+ === edit track visual properties
+  setTrackProperty(name, value)
+  setRendererForTrack(trackName, rendererName)
+  visibility
+  z-order functions?
+  position
+  range
+  color
+  overlay/pairing/grouping
+ 
+ 
+
+  

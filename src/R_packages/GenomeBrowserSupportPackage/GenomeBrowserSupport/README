@@ -1,0 +1,30 @@
+======================
+ GenomeBrowserSupport
+======================
+
+The GenomeBrowserSupport package enables data exchange between R and the Gaggle
+Genome Browser. Various R data structures can be converted into data.frames
+with the proper structure to become tracks in a genome browser data set. That
+structure depends on the exact type of track we're creating, but generally
+relates some data to coordinates on the genome (sequence, strand, start, end)
+or (sequence, strand, position).
+
+More information can be found at:
+http://gaggle.systemsbiology.net/docs/geese/genomebrowser/
+
+
+MeDiChI
+-------
+This package has one unlisted dependency, the MeDiChI library. It is needed only
+for certain functions and may be ignored if those functions are not used. These
+functions are:
+  * medichiProfile.chip.deconv
+  * medichiProfile.deconv.entire.genome
+  * medichiProfileAsGaggleMatrix
+  
+Many of the other MeDiChI related functions take the fit data structure produced
+by MeDiChI as input, but do not directly depend on MeDiChI.
+
+Instructions for installing MeDiChI can be found here:
+http://baliga.systemsbiology.net/drupal/content/medichi
+

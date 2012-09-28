@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head></head>
+
+<body>
+
+<p>Swing based user-interface components for the Genome Browser. UI serves as a facade to the UI package. MainWindow is the main window. GenomeViewPanel is where the tracks are drawn.</p>
+
+<p>External callers should only access the ui package through ExternalUiController. The classes in this package attempt to use the swing
+event thread correctly. No classes in this package should be called on any
+other thread except ExternalUiController, which respondes to all calls by delegating to SwingUtilities.invokeLater(...).</p>
+
+</body>
+</html>

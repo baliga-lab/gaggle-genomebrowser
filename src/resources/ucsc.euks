@@ -1,0 +1,79 @@
+name	genome	scientificName	eukaryota	clade	taxid
+braFlo1	Lancelet	Branchiostoma floridae	eukaryota	deuterostome	7739
+ci1	C. intestinalis	Ciona intestinalis	eukaryota	deuterostome	7719
+ci2	C. intestinalis	Ciona intestinalis	eukaryota	deuterostome	7719
+strPur2	S. purpuratus	Strongylocentrotus purpuratus	eukaryota	deuterostome	7668
+strPur1	S. purpuratus	Strongylocentrotus purpuratus	eukaryota	deuterostome	7668
+anoGam1	A. gambiae	Anopheles gambiae	eukaryota	insect	7165
+apiMel2	A. mellifera	Apis mellifera	eukaryota	insect	7460
+apiMel1	A. mellifera	Apis mellifera	eukaryota	insect	7460
+droAna2	D. ananassae	Drosophila ananassae	eukaryota	insect	7217
+droAna1	D. ananassae	Drosophila ananassae	eukaryota	insect	7217
+droEre1	D. erecta	Drosophila erecta	eukaryota	insect	7220
+droGri1	D. grimshawi	Drosophila grimshawi	eukaryota	insect	7222
+dm1	D. melanogaster	Drosophila melanogaster	eukaryota	insect	7227
+dm2	D. melanogaster	Drosophila melanogaster	eukaryota	insect	7227
+dm3	D. melanogaster	Drosophila melanogaster	eukaryota	insect	7227
+droMoj2	D. mojavensis	Drosophila mojavensis	eukaryota	insect	7230
+droMoj1	D. mojavensis	Drosophila mojavensis	eukaryota	insect	7230
+droPer1	D. persimilis	Drosophila persimilis	eukaryota	insect	7234
+dp3	D. pseudoobscura	Drosophila pseudoobscura	eukaryota	insect	7237
+dp2	D. pseudoobscura	Drosophila pseudoobscura	eukaryota	insect	7237
+droSec1	D. sechellia	Drosophila sechellia	eukaryota	insect	7238
+droSim1	D. simulans	Drosophila simulans	eukaryota	insect	7240
+droVir1	D. virilis	Drosophila virilis	eukaryota	insect	7244
+droVir2	D. virilis	Drosophila virilis	eukaryota	insect	7244
+droYak2	D. yakuba	Drosophila yakuba	eukaryota	insect	7245
+droYak1	D. yakuba	Drosophila yakuba	eukaryota	insect	7245
+bosTau2	Cow	Bos taurus	eukaryota	mammal	9913
+bosTau4	Cow	Bos taurus	eukaryota	mammal	9913
+bosTau3	Cow	Bos taurus	eukaryota	mammal	9913
+calJac1	Marmoset	Callithrix jacchus	eukaryota	mammal	9483
+canFam1	Dog	Canis lupus familiaris	eukaryota	mammal	9615
+canFam2	Dog	Canis lupus familiaris	eukaryota	mammal	9615
+cavPor3	Guinea Pig	Cavia porcellus	eukaryota	mammal	10141
+equCab2	Horse	Equus caballus	eukaryota	mammal	9796
+equCab1	Horse	Equus caballus	eukaryota	mammal	9796
+felCat3	Cat	Felis catus	eukaryota	mammal	9685
+hg16	Human	Homo sapiens	eukaryota	mammal	9606
+hg17	Human	Homo sapiens	eukaryota	mammal	9606
+hg18	Human	Homo sapiens	eukaryota	mammal	9606
+rheMac2	Rhesus	Macaca mulatta	eukaryota	mammal	9544
+monDom1	Opossum	Monodelphis domestica	eukaryota	mammal	13616
+monDom4	Opossum	Monodelphis domestica	eukaryota	mammal	13616
+mm9	Mouse	Mus musculus	eukaryota	mammal	10090
+mm7	Mouse	Mus musculus	eukaryota	mammal	10090
+mm8	Mouse	Mus musculus	eukaryota	mammal	10090
+ornAna1	Platypus	Ornithorhynchus anatinus	eukaryota	mammal	9258
+panTro1	Chimp	Pan troglodytes	eukaryota	mammal	9598
+panTro2	Chimp	Pan troglodytes	eukaryota	mammal	9598
+ponAbe2	Orangutan	Pongo pygmaeus abelii	eukaryota	mammal	9601
+rn3	Rat	Rattus norvegicus	eukaryota	mammal	10116
+rn4	Rat	Rattus norvegicus	eukaryota	mammal	10116
+sacCer1	S. cerevisiae	Saccharomyces cerevisiae	eukaryota	other	4932
+anoCar1	Lizard	Anolis carolinensis	eukaryota	vertebrate	28377
+danRer3	Zebrafish	Danio rerio	eukaryota	vertebrate	7955
+danRer5	Zebrafish	Danio rerio	eukaryota	vertebrate	7955
+danRer4	Zebrafish	Danio rerio	eukaryota	vertebrate	7955
+galGal3	Chicken	Gallus gallus	eukaryota	vertebrate	9031
+galGal2	Chicken	Gallus gallus	eukaryota	vertebrate	9031
+gasAcu1	Stickleback	Gasterosteus aculeatus	eukaryota	vertebrate	69293
+oryLat2	Medaka	Oryzias latipes	eukaryota	vertebrate	8090
+petMar1	Lamprey	Petromyzon marinus	eukaryota	vertebrate	7757
+taeGut1	Zebra finch	Taeniopygia guttata	eukaryota	vertebrate	59729
+fr2	Fugu	Takifugu rubripes	eukaryota	vertebrate	31033
+fr1	Fugu	Takifugu rubripes	eukaryota	vertebrate	31033
+tetNig1	Tetraodon	Tetraodon nigroviridis	eukaryota	vertebrate	99883
+xenTro1	X. tropicalis	Xenopus tropicalis	eukaryota	vertebrate	8364
+xenTro2	X. tropicalis	Xenopus tropicalis	eukaryota	vertebrate	8364
+caePb2	C. brenneri	Caenorhabditis brenneri	eukaryota	worm	135651
+caePb1	C. brenneri	Caenorhabditis brenneri	eukaryota	worm	135651
+cb3	C. briggsae	Caenorhabditis briggsae	eukaryota	worm	6238
+cb1	C. briggsae	Caenorhabditis briggsae	eukaryota	worm	6238
+ce2	C. elegans	Caenorhabditis elegans	eukaryota	worm	6239
+ce4	C. elegans	Caenorhabditis elegans	eukaryota	worm	6239
+ce6	C. elegans	Caenorhabditis elegans	eukaryota	worm	6239
+caeJap1	C. japonica	Caenorhabditis japonica	eukaryota	worm	281687
+caeRem3	C. remanei	Caenorhabditis remanei	eukaryota	worm	31234
+caeRem2	C. remanei	Caenorhabditis remanei	eukaryota	worm	31234
+priPac1	P. pacificus	Pristionchus pacificus	eukaryota	worm	54126

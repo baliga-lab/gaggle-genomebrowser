@@ -1,0 +1,3 @@
+#!/bin/sh
+java -cp ./bin:./lib/log4j-1.2.14.jar org.systemsbiology.ucscgenomebrowser.UCSCGB "$@"
+exit 0

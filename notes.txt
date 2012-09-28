@@ -1,0 +1,337 @@
+==================================
+ Genome Browser Development Notes
+==================================
+
+** These are notes to myself made during development of the genome browser. They are unlikely to be of much use or be very intelligible to anyone, including myself. Most of these apply to earlier versions of the software which used a horrible text based format to read in genome and track data. Now, the software has been revised to use SQLite as a datastore.
+
+
+
+Possible features:
+  large data sets:
+  caching and paging in and out partial data sets
+  caching multiple resolutions
+
+
+Datasets:
+
+  url/filename points to folder or dataset file
+  can be in file system, archive, remote url, or classpath
+  grab resources relative to folder containing dataset file
+
+  The directory structure of a dataset looks like this:
+    /dataset
+      whatever.dataset
+      /chromosome1
+        genes.tsv
+        track1_datafile.tsv
+        track2_datafile.tsv
+        icon.png
+      /chromosome2
+        ...
+
+  The code assumes the data files are sorted in order by START position. The windowing
+  functionality makes further assumptions when determining whether features are in
+  or not in the current window. The current method of finding features in a window
+  assumes that ordering features by start also orders them by end.
+
+  Datasets need a way of defining a data series up front that will later be used by one
+  or more individual tracks. Like we could define the probe start and end coordinates
+  once and reuse that for each track that refers to the same probes.
+  
+  My terminology needs to be more consistent:
+  == Position  = a single coordinate on the genome
+  == Segment   = a region on the genome with a START and END coordinates
+
+  Alternatives: StartEnd? Range? Interval? Feature? Coordinate(s)? Point?
+
+  what about a Eukaryotic gene w/ introns and exons?
+  
+  
+
+  
+Tie's R data files:
+  
+  halo.tfbd.data.all.genome.RData = ChIP-chip data. isb = low resolution, nimb = nimblegen high resolution.
+
+Tab separated text files:
+
+  I should write a generalized loader for tsv files. You could plug in what columns you want, whether there's
+  a header row, etc. and it loads it into parallel arrays of ints, doubles, or strings.
+
+  Maybe loaders should return columns, allowing the datasources or some configurator to pull the
+  columns they want.
+  
+  
+Progress bar for file loading:
+  When starting the GB w/ a data file command line argument, loading the data will start concurrently to
+  rendering the GUI. When the GUI is done initializing, it should add a progress bar. The progress bar
+  should be updated to the amount of progress at that time. It's possible that loading the data will finish
+  before the GUI is done being rendered.
+
+
+
+
+
+===============
+ Refactoring 2
+===============
+
+Goals: 
+ + Divide the GB app into discrete components.
+ + Simplify domain model.
+ + Replace the treatment of track data as being being divided into pieces by
+   sequence and strand. Do that separation internally (using embedded DB).
+ + Allow easier import of track data.
+ + Support large datasets without requiring that all data be loaded into
+   memory at start time.
+
+Components of the HBGB application:
+ Options
+ Dataset
+ Visualization
+ Bookmarks
+ Search
+ Selections
+ Plugins
+
+
+Application Life Cycle:
+ Load time
+  create GUI
+  load dataset
+ Run time
+  reload (modified) dataset
+  load new datasets
+  create new datasets
+  save modified datasets
+ Shutdown
+  cleanup
+
+Progress bars for long running tasks (loading datasets, etc.)
+
+Features:
+ Minimum:
+  sequence
+  strand
+  start
+  end
+ Optional:
+  label
+  value
+  annotation
+ May be nested
+
+Tracks
+ hold sets of features
+ apply to all sequences
+ can filter features for a specific sequence
+
+Sequences
+ name
+ length
+ topology: circular vs linear
+
+Packaging:
+ org.systemsbiology.genomebrowser
+   Main
+ org.systemsbiology.genomebrowser.application
+   Application
+   Options
+   OptionParser
+ org.systemsbiology.genomebrowser.model
+   Feature
+   Track
+   Sequence
+   Strand
+   Range
+ org.systemsbiology.genomebrowser.search
+ org.systemsbiology.genomebrowser.visualization.trackrenderers
+
+ 
+   TrackManager?
+   TrackRendererRegistry?
+   Dataset?
+   ExternalApi?
+   PluginManager?   
+
+
+Refactoring todo:
+  bookmarks
+  renderers
+  dataset i/o
+  tracks based on arrays
+  tracks based on db
+
+
+
+Dev Plan:
+  Start UI.
+  Factor out ViewParameters. As a test, print all changes to ViewParams.
+  Load datasets cleanly using FutureTask with progress. (leave cancel 'til later).
+  Implement application life cycle
+  
+  
+  
+Development process:
+  Proof of concept - tackle most difficult aspect first
+  Create implementation free interfaces that model core domain concepts
+
+
+ToDo:
++ remember viewport settings for each sequence.
++ zoomOutAll
++ find selects all results
++ track info
++ addToolbar
++ insertMenu
++ track editor
+  load dataset
+  save dataset
+  import track
+
+plugins:
+  gaggle
+  import NCBI genome
+
+
+Bugs:
+  bug in find when result is on another sequence
+  bookmark key shortcuts become disabled after move bkmrk then hide
+  
+
+
+Genome Browser refactoring ToDo list:
+x  simplify domain object model
+x  schema
+x  load index of track data mapping genome coordinates to blocks
+x  load blocks of track data
+
+x  represent tracks using blocks
+x  allowing filtering by sequence, strand, start and end
+x  do rendering using blocks
+x  move data access off the swing rendering thread
+x  read dataset from DB
+  save modified dataset
+x  create new dataset
+  import track data (from GFF files)
+x  convert existing datasets to new format (manually)
+x  fix bookmarks to work with new object model
+x  NCBI integration (as a plug-in)
+  keyword search using database
+  fix editor for track visual properties
+  gaggle integration (as a plug-in)
+x  gaggle broadcast namelist
+x  gaggle receive namelist
+x  gaggle receive track as matrix
+  gaggle receive mapping (identifiers -> genome coordinates) as tuple?
+  gaggle receive track as tuple?
+
+x  finish gaggle toolbar
+x  cache blocks of track data
+  save as... for datasets
+x  load mapping from a file?
+  communicate among components by events
+  work on increasing correctness of concurrency
+  scripting language support
+  general plug-in API
+  read old text-based dataset format
+  create reductions of tracks for zoomed out views (manually or automatically?)
+  allow tools (select box and crosshairs) to work without full redraw
+x  use color picker w/ transparency
+  connectivity to GWAP
+  support for DAS
+
+
+Mo' Todo:
+--------
+x  fix select genes
+x  fix scaling
+x  fix gaggle
+x  download and locally cache dataset files
+x  add block caching
+x  store block index in DB
+x  use better colorpicker
+x  receive broadcasts of matrices
+x  add a concept of mapping (named features to coordinates)
+x  get sequence annotations from UCSC or look into alternate NCBI methods
+  fix track editor
+  import tracks
+  spinner to indicate progress while redrawing
+  deal with sequence information
+
+
+track data import
+-----------------
+
+1. read by line or feature from source (file, url, etc.)
+2. transform to intermediate form
+3. select and sort into final track feature table
+
+I want to divide the process this way so the reader can be independent of the
+consumer, which creates the data structure.
+
+For the intermediate representation, there are several choices:
+ - an iterator of features
+ - the unsorted temp table that we have to build anyway
+ - a Queue of features
+
+An iterator is simplest, but presents problems of the reader wanting to push
+and the consumer wanting to pull. Using a Queue solves that problem, but seems
+complicated. Writing directly to the temp table is OK, but couples the reader
+to Sqlite.
+
+
+Mistakes:
+==========
+
+Should have done this in a Web 2.0 technology. (Flash?)
+Should have used more existing libraries, specifically BioJava and Prefuse. Maybe Genoviz.
+ 
+
+Importing Tracks:
+==================
+
+* split on sequence_id and strand (except for genes)
+* map sequence_id to sequence
+* size each array properly
+* sort by start
+
+After revision 3280, I pulled some code out of VisualPropertiesPanel, which I may want to restore
+later: editing individual track settings and names.
+
+
+Todo 2009-09:
+------------
+  heuristics for matching up names of chromosomes
+  - file import
+  - gaggle matrix broadcast
+  - however else we import track data?
+  clean up Application class and configurator
+  improve JavaDocs
+  implement search using DB or lucene
+  fix overlay feature
+  update UCSC index file
+
+Bugs brought out by sea urchin:
+------------------------------
+ downloading genomes with lots of unassembled fragments (~114K in this case) is slow:
+  - batched adding sequences and their attributes to the DB for a big speed-up.
+  - caused timeouts reading genes (why I still don't know)
+    - fixed by commenting out setting timeouts in UCSCGB.getReaderForPath(...)
+ opening the file is slow too.
+  - indexed sequences table on uuid helps SqliteDataSource.getSequencesHelper(UUID)
+  - the loop to assign attributes to sequences is still super slow in SqliteDataSource.getSequences(UUID)
+    - put a check; if there's more than 1000 sequences, we don't load sequence attributes.
+      They're not used much anyway. Maybe, we can load them lazily.
+ search for '*' yields copies - one for each term (canonical + common name)
+ search tries to select first hit, but doesn't change to correct sequence
+ clicking on search results should center the viewing area on the feature. This fails sometimes.
+ 
+ Export to GFF:
+ select s.name, 'ncbi' as source, f.gene_type, f.start, f.end, '.' as score, f.strand, '.' as frame, 'Name=' || f.name as attributes1, ';Alias=' || f.common_name || ';' as attributes from features_genes f join sequences s where f.sequences_id = s.id;
+ 
+ When dropping track tables, check if the table is a view. How to do that?
+
+Importing data from UCSC:
+Need an optional filter to remove ridiculous features - really big features, for example.
+

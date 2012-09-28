@@ -1,0 +1,7 @@
+>name: Examples
+Chromosome	Start	End	Strand	Name	Annotation
+1	7050	10325	forward	Foo and friends	The Foo operon containing the foo, bar, bat, and biz genes.
+1	19256	49425	none	OK	These genes are OK. Don't worry about them. They're totally fine.
+1	90685	93755	none	Cool thing	Hey wow, that's really cool.
+1	11016	16369	reverse	Big thing here	That's really big!
+2	18887	30161	reverse	CDE	Gobble gaggle bap. Wobble wiggle thump. Kaboom gloom flume. Wriggle, whilst flimsy fiddles flop.

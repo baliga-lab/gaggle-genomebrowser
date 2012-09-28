@@ -1,0 +1,3 @@
+#!/bin/sh
+java -cp ./dist/gaggle.jar:./dist/genomebrowser.jar:./dist/glazedlists-1.8.0_java15.jar:./dist/log4j-1.2.14.jar:./dist/sqlitejdbc-v052.jar org.systemsbiology.genomebrowser.util.TextDatasetConverter "$@"
+exit 0

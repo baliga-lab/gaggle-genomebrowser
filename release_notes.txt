@@ -1,0 +1,28 @@
+==============================
+ Genome Browser Release Notes
+==============================
+
+Sorry, these are very poorly maintained.
+
+
+0.3.14 release notes:
+====================
+  simple search (for genes, rRNAs, and tRNAs)
+  go directly to coordinates by editing coordinates in status bar
+  going to bookmarks now respects which chromosome or replicon the bookmark is on
+  handle returns and tabs in annotations
+  goto bookmark when clicking on already selected bookmark in bookmarks panel
+  add in bookmarks panel now picks up coordinates from selection or visible region
+  goto selection from right-click menu
+
+
+0.3.13 release notes:
+====================
+  fix odd behavior of chromosome menu
+  fix track loading progress bar
+  draw markers at the center of all features
+  reload datasets
+  bookmark segments of genome and add annotations
+  nifty right-click menu
+  zoom in to selection
+  Mac style menu bar on OS X

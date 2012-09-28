@@ -1,0 +1,33 @@
+import(gaggle, RSQLite)
+
+export(
+  toMedichiMatrix,
+  getTrackDataAsMatrix,
+  fetchHaloKernels,
+  medichiProfile.peaks,
+  medichiProfile.chip.deconv,
+  medichiProfile.deconv.entire.genome,
+  medichiFitData.chip.deconv,
+  medichiFitData.deconv.entire.genome,
+  medichiPeaks.chip.deconv,
+  medichiPeaks.deconv.entire.genome,
+  asGaggleMatrix,
+  medichiProfileAsGaggleMatrix,
+  positionToSegment,
+  toStrand,
+  toOppositeStrand,
+  broadcastProfile,
+  broadcastPeaks,
+  getFilename,
+  getTrackData,
+  getDatasetDescription,
+  getTrackInfo,
+  getTrackNames,
+  getSequenceNames,
+  addTrack,
+  setAttributes
+  )
+  
+  
+S3method(print, ggb.dataset.description)
+  

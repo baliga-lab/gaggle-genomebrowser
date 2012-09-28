@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE GBSet PUBLIC "-//NCBI//NCBI GBSeq/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd">
+<GBSet>
+<GBSeq>
+  <GBSeq_locus>NC_000001</GBSeq_locus>
+  <GBSeq_length>247249719</GBSeq_length>
+  <GBSeq_strandedness>double</GBSeq_strandedness>
+  <GBSeq_moltype>DNA</GBSeq_moltype>
+  <GBSeq_topology>linear</GBSeq_topology>
+  <GBSeq_division>CON</GBSeq_division>
+  <GBSeq_update-date>03-MAR-2008</GBSeq_update-date>
+  <GBSeq_create-date>29-AUG-2002</GBSeq_create-date>
+  <GBSeq_definition>Homo sapiens chromosome 1, reference assembly, complete sequence</GBSeq_definition>
+  <GBSeq_primary-accession>NC_000001</GBSeq_primary-accession>
+  <GBSeq_accession-version>NC_000001.9</GBSeq_accession-version>
+  <GBSeq_other-seqids>
+    <GBSeqid>ref|NC_000001.9|NC_000001</GBSeqid>
+    <GBSeqid>gnl|NCBI_GENOMES|1</GBSeqid>
+    <GBSeqid>gi|89161185</GBSeqid>
+  </GBSeq_other-seqids>
+  <GBSeq_project>168</GBSeq_project>
+  <GBSeq_keywords>
+    <GBKeyword>HTG</GBKeyword>
+  </GBSeq_keywords>
+  <GBSeq_source>Homo sapiens (human)</GBSeq_source>
+  <GBSeq_organism>Homo sapiens</GBSeq_organism>
+  <GBSeq_taxonomy>Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini; Catarrhini; Hominidae; Homo</GBSeq_taxonomy>
+  <GBSeq_references>
+    <GBReference>
+      <GBReference_reference>1</GBReference_reference>
+      <GBReference_position>1..247249719</GBReference_position>
+      <GBReference_authors>
+        <GBAuthor>International Human Genome Sequencing Consortium</GBAuthor>
+      </GBReference_authors>
+      <GBReference_title>Finishing the euchromatic sequence of the human genome</GBReference_title>
+      <GBReference_journal>Nature 431 (7011), 931-945 (2004)</GBReference_journal>
+      <GBReference_pubmed>15496913</GBReference_pubmed>
+    </GBReference>
+  </GBSeq_references>
+  <GBSeq_comment>GENOME ANNOTATION REFSEQ: Features on this sequence have been produced for build 36 version 3 of the NCBI&apos;s genome annotation [see documentation].; On Mar 3, 2006 this sequence version replaced gi:51511461.; The DNA sequence is part of the fourth release of the finished human reference genome. It was assembled from individual clone sequences by the Human Genome Sequencing Consortium in consultation with NCBI staff.</GBSeq_comment>
+  <GBSeq_feature-table>
+    <GBFeature>
+      <GBFeature_key>source</GBFeature_key>
+      <GBFeature_location>1..247249719</GBFeature_location>
+      <GBFeature_intervals>
+        <GBInterval>
+          <GBInterval_from>1</GBInterval_from>
+          <GBInterval_to>247249719</GBInterval_to>
+          <GBInterval_accession>NC_000001.9</GBInterval_accession>
+        </GBInterval>
+      </GBFeature_intervals>
+      <GBFeature_quals>
+        <GBQualifier>
+          <GBQualifier_name>organism</GBQualifier_name>
+          <GBQualifier_value>Homo sapiens</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>mol_type</GBQualifier_name>
+          <GBQualifier_value>genomic DNA</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>db_xref</GBQualifier_name>
+          <GBQualifier_value>taxon:9606</GBQualifier_value>
+        </GBQualifier>
+        <GBQualifier>
+          <GBQualifier_name>chromosome</GBQualifier_name>
+          <GBQualifier_value>1</GBQualifier_value>
+        </GBQualifier>
+      </GBFeature_quals>
+    </GBFeature>
+  </GBSeq_feature-table>
+  <GBSeq_contig>join(NT_077402.1:1..167280,gap(50000),NT_077911.1:1..40302,gap(50000),NT_077912.1:1..153649,gap(50000),NT_004350.18:1..2112849,gap(50000),NT_004321.17:1..1161048,gap(60000),NT_004547.17:1..1440092,gap(50000),NT_021937.18:1..7590365,gap(50000),NT_113791.1:1..116914,gap(50000),NT_077382.3:1..237250,gap(50000),NT_004873.16:1..3518496,gap(50000),NT_004610.18:1..12702424,gap(50000),NT_032977.8:1..73835825,gap(50000),NT_113792.1:1..157344,gap(50000),NT_019273.18:1..16604841,gap(50000),NT_086586.1:1..189539,gap(50000),NT_077389.3:1..398739,gap(20290000),NT_113793.1:1..195588,gap(50000),NT_113794.1:1..186739,gap(50000),NT_113795.1:1..175055,gap(50000),NT_113796.1:1..201709,gap(50000),NT_113797.1:1..126477,gap(50000),NT_079485.3:1..194615,gap(50000),NT_079497.3:1..78698,gap(50000),NT_077932.2:1..127263,gap(50000),NT_077933.1:1..170669,gap(50000),NT_113798.1:1..38311,gap(100000),NT_004434.18:1..1022394,gap(50000),NT_034398.4:1..281532,gap(50000),NT_034400.4:1..1566655,gap(50000),NT_113799.1:1..185320,gap(50000),NT_079483.1:1..172789,gap(50000),NT_034401.5:1..220313,gap(50000),NT_034403.4:1..455185,gap(50000),NT_004487.18:1..56413061,gap(50000),NT_086602.2:1..259514,gap(50000),NT_021877.18:1..17265625,gap(50000),NT_004559.13:1..11394365,gap(50000),NT_004836.17:1..13665999,gap(50000),NT_032968.7:1..174886,gap(50000))</GBSeq_contig>
+</GBSeq>
+</GBSet>

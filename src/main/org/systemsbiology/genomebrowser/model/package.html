@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head><title>model package</title></head>
+
+<body>
+
+<p>Domain model for the genome browser. The core abstractions of the genome
+browser are Dataset, Sequence, Track, and Feature. A Dataset consists of a set of
+Sequences, and a set of Tracks. Tracks aggregate Features with coordinates on 
+those Sequences.</p>
+
+<p>A Feature is essentially some data related to a position on
+a sequence. A Feature is a tuple containing of location and some other data.
+(sequenceId, strand, start, end, ...). Maybe location should be a separate
+artifact? Main subtypes of Feature are Feature.Quantitative that has a floating
+point measurement and Feature.Named that has a label. Feature.Nested is
+composed of internal Features (for example introns and exons).</p>
+
+<p>FeatureFilter allows a collection of features to be
+filtered by sequence and position on the sequence (for example to find features
+in the visible window on the screen).</p>
+
+<p>The Dataset abstracts the source of data allowing the application to retrieve
+desired tracks and features.</p>
+
+<p>The goal is that model package should have no external dependencies (except
+jfc libraries and utils).</p>
+
+</body>
+</html>

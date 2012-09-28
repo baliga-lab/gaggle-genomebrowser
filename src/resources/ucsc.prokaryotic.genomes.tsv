@@ -1,0 +1,87 @@
+archFulg1	Archaeoglobus fulgidus	archaea	Euryarchaeota
+halMar1	Haloarcula marismortui	archaea	Euryarchaeota
+haloSali1	Halobacterium salinarum R1	archaea	Euryarchaeota
+haloHalo1	Halobacterium sp. NRC-1	archaea	Euryarchaeota
+haloVolc1	Haloferax volcanii	archaea	Euryarchaeota
+haloWals1	Haloquadratum walsbyi	archaea	Euryarchaeota
+natrPhar1	Natronomonas pharaonis	archaea	Euryarchaeota
+methTher1	Methanobacterium thermoautotrophicum	archaea	Euryarchaeota
+methSmit1	Methanobrevibacter smithii	archaea	Euryarchaeota
+methStad1	Methanosphaera stadtmanae	archaea	Euryarchaeota
+methJann1	Methanocaldococcus jannaschii	archaea	Euryarchaeota
+methAeol1	Methanococcus aeolicus	archaea	Euryarchaeota
+methMari_C5_1	Methanococcus maripaludis C5	archaea	Euryarchaeota
+methMari_C6	Methanococcus maripaludis C6	archaea	Euryarchaeota
+methMari_C7	Methanococcus maripaludis C7	archaea	Euryarchaeota
+metMar1	Methanococcus maripaludis S2	archaea	Euryarchaeota
+methVann1	Methanococcus vannielii	archaea	Euryarchaeota
+methLabrZ_1	Methanocorpusculum labreanum Z	archaea	Euryarchaeota
+mculMari1	Methanoculleus marisnigri	archaea	Euryarchaeota
+methBoon1	Methanoregula boonei	archaea	Euryarchaeota
+methHung1	Methanospirillum hungatei	archaea	Euryarchaeota
+methBurt2	Methanococcoides burtonii	archaea	Euryarchaeota
+metAce1	Methanosarcina acetivorans	archaea	Euryarchaeota
+methBark1	Methanosarcina barkeri	archaea	Euryarchaeota
+methMaze1	Methanosarcina mazei	archaea	Euryarchaeota
+methTherPT1	Methanosaeta thermophila	archaea	Euryarchaeota
+methKand1	Methanopyrus kandleri	archaea	Euryarchaeota
+uncuMeth_RCI	Uncultured methanogenic archaeon RC-I	archaea	Euryarchaeota
+pyrAby1	Pyrococcus abyssi	archaea	Euryarchaeota
+pyrFur2	Pyrococcus furiosus	archaea	Euryarchaeota
+pyrHor1	Pyrococcus horikoshii	archaea	Euryarchaeota
+therKoda1	Thermococcus kodakaraensis	archaea	Euryarchaeota
+ferrAcid1	Ferroplasma acidarmanus	archaea	Euryarchaeota
+picrTorr1	Picrophilus torridus	archaea	Euryarchaeota
+therAcid1	Thermoplasma acidophilum	archaea	Euryarchaeota
+therVolc1	Thermoplasma volcanium	archaea	Euryarchaeota
+aerPer1	Aeropyrum pernix	archaea	Crenarchaeota
+hypeButy1	Hyperthermus butylicus	archaea	Crenarchaeota
+igniHosp1	Ignicoccus hospitalis	archaea	Crenarchaeota
+stapMari1	Staphylothermus marinus	archaea	Crenarchaeota
+metaSedu	Metallosphaera sedula	archaea	Crenarchaeota
+sulfAcid1	Sulfolobus acidocaldarius	archaea	Crenarchaeota
+sulSol1	Sulfolobus solfataricus	archaea	Crenarchaeota
+sulfToko1	Sulfolobus tokodaii	archaea	Crenarchaeota
+caldMaqu1	Caldivirga maquilingensis	archaea	Crenarchaeota
+pyrAer1	Pyrobaculum aerophilum	archaea	Crenarchaeota
+pyroArse1	Pyrobaculum arsenaticum	archaea	Crenarchaeota
+pyroCali1	Pyrobaculum calidifontis	archaea	Crenarchaeota
+pyroIsla1	Pyrobaculum islandicum	archaea	Crenarchaeota
+therPend1	Thermofilum pendens	archaea	Crenarchaeota
+therNeut1	Thermoproteus neutrophilus	archaea	Crenarchaeota
+cenaSymb1	Cenarchaeum symbiosum	archaea	Crenarchaeota
+nitrMari1	Nitrosopumilus maritimus	archaea	Crenarchaeota
+koraCryp1	Korarchaeum cryptofilum	archaea	Korarchaeota
+nanEqu1	Nanoarchaeum equitans	archaea	Nanoarchaeota
+aquiAeol	Aquifex aeolicus	bacteria	Aquificae
+baciHalo	Bacillus halodurans	bacteria	Firmicutes
+carbHydr_Z_2901	Carboxydothermus hydrogenoformans Z-2901	bacteria	Firmicutes
+desuPsyc_LSV54	Desulfotalea psychrophila LSv54	bacteria	Proteobacteria
+saliRube_DSM13855	Salinibacter ruber DSM 13855	bacteria	Bacteroidetes
+therTeng	Thermoanaerobacter tengcongensis	bacteria	Firmicutes
+therFusc_YX	Thermobifida fusca YX	bacteria	Actinobacteria
+therMari	Thermotoga maritima	bacteria	Thermotogae
+therTher_HB27	Thermus thermophilus HB27	bacteria	Deinococcus-Thermus
+therTher_HB8	Thermus thermophilus HB8	bacteria	Deinococcus-Thermus
+therElon	Thermosynechococcus elongatus	bacteria	Cyanobacteria
+deinRadi	Deinococcus radiodurans	bacteria	Deinococcus-Thermus
+geobKaus_HTA426	Geobacillus kaustophilus HTA426	bacteria	Firmicutes
+geobMeta_GS15	Geobacter metallireducens GS-15	bacteria	Proteobacteria
+geobSulf	Geobacter sulfurreducens	bacteria	Proteobacteria
+shewOnei	Shewanella oneidensis	bacteria	Proteobacteria
+baciSubt	Bacillus subtilis	bacteria	Firmicutes
+eschColi_CFT073	Escherichia coli CFT073	bacteria	Proteobacteria
+eschColi_K12	Escherichia coli K12	bacteria	Proteobacteria
+eschColi_O157H7	Escherichia coli O157H7	bacteria	Proteobacteria
+salmEnte_CHOLERAESUIS	Salmonella enterica Choleraesuis	bacteria	Proteobacteria
+salmTyph	Salmonella typhi	bacteria	Proteobacteria
+campJeju	Campylobacter jejuni	bacteria	Proteobacteria
+heliHepa	Helicobacter hepaticus	bacteria	Proteobacteria
+heliPylo_26695	Helicobacter pylori 26695	bacteria	Proteobacteria
+heliPylo_J99	Helicobacter pylori J99	bacteria	Proteobacteria
+vibrChol1	Vibrio cholerae O1 El Tor	bacteria	Proteobacteria
+vibrFisc_ES114_1	Vibrio fischeri ES114	bacteria	Proteobacteria
+vibrPara1	Vibrio parahaemolyticus	bacteria	Proteobacteria
+vibrVuln_CMCP6_1	Vibrio vulnificus CMCP6	bacteria	Proteobacteria
+vibrVuln_YJ016_1	Vibrio vulnificus YJ016	bacteria	Proteobacteria
+vibrChol_O395_1	Vibrio cholerae O395	bacteria	Proteobacteria
