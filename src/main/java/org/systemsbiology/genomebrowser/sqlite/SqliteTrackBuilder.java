@@ -81,7 +81,7 @@ public abstract class SqliteTrackBuilder extends SqliteDb implements TrackBuilde
 		// TODO Auto-generated method stub
 	}
 
-	public void applySequenceMapper(SequenceMapper mapper) {
+	public void applySequenceMapper(SequenceMapper<String> mapper) {
 		log.info("applying sequence mapper");
 		Connection conn = null;
 		PreparedStatement ps = null;

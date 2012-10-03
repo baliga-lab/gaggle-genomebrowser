@@ -74,7 +74,7 @@ public interface TrackBuilder {
 	 * Transform features by replacing sequence names to names compatible
 	 * with the target dataset.
 	 */
-	public void applySequenceMapper(SequenceMapper mapper);
+	public void applySequenceMapper(SequenceMapper<String> mapper);
 
 	/**
 	 * Transform features by mapping feature names to coordinates on the genome.

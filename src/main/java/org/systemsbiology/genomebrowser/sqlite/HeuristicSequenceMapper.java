@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource.SequenceMapper;
+import org.systemsbiology.genomebrowser.io.track.SequenceMapper;
 import org.systemsbiology.util.Roman;
 import static org.systemsbiology.util.StringUtils.isInteger;
 
@@ -27,25 +27,25 @@ import static org.systemsbiology.util.StringUtils.isInteger;
  * 
  * @author cbare
  */
-class HeuristicSequenceMapper implements SequenceMapper {
-	private static final Pattern singleChrPattern = Pattern.compile("chr(omosome)?[-_ ]?1?");
-	private static final Pattern plasmidPattern = Pattern.compile("(plasmid[-_ ]?)(.*)");
-	private static final Pattern chrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)(.*)");
-	private static final Pattern numberedChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?(\\d+)");
+class HeuristicSequenceMapper implements SequenceMapper<Integer> {
+    private static final Pattern singleChrPattern = Pattern.compile("chr(omosome)?[-_ ]?1?");
+    private static final Pattern plasmidPattern = Pattern.compile("(plasmid[-_ ]?)(.*)");
+    private static final Pattern chrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)(.*)");
+    private static final Pattern numberedChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?(\\d+)");
 
-	// Note that this will match things that aren't valid roman numerals and things like mammalian
-	// sex chromosomes and chrLCD which has roman numeral characters, but isn't a roman numeral.
-	// We ignore M as a roman numeral, since M usually means mitochondrial plus organisms with > 999
-	// chromosomes are rare and you'd have to be insane to use roman numerals in one of those cases.
-	private static final Pattern romanChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?([IVXLCD]+)");
+    // Note that this will match things that aren't valid roman numerals and things like mammalian
+    // sex chromosomes and chrLCD which has roman numeral characters, but isn't a roman numeral.
+    // We ignore M as a roman numeral, since M usually means mitochondrial plus organisms with > 999
+    // chromosomes are rare and you'd have to be insane to use roman numerals in one of those cases.
+    private static final Pattern romanChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?([IVXLCD]+)");
 
-	Map<String, Integer> sequenceMap = new HashMap<String, Integer>();	
-	Map<String, Integer> chrMap = new HashMap<String, Integer>();
-	Map<String, Integer> plasmidMap = new HashMap<String, Integer>();
-	int chrCount;
-	int numCount;
-	int romansCount;
-	int singleChrId;
+    private Map<String, Integer> sequenceMap = new HashMap<String, Integer>();	
+    private Map<String, Integer> chrMap = new HashMap<String, Integer>();
+    private Map<String, Integer> plasmidMap = new HashMap<String, Integer>();
+    private int chrCount;
+    private int numCount;
+    private int romansCount;
+    private int singleChrId;
 
 
 	/**
@@ -114,7 +114,8 @@ class HeuristicSequenceMapper implements SequenceMapper {
 		}
 	}
 
-	public int getId(String name) {
+	public int getId(String name) { return map(name).intValue(); }
+	public Integer map(String name) {
 		Matcher m;
 
 		// look for exact matches first

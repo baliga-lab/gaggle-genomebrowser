@@ -49,7 +49,7 @@ import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.StringUtils;
-
+import org.systemsbiology.genomebrowser.io.track.SequenceMapper;
 
 // proposed changes for version 2 of schema:
 // * add label column to attributes for use in switchable views
@@ -3282,11 +3282,7 @@ public class SqliteDataSource extends SqliteDb {
 		}
 	}
 
-	public interface SequenceMapper {
-		int getId(String name);
-	}
-
-	public void writeMapping(Connection conn, Iterable<NamedFeature> mappings, SequenceMapper sequenceMapper, String table) throws SQLException {
+	public void writeMapping(Connection conn, Iterable<NamedFeature> mappings, SequenceMapper<Integer> sequenceMapper, String table) throws SQLException {
 		PreparedStatement ps = null;
 		try {
 			/*
@@ -3298,7 +3294,7 @@ public class SqliteDataSource extends SqliteDb {
 			 */
 			ps = conn.prepareStatement("insert into " + table + " values (?,?,?,?,?);");
 			for (NamedFeature mapping : mappings) {
-				int sequencesId = sequenceMapper.getId(mapping.getSeqId());
+				int sequencesId = sequenceMapper.map(mapping.getSeqId());
 				ps.setString(1, mapping.getName());
 				ps.setInt(2, sequencesId);
 				ps.setString(3, mapping.getStrand().toAbbreviatedString());
