@@ -13,11 +13,6 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
     protected static final Pattern chrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)(.*)");
     protected static final Pattern numberedChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?(\\d+)");
 
-    // Note that this will match things that aren't valid roman numerals and things like mammalian
-    // sex chromosomes and chrLCD which has roman numeral characters, but isn't a roman numeral.
-    // We ignore M as a roman numeral, since M usually means mitochondrial plus organisms with > 999
-    // chromosomes are rare and you'd have to be insane to use roman numerals in one of those cases.
-    protected static final Pattern romanChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?([ivxlcd]+)");
 	
     protected Map<String, T> sequenceMap = new HashMap<String, T>();
     protected Map<String, T> chrMap = new HashMap<String, T>();
@@ -27,6 +22,27 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
     protected int numCount;
     protected int romansCount;
     protected T singleChrId;
+
+    protected abstract Pattern romanChrPattern();
+    protected Matcher romanMatcher(String name) {
+        return romanChrPattern().matcher(name.trim().toLowerCase());
+    }
+
+    protected void addChromosomeStems(String searchstring, T id) {
+        Matcher m = chrPattern.matcher(searchstring);
+        if (m.matches()) chrMap.put(m.group(3).toLowerCase(), id);
+    }
+    protected void addPlasmidStems(String searchstring, T id) {
+        Matcher m = plasmidPattern.matcher(searchstring);
+        if (m.matches()) plasmidMap.put(m.group(2).toLowerCase(), id);
+    }
+    protected void checkIfNumberedChromosome(String searchstring) {
+        if (numberedChrPattern.matcher(searchstring).matches()) numCount++;
+    }
+    protected void checkIfRomanNumberedChromosome(String searchstring) {
+        Matcher m = romanChrPattern().matcher(searchstring);
+        if (m.matches() && Roman.isRoman(m.group(3))) romansCount++;
+    }
 
     /**
      * Map name to standard name, if possible.
@@ -45,7 +61,6 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
         String nameLower = name.trim().toLowerCase();
         if (sequenceMap.containsKey(nameLower))
             return sequenceMap.get(nameLower);
-        
         // if we only have one chromosome, then chr=chr1
         if (chrCount==1 && singleChrPattern.matcher(nameLower).matches()) {
             return singleChrId;
@@ -81,7 +96,7 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
             }
         }
 
-        m = romanChrPattern.matcher(nameLower);
+        m = romanMatcher(name);
         if (m.matches() && Roman.isRoman(m.group(3))) {
             int num = Roman.romanToInt(m.group(3));
             String key = String.valueOf(num);
