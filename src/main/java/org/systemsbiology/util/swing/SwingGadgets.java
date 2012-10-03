@@ -1,6 +1,7 @@
 package org.systemsbiology.util.swing;
 
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -14,7 +15,6 @@ import javax.swing.text.html.parser.DTD;
 import javax.swing.text.html.parser.DTDConstants;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.util.BrowserUtil;
 
 public class SwingGadgets {
 	public static final int COMPUTE_FROM_SCREEN = -1001;
@@ -99,7 +99,7 @@ public class SwingGadgets {
 			public void hyperlinkUpdate(HyperlinkEvent event) {
 				if (event.getEventType()==HyperlinkEvent.EventType.ACTIVATED) {
 					try {
-						BrowserUtil.openUrl(event.getURL().toString());
+              Desktop.getDesktop().browse(new java.net.URI(event.getURL().toString()));
 					} catch (Exception e) {
 						log.error("Failed to open browser: " + event, e);
 					}

@@ -3,6 +3,7 @@ package org.systemsbiology.genomebrowser.ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -36,7 +37,6 @@ import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalogListener;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.bookmarks.ListBookmarkDataSource;
 import org.systemsbiology.genomebrowser.model.Feature;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.FileUtils;
 
 
@@ -475,7 +475,8 @@ public class BookmarksPanel extends JPanel implements BookmarkCatalogListener, C
 			for (int row : rows) {
 				if (row > -1 && row < dataSource.getSize()) {
 					try {
-						BrowserUtil.openUrl("http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+dataSource.getElementAt(row).getSequence());
+              Desktop.getDesktop().browse(new java.net.URI(
+                                                           "http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+dataSource.getElementAt(row).getSequence()));
 					} catch (Exception e) {
 						ui.showErrorMessage("Can't open browser: " + e.getMessage());
 					}

@@ -1,5 +1,6 @@
 package org.systemsbiology.genomebrowser.ui;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
@@ -34,7 +35,6 @@ import javax.swing.SwingUtilities;
 import org.systemsbiology.genomebrowser.model.SequenceFetcher;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.InvertionUtils;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.SwingGadgets;
 
@@ -212,7 +212,7 @@ public class SequenceDialog extends JDialog {
 	
 	public void blast() {
 		try {
-			BrowserUtil.openUrl("http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+sequence.getText());
+        Desktop.getDesktop().browse(new java.net.URI("http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+sequence.getText()));
 		} catch (Exception e) {
 			showErrorMessage(e.getClass().getSimpleName() + " " + e.getMessage());
 		}

@@ -2,6 +2,7 @@ package org.systemsbiology.genomebrowser.ui;
 
 import static org.systemsbiology.util.StringUtils.isNullOrEmpty;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -39,7 +40,6 @@ import org.systemsbiology.genomebrowser.app.ProjectDescription.SequenceDescripti
 import org.systemsbiology.genomebrowser.model.Topology;
 import org.systemsbiology.ucscgb.Genome;
 import org.systemsbiology.ucscgb.UCSCGB;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.Dialogs;
@@ -135,7 +135,7 @@ public class NewProjectWizard extends JDialog {
 		helpButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					BrowserUtil.openUrl("http://gaggle.systemsbiology.net/docs/geese/genomebrowser/help/new/");
+            Desktop.getDesktop().browse(new java.net.URI("http://gaggle.systemsbiology.net/docs/geese/genomebrowser/help/new/"));
 				}
 				catch (Exception e1) {
 					showErrorMessage(e1.getMessage(), "Error opening help");

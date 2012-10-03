@@ -2,6 +2,7 @@ package org.systemsbiology.genomebrowser.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Frame;
@@ -25,7 +26,6 @@ import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.InvertionUtils;
-import org.systemsbiology.util.BrowserUtil;
 
 
 /**
@@ -207,16 +207,13 @@ public class BookmarkDialog extends JDialog {
 				saveBookmark();
 			}
 		});
-//		this.getRootPane().setDefaultButton(okButton);
 		
 		JButton blastButton = new JButton("BLAST");
 		blastButton.setFocusable(isFocusable());
 		blastButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//System.out.println("clicou no blast");
-				//openBrowser open = new openBrowser();
 				try {
-					BrowserUtil.openUrl("http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+sequence.getText());
+            Desktop.getDesktop().browse(new java.net.URI("http://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Nucleotides&DATABASE=nr&BLAST_PROGRAMS=discoMegablast&QUERY="+sequence.getText()));
 				} catch (Exception e1) {
 					showErrorMessage("Can't start browser: " + e1.getMessage());
 				}

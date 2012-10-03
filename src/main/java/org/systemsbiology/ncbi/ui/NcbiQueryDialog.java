@@ -1,5 +1,6 @@
 package org.systemsbiology.ncbi.ui;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -21,7 +22,6 @@ import org.systemsbiology.ncbi.NcbiSequence;
 import org.systemsbiology.ncbi.EUtilitiesGenomeProjectSummary;
 import org.systemsbiology.ncbi.NcbiGenomeProjectSummary;
 import org.systemsbiology.ncbi.ui.actions.*;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.util.swing.Spinner;
 
@@ -182,7 +182,7 @@ public class NcbiQueryDialog extends JFrame {
 			public void hyperlinkUpdate(HyperlinkEvent event) {
 				if (event.getEventType()==HyperlinkEvent.EventType.ACTIVATED) {
 					try {
-						BrowserUtil.openUrl(event.getURL().toString());
+              Desktop.getDesktop().browse(new java.net.URI(event.getURL().toString()));
 					} catch (Exception e) {
 						log.error("Failed to open browser: " + event, e);
 					}

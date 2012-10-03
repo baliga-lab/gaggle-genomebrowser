@@ -1,6 +1,7 @@
 package org.systemsbiology.genomebrowser.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Frame;
@@ -16,7 +17,6 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.FileUtils;
 
 
@@ -45,7 +45,7 @@ public class ExtendedErrorDialog extends JDialog {
 			public void hyperlinkUpdate(HyperlinkEvent event) {
 				if (event.getEventType()==HyperlinkEvent.EventType.ACTIVATED) {
 					try {
-						BrowserUtil.openUrl(event.getURL().toString());
+              Desktop.getDesktop().browse(new java.net.URI(event.getURL().toString()));
 					} catch (Exception e) {
 						log.error("Failed to open browser: " + event, e);
 					}

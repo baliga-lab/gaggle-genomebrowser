@@ -17,7 +17,6 @@ import java.util.Set;
 public class Attributes extends HashMap<String, Object> {
 	private static final long serialVersionUID = 7921514258446479640L;
 
-
 	public Attributes() {}
 
 	public Attributes(Map<String, Object> map) {
@@ -48,16 +47,10 @@ public class Attributes extends HashMap<String, Object> {
 
 	public int getInt(String key, int defaultValue) {
 		Object value = get(key);
-		if (value == null) 
-			return defaultValue;
-		else if (value instanceof Number) {
-			return ((Number)value).intValue();
-		}
-		else if (value instanceof String) {
-			return Integer.parseInt((String)value);
-		}
-		else
-			return defaultValue;
+		if (value == null) return defaultValue;
+		else if (value instanceof Number) return ((Number)value).intValue();
+		else if (value instanceof String) return Integer.parseInt((String)value);
+		else return defaultValue;
 	}
 	
 	public float getFloat(String key) {
@@ -74,16 +67,14 @@ public class Attributes extends HashMap<String, Object> {
 
 	public float getFloat(String key, float defaultValue) {
 		Object value = get(key);
-		if (value == null) 
-			return defaultValue;
+		if (value == null) return defaultValue;
 		else if (value instanceof Number) {
 			return ((Number)value).floatValue();
 		}
 		else if (value instanceof String) {
 			return Float.parseFloat((String)value);
 		}
-		else
-			return defaultValue;
+		else return defaultValue;
 	}
 
 	public double getDouble(String key) {
@@ -134,8 +125,7 @@ public class Attributes extends HashMap<String, Object> {
 		else if (value instanceof String) {
 			return Boolean.parseBoolean((String)value);
 		}
-		else
-			return defaultValue;
+		else return defaultValue;
 	}
 
 	public Color getColor(String key) {
@@ -155,8 +145,7 @@ public class Attributes extends HashMap<String, Object> {
 
 	public Color getColor(String key, Color defaultValue) {
 		Object value = get(key);
-		if (value == null)
-			return defaultValue;
+		if (value == null) return defaultValue;
 		else if (value instanceof Color) {
 			return (Color)value;
 		}
@@ -166,15 +155,11 @@ public class Attributes extends HashMap<String, Object> {
 		else if (value instanceof String) {
 			return ColorUtils.decodeColor((String)value);
 		}
-		else
-			return defaultValue;
+		else return defaultValue;
 	}
 
 	private String getClassName(Object o) {
-		if (o==null)
-			return "null";
-		else
-			return o.getClass().getName();
+      return (o == null) ? "null" : o.getClass().getName();
 	}
 
 	/**
@@ -198,7 +183,7 @@ public class Attributes extends HashMap<String, Object> {
 		if (attributes != null) {
 			String[] pairs = attributes.split(";");
 			for (String pair : pairs) {
-				if (pair.length()>0) {
+				if (pair.length() > 0) {
 					String[] fields = pair.split("=");
 					String key = unescape(fields[0]);
 					String value = unescape(fields[1]);
@@ -216,7 +201,6 @@ public class Attributes extends HashMap<String, Object> {
 	private static String escape(String string) {
 		return string.replace("\\", "\\\\").replace("\n","\\n");
 	}
-
 
 	// a semi-safe EMPTY attributes object. Be nice and don't
 	// add attributes to it.

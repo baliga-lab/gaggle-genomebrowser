@@ -3,6 +3,7 @@ package org.systemsbiology.genomebrowser.ui;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -58,7 +59,6 @@ import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegist
 import org.systemsbiology.ncbi.NcbiGenome;
 import org.systemsbiology.ncbi.ui.NcbiQueryDialog;
 import org.systemsbiology.ucscgb.Category;
-import org.systemsbiology.util.BrowserUtil;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.Hyperlink;
@@ -860,7 +860,7 @@ public class UI {
 
 	public void openBrowser(String url) {
 		try {
-			BrowserUtil.openUrl(url);
+        Desktop.getDesktop().browse(new java.net.URI(url));
 		} catch (Exception e) {
 			log.error("Failed to open browser", e);
 			showErrorMessage("Failed to open browser. Please see: " + url, e);
