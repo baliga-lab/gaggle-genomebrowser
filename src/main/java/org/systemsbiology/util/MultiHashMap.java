@@ -10,9 +10,9 @@ import java.util.Map;
  * maps from a key to a list of values
  */
 public class MultiHashMap<T, V> extends HashMap<T, List<V>> {
-	private static final long serialVersionUID = -8104431688383800791L;
+    private static final long serialVersionUID = -8104431688383800791L;
 
-	public MultiHashMap() {
+    public MultiHashMap() {
         super();
     }
 
@@ -28,7 +28,6 @@ public class MultiHashMap<T, V> extends HashMap<T, List<V>> {
         super(m);
     }
 
-
     /**
      * Each key maps to a list of values, so for new
      * keys create a list and insert the first value.
@@ -36,34 +35,25 @@ public class MultiHashMap<T, V> extends HashMap<T, List<V>> {
      * list (if it's not there already).
      */
     public void add(T key, V value) {
-        List<V> list = this.get(key);
-        if (list == null) {
-            list = new ArrayList<V>(1);
-            put(key, list);
+        if (!this.containsKey(key)) {
+            this.put(key, new ArrayList<V>(1));
         }
-        if (!list.contains(value))
-            list.add(value);
+        List<V> list = this.get(key);
+        if (!list.contains(value)) list.add(value);
     }
 
     public void addAll(T key, Iterable<? extends V> values) {
-    	for (V value : values) {
-    		add(key, value);
-    	}
+        for (V value : values) add(key, value);
     }
 
     public List<V> getList(T key) {
-    	List<V> list = get(key);
-    	if (list!=null)
-    		return list;
-    	else
-    		return Collections.emptyList();
+        if (this.containsKey(key)) return this.get(key);
+        else return Collections.emptyList();
     }
 
     public List<V> getAllValues() {
-    	List<V> list = new ArrayList<V>();
-    	for (T key: keySet()) {
-    		list.addAll(get(key));
-    	}
-    	return list;
+        List<V> list = new ArrayList<V>();
+        for (T key: keySet()) list.addAll(get(key));
+        return list;
     }
 }
