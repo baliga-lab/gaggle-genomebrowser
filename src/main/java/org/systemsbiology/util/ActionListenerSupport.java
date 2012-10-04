@@ -11,19 +11,20 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * holds references to action listeners
  */
 public class ActionListenerSupport {
-	Set<ActionListener> listeners = new CopyOnWriteArraySet<ActionListener>();
+    private Set<ActionListener> listeners =
+        new CopyOnWriteArraySet<ActionListener>();
 
-	public void addActionListener(ActionListener listener) {
-		listeners.add(listener);
-	}
+    public void addActionListener(ActionListener listener) {
+        listeners.add(listener);
+    }
 
-	public void removeActionListener(ActionListener listener) {
-		listeners.remove(listener);
-	}
+    public void removeActionListener(ActionListener listener) {
+        listeners.remove(listener);
+    }
 
-	public void fireActionEvent(ActionEvent event) {
-		for (ActionListener listener : listeners) {
-			listener.actionPerformed(event);
-		}
-	}
+    public void fireActionEvent(ActionEvent event) {
+        for (ActionListener listener : listeners) {
+            listener.actionPerformed(event);
+        }
+    }
 }

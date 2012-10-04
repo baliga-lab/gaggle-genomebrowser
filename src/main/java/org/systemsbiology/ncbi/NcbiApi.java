@@ -23,52 +23,68 @@ import javax.xml.xpath.XPathFactory;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
-import org.systemsbiology.util.HashCounter;
 import org.systemsbiology.util.ProgressListener;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
 // network connectivity assumed
-
 public class NcbiApi {
-	private static final Logger log = Logger.getLogger(NcbiApi.class);
-	private static String eutils = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
-	private Pattern ncbiESearchIdPattern = Pattern.compile("\\s*<Id>(.*?)<\\/Id>\\s*");
+
+    // Hash-based string counter
+    static class NameCounter {
+        private static final long serialVersionUID = -855802811482282817L;
+        private java.util.Map<String, Integer> countMap =
+            new java.util.HashMap<String, Integer>();
+
+        public int increment(String key) {
+            if (!countMap.containsKey(key)) countMap.put(key, 0);
+            int newcount = countMap.get(key) + 1;
+            countMap.put(key, newcount);
+            return newcount;
+        }
+
+        public int count(String key) {
+            return countMap.containsKey(key) ? 0 : countMap.get(key);
+        }
+    }
+    
+    private static final Logger log = Logger.getLogger(NcbiApi.class);
+    private static String eutils = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+    private Pattern ncbiESearchIdPattern = Pattern.compile("\\s*<Id>(.*?)<\\/Id>\\s*");
 	
-	// this is a totally unofficial hack, but it gives a very convenient list of prokaryotic genomes
-	private String prokUrl = "http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi?view=1&dump=selected&p3=";
-	private int progressInitialized;
-	private Object progressLock = new Object();
+    // this is a totally unofficial hack, but it gives a very convenient list of prokaryotic genomes
+    private String prokUrl = "http://www.ncbi.nlm.nih.gov/genomes/lproks.cgi?view=1&dump=selected&p3=";
+    private int progressInitialized;
+    private Object progressLock = new Object();
 
-
-	String[][] ncbiOrganismCodes = {
-			{"6:|7:", "-- All Prokaryotes --"},
-			{"6:Archaea|7:", "-- All Archaea --"},
-			{"6:|7:Crenarchaeota", "Crenarchaeota"},
-			{"6:|7:Euryarchaeota", "Euryarchaeota"},
-			{"6:|7:Nanoarchaeota", "Nanoarchaeota"},
-			{"6:|7:Other Archaea", "Other Archaea"},
-			{"6:Bacteria|7:", "-- All Bacteria --"},
-			{"6:|7:Acidobacteria", "Acidobacteria"},
-			{"6:|7:Actinobacteria", "Actinobacteria"},
-			{"6:|7:Aquificae", "Aquificae"},
-			{"6:|7:Bacteroidetes/Chlorobi", "Bacteroidetes/Chlorobi"},
-			{"6:|7:Chlamydiae/Verrucomicrobia", "Chlamydiae/Verrucomicrobia"},
-			{"6:|7:Chloroflexi", "Chloroflexi"},
-			{"6:|7:Cyanobacteria", "Cyanobacteria"},
-			{"6:|7:Deinococcus-Thermus", "Deinococcus-Thermus"},
-			{"6:|7:Firmicutes", "Firmicutes"},
-			{"6:|7:Fusobacteria", "Fusobacteria"},
-			{"6:|7:Planctomycetes", "Planctomycetes"},
-			{"6:|7:%proteobacteria", "Proteobacteria"},
-			{"6:|7:Alphaproteobacteria", "Alphaproteobacteria"},
-			{"6:|7:Betaproteobacteria", "Betaproteobacteria"},
-			{"6:|7:Gammaproteobacteria", "Gammaproteobacteria"},
-			{"6:|7:Deltaproteobacteria", "Deltaproteobacteria"},
-			{"6:|7:Epsilonproteobacteria", "Epsilonproteobacteria"},
-			{"6:|7:Spirochaetes", "Spirochaetes"},
-			{"6:|7:Thermotogae", "Thermotogae"},
-			{"6:|7:Other Bacteria", "Other Bacteria"}};
+    String[][] ncbiOrganismCodes = {
+        {"6:|7:", "-- All Prokaryotes --"},
+        {"6:Archaea|7:", "-- All Archaea --"},
+        {"6:|7:Crenarchaeota", "Crenarchaeota"},
+        {"6:|7:Euryarchaeota", "Euryarchaeota"},
+        {"6:|7:Nanoarchaeota", "Nanoarchaeota"},
+        {"6:|7:Other Archaea", "Other Archaea"},
+        {"6:Bacteria|7:", "-- All Bacteria --"},
+        {"6:|7:Acidobacteria", "Acidobacteria"},
+        {"6:|7:Actinobacteria", "Actinobacteria"},
+        {"6:|7:Aquificae", "Aquificae"},
+        {"6:|7:Bacteroidetes/Chlorobi", "Bacteroidetes/Chlorobi"},
+        {"6:|7:Chlamydiae/Verrucomicrobia", "Chlamydiae/Verrucomicrobia"},
+        {"6:|7:Chloroflexi", "Chloroflexi"},
+        {"6:|7:Cyanobacteria", "Cyanobacteria"},
+        {"6:|7:Deinococcus-Thermus", "Deinococcus-Thermus"},
+        {"6:|7:Firmicutes", "Firmicutes"},
+        {"6:|7:Fusobacteria", "Fusobacteria"},
+        {"6:|7:Planctomycetes", "Planctomycetes"},
+        {"6:|7:%proteobacteria", "Proteobacteria"},
+        {"6:|7:Alphaproteobacteria", "Alphaproteobacteria"},
+        {"6:|7:Betaproteobacteria", "Betaproteobacteria"},
+        {"6:|7:Gammaproteobacteria", "Gammaproteobacteria"},
+        {"6:|7:Deltaproteobacteria", "Deltaproteobacteria"},
+        {"6:|7:Epsilonproteobacteria", "Epsilonproteobacteria"},
+        {"6:|7:Spirochaetes", "Spirochaetes"},
+        {"6:|7:Thermotogae", "Thermotogae"},
+        {"6:|7:Other Bacteria", "Other Bacteria"}};
 
 	/**
 	 * Translate from human readable menu options to ncbi organism code.
@@ -405,22 +421,21 @@ public class NcbiApi {
 	 * Should be unnecessary
 	 */
 	public void uniqifySequenceNames(List<NcbiSequence> sequences) {
-		HashCounter counter = new HashCounter();
+		NameCounter counter = new NameCounter();
 		for (NcbiSequence sequence: sequences) {
 			counter.increment(sequence.getName());
 		}
 
 		// make the names of the chromosomes unique by adding numbers
-		HashCounter numbers = new HashCounter();
+		NameCounter numbers = new NameCounter();
 		for (NcbiSequence sequence: sequences) {
 			String name = sequence.getName();
-			if (counter.get(name) > 1) {
+			if (counter.count(name) > 1) {
 				numbers.increment(name);
-				sequence.setName(name + "." + numbers.get(name) + "");
+				sequence.setName(name + "." + numbers.count(name) + "");
 			}
 		}
 	}
-
 
 	Set<ProgressListener> listeners = new CopyOnWriteArraySet<ProgressListener>();
 
