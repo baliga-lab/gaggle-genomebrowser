@@ -8,24 +8,21 @@ import javax.swing.Icon;
 
 import org.systemsbiology.ncbi.ui.NcbiQueryDialog;
 
-
 public class RetrieveBacterialGenomesAction extends AbstractAction {
-	NcbiQueryDialog ncbiQueryDialog;
+    private NcbiQueryDialog ncbiQueryDialog;
 
+    public RetrieveBacterialGenomesAction(NcbiQueryDialog ncbiQueryDialog) {
+        super("All Bacteria");
+        this.ncbiQueryDialog = ncbiQueryDialog;
+        putValue(Action.SHORT_DESCRIPTION, "Select from all sequenced bacterial genomes.");
+    }
 
-	public RetrieveBacterialGenomesAction(NcbiQueryDialog ncbiQueryDialog) {
-		super("All Bacteria");
-		this.ncbiQueryDialog = ncbiQueryDialog;
-		putValue(Action.SHORT_DESCRIPTION, "Select from all sequenced bacterial genomes.");
-	}
+    public RetrieveBacterialGenomesAction(Icon icon, NcbiQueryDialog ncbiQueryDialog) {
+        super("All Bacteria", icon);
+        this.ncbiQueryDialog = ncbiQueryDialog;
+    }
 
-	public RetrieveBacterialGenomesAction(Icon icon, NcbiQueryDialog ncbiQueryDialog) {
-		super("All Bacteria", icon);
-		this.ncbiQueryDialog = ncbiQueryDialog;
-	}
-
-	public void actionPerformed(ActionEvent e) {
-		ncbiQueryDialog.retrieveBacterialGenomes();
-	}
-
+    public void actionPerformed(ActionEvent e) {
+        ncbiQueryDialog.retrieveBacterialGenomes();
+    }
 }

@@ -8,24 +8,21 @@ import javax.swing.Icon;
 
 import org.systemsbiology.ncbi.ui.NcbiQueryDialog;
 
-
 public class RetrieveArchaealGenomesAction extends AbstractAction {
-	NcbiQueryDialog ncbiQueryDialog;
+    private NcbiQueryDialog ncbiQueryDialog;
 
+    public RetrieveArchaealGenomesAction(NcbiQueryDialog ncbiQueryDialog) {
+        super("All Archaea");
+        this.ncbiQueryDialog = ncbiQueryDialog;
+        putValue(Action.SHORT_DESCRIPTION, "Select from all sequenced archaeal genomes.");
+    }
 
-	public RetrieveArchaealGenomesAction(NcbiQueryDialog ncbiQueryDialog) {
-		super("All Archaea");
-		this.ncbiQueryDialog = ncbiQueryDialog;
-		putValue(Action.SHORT_DESCRIPTION, "Select from all sequenced archaeal genomes.");
-	}
+    public RetrieveArchaealGenomesAction(Icon icon, NcbiQueryDialog ncbiQueryDialog) {
+        super("All Archaea", icon);
+        this.ncbiQueryDialog = ncbiQueryDialog;
+    }
 
-	public RetrieveArchaealGenomesAction(Icon icon, NcbiQueryDialog ncbiQueryDialog) {
-		super("All Archaea", icon);
-		this.ncbiQueryDialog = ncbiQueryDialog;
-	}
-
-	public void actionPerformed(ActionEvent e) {
-		ncbiQueryDialog.retrieveArchaealGenomes();
-	}
-
+    public void actionPerformed(ActionEvent e) {
+        ncbiQueryDialog.retrieveArchaealGenomes();
+    }
 }

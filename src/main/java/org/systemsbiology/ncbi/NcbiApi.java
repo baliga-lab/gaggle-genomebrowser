@@ -86,397 +86,368 @@ public class NcbiApi {
         {"6:|7:Thermotogae", "Thermotogae"},
         {"6:|7:Other Bacteria", "Other Bacteria"}};
 
-	/**
-	 * Translate from human readable menu options to ncbi organism code.
-	 * @param organism
-	 * @return the organism code or null if none is found
-	 */
-	public String getNcbiOrganismCode(String organism) {
-		for (String[] entry : ncbiOrganismCodes) {
-			if (entry[1].equals(organism)) {
-				return entry[0];
-			}
-		}
-		return null;
-	}
+    /**
+     * Translate from human readable menu options to ncbi organism code.
+     * @param organism
+     * @return the organism code or null if none is found
+     */
+    public String getNcbiOrganismCode(String organism) {
+        for (String[] entry : ncbiOrganismCodes) {
+            if (entry[1].equals(organism)) {
+                return entry[0];
+            }
+        }
+        return null;
+    }
 	
-	/**
-	 * Use the lproks.cgi script to get info on prokaryotic genome projects.
-	 * @param p3code the cgi script takes a parameter called p3 which determines the set of organisms returned (see ncbiOrganismCodes)
-	 */
-	public List<ProkaryoticGenomeProjectSummary> retrieveProkaryoticGenomeProjects(String ncbiOrganismCode) throws Exception {
-		URL url = new URL(prokUrl + ncbiOrganismCode);
-		log.info("prok url = " + url);
-		return readProkaryoticGenomeProjects(new InputStreamReader(url.openStream()));
-	}
+    /**
+     * Use the lproks.cgi script to get info on prokaryotic genome projects.
+     * @param p3code the cgi script takes a parameter called p3 which determines the set of organisms returned (see ncbiOrganismCodes)
+     */
+    public List<ProkaryoticGenomeProjectSummary> retrieveProkaryoticGenomeProjects(String ncbiOrganismCode) throws Exception {
+        URL url = new URL(prokUrl + ncbiOrganismCode);
+        log.info(String.format("prok url = '%s'", url.toString()));
+        return readProkaryoticGenomeProjects(new InputStreamReader(url.openStream()));
+    }
 
-	public List<ProkaryoticGenomeProjectSummary> readProkaryoticGenomeProjects(Reader reader) throws Exception {
-		fireProgressInitEvent();
-		List<ProkaryoticGenomeProjectSummary> projects = new ArrayList<ProkaryoticGenomeProjectSummary>();
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(reader);
-			String line = br.readLine();
-			int i=0;
-			while (line != null) {
-				if (!line.startsWith("##")) {
-					String[] fields = line.split("\t");
-					try {
-						ProkaryoticGenomeProjectSummary project = new ProkaryoticGenomeProjectSummary();
-						project.setProjectId(fields[0]);
-						project.setTaxId(Integer.parseInt(fields[1]));
-						project.setOrganismName(fields[2]);
-						project.setSuperKingdom(fields[3]);
-						project.setGroup(fields[4]);
-						project.setGenomeSize(Float.parseFloat(fields[5]));
-						project.setGcContent(toFloat(fields[6], null));
-						project.setNumberOfChromosomes(Integer.parseInt(fields[7]));
-						project.setNumberOfPlasmids(toInt(fields[8], 0));
-						project.setReleasedDate(fields[9]);
-						project.setAccessions(fields[11].split(","));
-						projects.add(project);
-						System.out.println(project);
-					}
-					catch (NumberFormatException e) {
-						log.warn("Error reading prokarotic genome projects in line: " + line);
-					}
-					
-					if (i++ % 10 == 0)
-						fireIncrementProgressEvent();
-				}
-				line = br.readLine();
-			}
-			return projects;
-		} catch (Exception e) {
-			log.error("Error reading genome projects from NCBI", e);
-			throw e;
-		}
-		finally {
-			try {
-				if (br != null)
-					br.close();
-			}
-			catch (Exception e) {
-				log.warn(e);
-			}
-			fireProgressDoneEvent();
-		}
-	}
+    public List<ProkaryoticGenomeProjectSummary> readProkaryoticGenomeProjects(Reader reader)
+        throws Exception {
+        fireProgressInitEvent();
+        List<ProkaryoticGenomeProjectSummary> projects = new ArrayList<ProkaryoticGenomeProjectSummary>();
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(reader);
+            String line = br.readLine();
+            int i = 0;
+            while (line != null) {
+                if (!line.startsWith("##")) {
+                    String[] fields = line.split("\t");
+                    try {
+                        ProkaryoticGenomeProjectSummary project = new ProkaryoticGenomeProjectSummary();
+                        project.setProjectId(fields[0]);
+                        project.setTaxId(Integer.parseInt(fields[1]));
+                        project.setOrganismName(fields[2]);
+                        project.setSuperKingdom(fields[3]);
+                        project.setGroup(fields[4]);
+                        project.setGenomeSize(Float.parseFloat(fields[5]));
+                        project.setGcContent(toFloat(fields[6], null));
+                        project.setNumberOfChromosomes(Integer.parseInt(fields[7]));
+                        project.setNumberOfPlasmids(toInt(fields[8], 0));
+                        project.setReleasedDate(fields[9]);
+                        project.setAccessions(fields[11].split(","));
+                        projects.add(project);
+                        System.out.println(project);
+                    }	catch (NumberFormatException e) {
+                        log.warn("Error reading prokarotic genome projects in line: " + line);
+                    }
+                    if (i++ % 10 == 0) fireIncrementProgressEvent();
+                }
+                line = br.readLine();
+            }
+            return projects;
+        } catch (Exception e) {
+            log.error("Error reading genome projects from NCBI", e);
+            throw e;
+        }	finally {
+            try {
+                if (br != null)	br.close();
+            }	catch (Exception e) {
+                log.warn(e);
+            }
+            fireProgressDoneEvent();
+        }
+    }
 
-//	public NcbiGenome retrieveGenome(String genomeProjectId) throws Exception {
-//		return retrieveGenome()
-//	}
+    public NcbiGenome retrieveGenome(final NcbiGenomeProjectSummary summary) throws Exception {
+        try {
+            fireProgressInitEvent();
+            List<NcbiSequence> sequences = this.retrieveSequences(summary.getProjectId());
+            fireIncrementProgressEvent();
 
-	public NcbiGenome retrieveGenome(final NcbiGenomeProjectSummary summary) throws Exception {
-		try {
-			fireProgressInitEvent();
-			List<NcbiSequence> sequences = this.retrieveSequences(summary.getProjectId());
-			fireIncrementProgressEvent();
+            // sort sequences by ncbi id?
+            Collections.sort(sequences, new Comparator<NcbiSequence>() {
+                    public int compare(NcbiSequence o1, NcbiSequence o2) {
+                        return 
+                            (o1.getNcbiId() > o2.getNcbiId()) ? 1 :
+                            (o1.getNcbiId() < o2.getNcbiId()) ? -1 :
+                            0;
+                    }
+                });
+            fireIncrementProgressEvent();
+            return new NcbiGenomeImpl(summary, sequences);
+        }	finally {
+            fireProgressDoneEvent();
+        }
+    }
 
-			// sort sequences by ncbi id?
-			Collections.sort(sequences, new Comparator<NcbiSequence>() {
-				public int compare(NcbiSequence o1, NcbiSequence o2) {
-					return 
-						(o1.getNcbiId() > o2.getNcbiId()) ? 1 :
-						(o1.getNcbiId() < o2.getNcbiId()) ? -1 :
-							0;
-				}
-			});
-			fireIncrementProgressEvent();
+    /**
+     * @param genomeProjectId
+     */
+    public List<NcbiSequence> retrieveSequences(String genomeProjectId) throws Exception {
+        List<String> sequenceIds = retrieveGenomeIds(genomeProjectId);
+        if (sequenceIds.size() == 0)
+            throw new RuntimeException("No sequences found for genome project " + genomeProjectId);
+        List<NcbiSequence> sequences = new ArrayList<NcbiSequence>();
+        for (String sequenceId : sequenceIds) {
+            sequences.add(retrieveSequenceAndFeatures(sequenceId));
+        }
+        uniqifySequenceNames(sequences);
+        return sequences;
+    }
 
-			return new NcbiGenomeImpl(summary, sequences);
-		}
-		finally {
-			fireProgressDoneEvent();
-		}
-	}
+    /**
+     * Return the first projectId found by searching entrez for the given refseq identifier.
+     * (We're assuming there's exactly one result to the search.)
+     */
+    public String retrieveIdForRefseq(String refseq) throws Exception {
+        URL url = new URL(eutils + "esearch.fcgi?db=genome&term=" + refseq);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+        String line = reader.readLine();
+        while (line != null) {
+            Matcher m = ncbiESearchIdPattern.matcher(line);
+            if (m.matches()) {
+                return m.group(1);
+            }
+            line = reader.readLine();
+        }
+        return null;
+    }
 
-	/**
-	 * 
-	 * @param genomeProjectId
-	 */
-	public List<NcbiSequence> retrieveSequences(String genomeProjectId) throws Exception {
-		List<String> sequenceIds = retrieveGenomeIds(genomeProjectId);
-		if (sequenceIds.size()==0)
-			throw new RuntimeException("No sequences found for genome project " + genomeProjectId);
-		List<NcbiSequence> sequences = new ArrayList<NcbiSequence>();
-		for (String sequenceId : sequenceIds) {
-			sequences.add(retrieveSequenceAndFeatures(sequenceId));
-		}
-		
-		uniqifySequenceNames(sequences);
+    public List<String> retrieveGenomeProjectIds(String organism) throws Exception {
+        try {
+            fireProgressInitEvent();
+            List<String> ids = new ArrayList<String>();
+            URL url = new URL(eutils + "esearch.fcgi?db=genomeprj&term=" + URLEncoder.encode(organism, "UTF-8") + "[orgn]");
+            log.info("searching genomeprj: " + url);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line = reader.readLine();
+            while (line != null) {
+                Matcher m = ncbiESearchIdPattern.matcher(line);
+                if (m.matches()) {
+                    ids.add(m.group(1));
+                }
+                line = reader.readLine();
+                fireIncrementProgressEvent();
+            }
+            return ids;
+        } finally {
+            fireProgressDoneEvent();
+        }
+    }
 
-		return sequences;
-	}
+    /**
+     * get the summary for a genome project and parse out
+     * @param organism
+     * @return
+     * @throws Exception
+     */
+    public List<EUtilitiesGenomeProjectSummary> retrieveGenomeProjectSummaries(String organism)
+        throws Exception {
+        try {
+            fireProgressInitEvent();
+            List<EUtilitiesGenomeProjectSummary> summaries = new ArrayList<EUtilitiesGenomeProjectSummary>();
+            List<String> ids = retrieveGenomeProjectIds(organism);
+            for (String id : ids) {
+                summaries.add(retrieveGenomeProjectSummary(id));
+                fireIncrementProgressEvent();
+            }
+            return summaries;
+        } finally {
+            fireProgressDoneEvent();
+        }
+    }
 
-	/**
-	 * Return the first projectId found by searching entrez for the given refseq identifier.
-	 * (We're assuming there's exactly one result to the search.)
-	 */
-	public String retrieveIdForRefseq(String refseq) throws Exception {
-		URL url = new URL(eutils + "esearch.fcgi?db=genome&term=" + refseq);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-		String line = reader.readLine();
-		while (line != null) {
-			Matcher m = ncbiESearchIdPattern.matcher(line);
-			if (m.matches()) {
-				return m.group(1);
-			}
-			line = reader.readLine();
-		}
-		return null;
-	}
+    public EUtilitiesGenomeProjectSummary retrieveGenomeProjectSummary(String id) throws Exception {
+        URL url = new URL(eutils + "esummary.fcgi?db=genomeprj&id=" + id);
+        log.info("getting genomeprj summary: " + url);
 
-	public List<String> retrieveGenomeProjectIds(String organism) throws Exception {
-		try {
-			fireProgressInitEvent();
-			List<String> ids = new ArrayList<String>();
-			URL url = new URL(eutils + "esearch.fcgi?db=genomeprj&term=" + URLEncoder.encode(organism, "UTF-8") + "[orgn]");
-			log.info("searching genomeprj: " + url);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-			String line = reader.readLine();
-			while (line != null) {
-				Matcher m = ncbiESearchIdPattern.matcher(line);
-				if (m.matches()) {
-					ids.add(m.group(1));
-				}
-				line = reader.readLine();
-				fireIncrementProgressEvent();
-			}
-			return ids;
-		}
-		finally {
-			fireProgressDoneEvent();
-		}
-	}
+        DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
+        domFactory.setNamespaceAware(true);
+        DocumentBuilder builder = domFactory.newDocumentBuilder();
+        Document doc = builder.parse(url.openStream());
 
-	/**
-	 * get the summary for a genome project and parse out
-	 * @param organism
-	 * @return
-	 * @throws Exception
-	 */
-	public List<EUtilitiesGenomeProjectSummary> retrieveGenomeProjectSummaries(String organism) throws Exception {
-		try {
-			fireProgressInitEvent();
-			List<EUtilitiesGenomeProjectSummary> summaries = new ArrayList<EUtilitiesGenomeProjectSummary>();
-			List<String> ids = retrieveGenomeProjectIds(organism);
-			for (String id : ids) {
-				summaries.add(retrieveGenomeProjectSummary(id));
-				fireIncrementProgressEvent();
-			}
-			return summaries;
-		}
-		finally {
-			fireProgressDoneEvent();
-		}
-	}
+        XPathFactory factory = XPathFactory.newInstance();
+        XPath xpath = factory.newXPath();
+        XPathExpression xname = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Name\"][1]/text()");
+        XPathExpression xkindom = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Kingdom\"][1]/text()");
+        XPathExpression xgroup = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Group\"][1]/text()");
+        XPathExpression xchrom = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Chromosomes\"][1]/text()");
+        XPathExpression xplasmid = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Plasmid\"][1]/text()");
+        XPathExpression xmit = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Mitochondrion\"][1]/text()");
+        XPathExpression xplastid = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Plastid\"][1]/text()");
+        XPathExpression xstatus = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Sequencing_Status\"][1]/text()");
 
-	public EUtilitiesGenomeProjectSummary retrieveGenomeProjectSummary(String id) throws Exception {
-		URL url = new URL(eutils + "esummary.fcgi?db=genomeprj&id=" + id);
-		log.info("getting genomeprj summary: " + url);
+        EUtilitiesGenomeProjectSummary summary = 
+            new EUtilitiesGenomeProjectSummary(id,
+                                               (String)xname.evaluate(doc, XPathConstants.STRING),
+                                               (String)xkindom.evaluate(doc, XPathConstants.STRING),
+                                               (String)xgroup.evaluate(doc, XPathConstants.STRING),
+                                               toInt((String)xchrom.evaluate(doc, XPathConstants.STRING), 0),
+                                               toInt((String)xplasmid.evaluate(doc, XPathConstants.STRING), 0),
+                                               toInt((String)xmit.evaluate(doc, XPathConstants.STRING), 0),
+                                               toInt((String)xplastid.evaluate(doc, XPathConstants.STRING), 0),
+                                               (String)xstatus.evaluate(doc, XPathConstants.STRING));
 
-		DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
-		domFactory.setNamespaceAware(true);
-		DocumentBuilder builder = domFactory.newDocumentBuilder();
-		Document doc = builder.parse(url.openStream());
-
-		XPathFactory factory = XPathFactory.newInstance();
-		XPath xpath = factory.newXPath();
-		XPathExpression xname = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Name\"][1]/text()");
-		XPathExpression xkindom = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Kingdom\"][1]/text()");
-		XPathExpression xgroup = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Organism_Group\"][1]/text()");
-		XPathExpression xchrom = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Chromosomes\"][1]/text()");
-		XPathExpression xplasmid = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Plasmid\"][1]/text()");
-		XPathExpression xmit = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Mitochondrion\"][1]/text()");
-		XPathExpression xplastid = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Number_of_Plastid\"][1]/text()");
-		XPathExpression xstatus = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Sequencing_Status\"][1]/text()");
-
-		EUtilitiesGenomeProjectSummary summary = new EUtilitiesGenomeProjectSummary(id,
-				(String)xname.evaluate(doc, XPathConstants.STRING),
-				(String)xkindom.evaluate(doc, XPathConstants.STRING),
-				(String)xgroup.evaluate(doc, XPathConstants.STRING),
-				toInt((String)xchrom.evaluate(doc, XPathConstants.STRING), 0),
-				toInt((String)xplasmid.evaluate(doc, XPathConstants.STRING), 0),
-				toInt((String)xmit.evaluate(doc, XPathConstants.STRING), 0),
-				toInt((String)xplastid.evaluate(doc, XPathConstants.STRING), 0),
-				(String)xstatus.evaluate(doc, XPathConstants.STRING));
-
-		return summary;
-	}
+        return summary;
+    }
 
 
-	/**
-	 * given a genome project id, get genome ids for the individual sequences in the genome
-	 */
-	public List<String> retrieveGenomeIds(String projectId) throws Exception {
-		try {
-			fireProgressInitEvent();
-			List<String> ids = new ArrayList<String>();
-			URL url = new URL(eutils + "elink.fcgi?dbfrom=genomeprj&db=genome&id=" + projectId);
-			
-			log.debug("url = " + url);
+    /**
+     * given a genome project id, get genome ids for the individual sequences in the genome
+     */
+    public List<String> retrieveGenomeIds(String projectId) throws Exception {
+        try {
+            fireProgressInitEvent();
+            List<String> ids = new ArrayList<String>();
+            URL url = new URL(eutils + "elink.fcgi?dbfrom=genomeprj&db=genome&id=" + projectId);
+            log.debug("url = " + url);
 
-			DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
-			domFactory.setNamespaceAware(true);
-			DocumentBuilder builder = domFactory.newDocumentBuilder();
-			Document doc = builder.parse(url.openStream());
-			
-			fireIncrementProgressEvent();
+            DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
+            domFactory.setNamespaceAware(true);
+            DocumentBuilder builder = domFactory.newDocumentBuilder();
+            Document doc = builder.parse(url.openStream());
+            fireIncrementProgressEvent();
 
-			XPathFactory factory = XPathFactory.newInstance();
-			XPath xpath = factory.newXPath();
-			XPathExpression expr = xpath.compile("/eLinkResult/LinkSet/LinkSetDb/Link/Id/text()");
+            XPathFactory factory = XPathFactory.newInstance();
+            XPath xpath = factory.newXPath();
+            XPathExpression expr = xpath.compile("/eLinkResult/LinkSet/LinkSetDb/Link/Id/text()");
 
-			Object result = expr.evaluate(doc, XPathConstants.NODESET);
-			NodeList nodes = (NodeList) result;
-			for (int i = 0; i < nodes.getLength(); i++) {
-				ids.add(nodes.item(i).getNodeValue().trim());
-				fireIncrementProgressEvent();
-			}
+            Object result = expr.evaluate(doc, XPathConstants.NODESET);
+            NodeList nodes = (NodeList) result;
+            for (int i = 0; i < nodes.getLength(); i++) {
+                ids.add(nodes.item(i).getNodeValue().trim());
+                fireIncrementProgressEvent();
+            }
+            return ids;
+        } finally {
+            fireProgressDoneEvent();
+        }
+    }
 
-			return ids;
-		}
-		finally {
-			fireProgressDoneEvent();
-		}
-	}
-
-	public NcbiSequence retrieveSequenceSummary(String id) throws Exception {
-		try {
-			fireProgressInitEvent();
-
-			URL url = new URL(eutils + "esummary.fcgi?db=genome&id=" + id);
+    public NcbiSequence retrieveSequenceSummary(String id) throws Exception {
+        try {
+            fireProgressInitEvent();
+            URL url = new URL(eutils + "esummary.fcgi?db=genome&id=" + id);
+            DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
+            domFactory.setNamespaceAware(true);
+            DocumentBuilder builder = domFactory.newDocumentBuilder();
+            Document doc = builder.parse(url.openStream());
+            fireIncrementProgressEvent();
 	
-			DocumentBuilderFactory domFactory = DocumentBuilderFactory.newInstance();
-			domFactory.setNamespaceAware(true);
-			DocumentBuilder builder = domFactory.newDocumentBuilder();
-			Document doc = builder.parse(url.openStream());
-			
-			fireIncrementProgressEvent();
-	
-			XPathFactory factory = XPathFactory.newInstance();
-			XPath xpath = factory.newXPath();
-			XPathExpression xtitle = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Title\"]/text()");
-			XPathExpression xlength = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Length\"]/text()");
-	
-			fireIncrementProgressEvent();
+            XPathFactory factory = XPathFactory.newInstance();
+            XPath xpath = factory.newXPath();
+            XPathExpression xtitle = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Title\"]/text()");
+            XPathExpression xlength = xpath.compile("/eSummaryResult/DocSum/Item[@Name=\"Length\"]/text()");
+            fireIncrementProgressEvent();
 
-			return new NcbiSequence(
-					(String)xtitle.evaluate(doc, XPathConstants.STRING),
-					toInt((String)xlength.evaluate(doc, XPathConstants.STRING), 0));
-		}
-		finally {
-			fireProgressDoneEvent();
-		}
-	}
+            return new NcbiSequence(
+                                    (String)xtitle.evaluate(doc, XPathConstants.STRING),
+                                    toInt((String)xlength.evaluate(doc, XPathConstants.STRING), 0));
+        } finally {
+            fireProgressDoneEvent();
+        }
+    }
 
-	/**
-	 * Retrieves the features for a chromosome. Names of the chromosomes are ugly and
-	 * not unique. Use cleanupChromosomeNames(...) to fix that.
-	 */
-	public NcbiSequence retrieveSequenceAndFeatures(String sequenceId) throws Exception {
-		URL url = new URL(eutils + "efetch.fcgi?db=genome&retmode=xml&id=" + sequenceId);
-		log.debug("url = " + url);
+    /**
+     * Retrieves the features for a chromosome. Names of the chromosomes are ugly and
+     * not unique. Use cleanupChromosomeNames(...) to fix that.
+     */
+    public NcbiSequence retrieveSequenceAndFeatures(String sequenceId) throws Exception {
+        URL url = new URL(eutils + "efetch.fcgi?db=genome&retmode=xml&id=" + sequenceId);
+        log.debug("url = " + url);
+        GbXmlSaxParser gbXmlSaxParser = new GbXmlSaxParser();
+        gbXmlSaxParser.addAllProgressListeners(this.listeners);
+        List<GeneFeatureImpl> features = gbXmlSaxParser.extractFeatures(url.openStream());
 
-		GbXmlSaxParser gbXmlSaxParser = new GbXmlSaxParser();
-		gbXmlSaxParser.addAllProgressListeners(this.listeners);
+        NcbiSequence seq = new NcbiSequence();
+        seq.setName(gbXmlSaxParser.getSequenceName());
+        seq.setLength(gbXmlSaxParser.getSequenceLength());
+        seq.setAccession(gbXmlSaxParser.getAccession());
+        seq.setLocus(gbXmlSaxParser.getSequenceLocus());
+        seq.setUpdateDate(gbXmlSaxParser.getUpdateDate());
+        seq.setDefinition(gbXmlSaxParser.getDefinition());
+        seq.setNcbiId(Long.parseLong(sequenceId));
+        seq.setGenes(features);
+        log.debug("retrieved features for " + seq.getAccession());
+        return seq;
+    }
 
-		List<GeneFeatureImpl> features = gbXmlSaxParser.extractFeatures(url.openStream());
+    private int toInt(String string, int defaultValue) {
+        try {
+            return Integer.parseInt(string);
+        }	catch (Exception e) {
+            return defaultValue;
+        }
+    }
 
-		NcbiSequence seq = new NcbiSequence();
-		seq.setName(gbXmlSaxParser.getSequenceName());
-		seq.setLength(gbXmlSaxParser.getSequenceLength());
-		seq.setAccession(gbXmlSaxParser.getAccession());
-		seq.setLocus(gbXmlSaxParser.getSequenceLocus());
-		seq.setUpdateDate(gbXmlSaxParser.getUpdateDate());
-		seq.setDefinition(gbXmlSaxParser.getDefinition());
-		seq.setNcbiId(Long.parseLong(sequenceId));
-		seq.setGenes(features);
+    private Float toFloat(String string, Float defaultValue) {
+        try {
+            return Float.parseFloat(string);
+        }	catch (Exception e) {
+            return defaultValue;
+        }
+    }
 
-		log.debug("retrieved features for " + seq.getAccession());
+    /**
+     * Should be unnecessary
+     */
+    public void uniqifySequenceNames(List<NcbiSequence> sequences) {
+        NameCounter counter = new NameCounter();
+        for (NcbiSequence sequence: sequences) {
+            counter.increment(sequence.getName());
+        }
 
-		return seq;
-	}
+        // make the names of the chromosomes unique by adding numbers
+        NameCounter numbers = new NameCounter();
+        for (NcbiSequence sequence: sequences) {
+            String name = sequence.getName();
+            if (counter.count(name) > 1) {
+                numbers.increment(name);
+                sequence.setName(name + "." + numbers.count(name) + "");
+            }
+        }
+    }
 
-	private int toInt(String string, int defaultValue) {
-		try {
-			return Integer.parseInt(string);
-		}
-		catch (Exception e) {
-			return defaultValue;
-		}
-	}
+    Set<ProgressListener> listeners = new CopyOnWriteArraySet<ProgressListener>();
 
-	private Float toFloat(String string, Float defaultValue) {
-		try {
-			return Float.parseFloat(string);
-		}
-		catch (Exception e) {
-			return defaultValue;
-		}
-	}
+    public void addProgressListener(ProgressListener listener) {
+        listeners.add(listener);
+    }
 
-	/**
-	 * Should be unnecessary
-	 */
-	public void uniqifySequenceNames(List<NcbiSequence> sequences) {
-		NameCounter counter = new NameCounter();
-		for (NcbiSequence sequence: sequences) {
-			counter.increment(sequence.getName());
-		}
+    public void removeProgressListener(ProgressListener listener) {
+        listeners.remove(listener);
+    }
 
-		// make the names of the chromosomes unique by adding numbers
-		NameCounter numbers = new NameCounter();
-		for (NcbiSequence sequence: sequences) {
-			String name = sequence.getName();
-			if (counter.count(name) > 1) {
-				numbers.increment(name);
-				sequence.setName(name + "." + numbers.count(name) + "");
-			}
-		}
-	}
+    void fireIncrementProgressEvent() {
+        for (ProgressListener listener : listeners) {
+            listener.incrementProgress(1);
+        }
+    }
 
-	Set<ProgressListener> listeners = new CopyOnWriteArraySet<ProgressListener>();
+    void fireProgressInitEvent() {
+        synchronized (progressLock) {
+            if (progressInitialized <= 0) {
+                for (ProgressListener listener : listeners) {
+                    listener.init(0);
+                }
+            }
+            progressInitialized++;
+            System.out.println("+ progress init = " + progressInitialized);
+        }
+    }
 
-	public void addProgressListener(ProgressListener listener) {
-		listeners.add(listener);
-	}
-
-	public void removeProgressListener(ProgressListener listener) {
-		listeners.remove(listener);
-	}
-
-	void fireIncrementProgressEvent() {
-		for (ProgressListener listener : listeners) {
-			listener.incrementProgress(1);
-		}
-	}
-
-	void fireProgressInitEvent() {
-		synchronized (progressLock) {
-			if (progressInitialized <= 0) {
-				for (ProgressListener listener : listeners) {
-					listener.init(0);
-				}
-			}
-			progressInitialized++;
-			System.out.println("+ progress init = " + progressInitialized);
-		}
-	}
-
-	void fireProgressDoneEvent() {
-		synchronized (progressLock) {
-			if (progressInitialized > 0) {
-				progressInitialized--;
-				System.out.println("- progress init = " + progressInitialized);
-			}
-			if (progressInitialized == 0) {
-				System.out.println("d progress init = " + progressInitialized);
-				for (ProgressListener listener : listeners) {
-					listener.done();
-				}
-			}
-		}
-	}
+    void fireProgressDoneEvent() {
+        synchronized (progressLock) {
+            if (progressInitialized > 0) {
+                progressInitialized--;
+                System.out.println("- progress init = " + progressInitialized);
+            }
+            if (progressInitialized == 0) {
+                System.out.println("d progress init = " + progressInitialized);
+                for (ProgressListener listener : listeners) {
+                    listener.done();
+                }
+            }
+        }
+    }
 }

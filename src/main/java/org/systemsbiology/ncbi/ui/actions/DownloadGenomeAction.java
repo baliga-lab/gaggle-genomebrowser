@@ -8,16 +8,16 @@ import javax.swing.Action;
 import org.systemsbiology.ncbi.ui.NcbiQueryDialog;
 
 public class DownloadGenomeAction extends AbstractAction {
-	NcbiQueryDialog ncbiQueryDialog;
 
-	public DownloadGenomeAction(NcbiQueryDialog ncbiQueryDialog) {
-		super("Download");
-		this.ncbiQueryDialog = ncbiQueryDialog;
-		putValue(Action.SHORT_DESCRIPTION, "Download genes from NCBI.");
-	}
+    private NcbiQueryDialog ncbiQueryDialog;
 
-	public void actionPerformed(ActionEvent e) {
-		ncbiQueryDialog.downloadGenome();
-	}
+    public DownloadGenomeAction(NcbiQueryDialog ncbiQueryDialog) {
+        super("Download");
+        this.ncbiQueryDialog = ncbiQueryDialog;
+        putValue(Action.SHORT_DESCRIPTION, "Download genes from NCBI.");
+    }
 
+    public void actionPerformed(ActionEvent e) {
+        ncbiQueryDialog.downloadGenome();
+    }
 }

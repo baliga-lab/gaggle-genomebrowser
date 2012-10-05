@@ -35,11 +35,16 @@ public class TestGbXmlToFeatures {
 		assertEquals(100, features.size());
 
 		GeneFeatureImpl feature = features.get(0);
-		assertEquals("YAL068C", feature.getName());
-		assertEquals("PAU8", feature.getCommonName());
-		assertEquals(1807, feature.getStart());
-		assertEquals(2169, feature.getEnd());
-		assertEquals(Strand.reverse, feature.getStrand());
+		assertEquals("YAL067W-A", feature.getName());
+    // WW: reading order has changed
+		//assertEquals("YAL068C", feature.getName());
+		//assertEquals("PAU8", feature.getCommonName());
+		//assertEquals(1807, feature.getStart());
+		//assertEquals(2169, feature.getEnd());
+    assertNull(feature.getCommonName());
+		assertEquals(2480, feature.getStart());
+		assertEquals(2707, feature.getEnd());
+		assertEquals(Strand.forward, feature.getStrand());
 
 		// YAL030W has an intron
 		feature = findFeatureByName("YAL030W", features);

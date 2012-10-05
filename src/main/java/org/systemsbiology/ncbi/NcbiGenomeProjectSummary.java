@@ -5,13 +5,13 @@ package org.systemsbiology.ncbi;
  * implement equals and hashcode (see NcbiGenomeProjectSummaryWrapper).
  */
 public interface NcbiGenomeProjectSummary {
-	public String getProjectId();
-	public String getOrganismName();
-	public String getSuperkingdom();
-	public String getGroup();
-	public String getStatus();
-	public int getNumberOfChromosomes();
-	public int getNumberOfPlasmids();
-	public int getNumberOfMitochondria();
-	public int getNumberOfPlastids();
+    String getProjectId();
+    String getOrganismName();
+    String getSuperkingdom();
+    String getGroup();
+    String getStatus();
+    int getNumberOfChromosomes();
+    int getNumberOfPlasmids();
+    int getNumberOfMitochondria();
+    int getNumberOfPlastids();
 }

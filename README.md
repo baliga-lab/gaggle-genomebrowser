@@ -29,3 +29,10 @@ http://gaggle.systemsbiology.net/docs/geese/genomebrowser/
 
 Features that straddle the zero point on circular chromosomes aren't handled properly.
 
+* NCBI interface:
+  * lproks.cgi and leuks.cgi were replaced by ftp://ftp.ncbi.nih.gov/genomes/GENOME_REPORTS/
+    need to be worked into NCBI API
+
+## TODO
+
+* Data exchange (NCBI/UCSC) should be external dependency
