@@ -32,7 +32,7 @@ import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.util.FeatureUtils;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.NiceTuple;
 import org.systemsbiology.util.StringUtils;
 

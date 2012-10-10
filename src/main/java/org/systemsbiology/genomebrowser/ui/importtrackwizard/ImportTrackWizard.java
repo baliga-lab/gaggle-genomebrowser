@@ -16,10 +16,8 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
 import org.systemsbiology.genomebrowser.sqlite.SqliteTrackImporter;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.StringUtils;
-
-
 
 /**
  * TrackImportWizard collects the data and resources needed to import a

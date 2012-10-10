@@ -1,4 +1,4 @@
-package org.systemsbiology.util;
+package org.systemsbiology.genomebrowser.util;
 
 import java.awt.Color;
 import java.util.regex.Matcher;

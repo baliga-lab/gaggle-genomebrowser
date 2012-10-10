@@ -6,8 +6,7 @@ import java.util.Iterator;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * Renders segmentation. Segmentation is derived from transcript signal where

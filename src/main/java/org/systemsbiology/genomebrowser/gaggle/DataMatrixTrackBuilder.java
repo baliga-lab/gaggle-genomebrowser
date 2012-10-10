@@ -22,7 +22,7 @@ import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
 import org.systemsbiology.genomebrowser.sqlite.MatrixFeatureFields;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.LoggingProgressListener;
 

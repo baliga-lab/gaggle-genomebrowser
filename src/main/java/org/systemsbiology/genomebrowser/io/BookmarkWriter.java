@@ -9,7 +9,7 @@ import java.io.Writer;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 // TODO write associated features?
 

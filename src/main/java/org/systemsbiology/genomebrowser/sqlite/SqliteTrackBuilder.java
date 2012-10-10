@@ -22,10 +22,8 @@ import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource.TrackStub;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
-
-
 
 // could I change the strategy of joining the temp features to the sequences table
 // and do that as a separate step?

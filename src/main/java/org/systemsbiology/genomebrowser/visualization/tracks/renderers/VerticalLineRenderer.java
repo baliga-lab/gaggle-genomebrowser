@@ -10,7 +10,7 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Range;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 
 /**

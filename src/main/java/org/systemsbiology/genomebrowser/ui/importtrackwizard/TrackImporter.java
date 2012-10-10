@@ -6,8 +6,7 @@ import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 // TODO move TrackImporter (to app?)
 

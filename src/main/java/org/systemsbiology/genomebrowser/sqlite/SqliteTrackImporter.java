@@ -17,9 +17,8 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource.TrackStub;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.StringUtils;
-
 
 /**
  * Imports tracks to a dataset stored in a sqlite database

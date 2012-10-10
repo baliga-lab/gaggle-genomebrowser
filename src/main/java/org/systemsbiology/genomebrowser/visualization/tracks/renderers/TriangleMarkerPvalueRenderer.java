@@ -13,9 +13,8 @@ import org.systemsbiology.genomebrowser.model.Range;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.ui.HasTooltips;
-import org.systemsbiology.util.Attributes;
-import org.systemsbiology.util.ColorUtils;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
+import org.systemsbiology.genomebrowser.util.ColorUtils;
 
 /**
  * A track renderer that plots a triangular marker in some color and is sensitive to p-value. Data points

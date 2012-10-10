@@ -8,7 +8,7 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.visualization.ColorScale;
 import org.systemsbiology.genomebrowser.visualization.ColorScaleRegistry;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 
 public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {

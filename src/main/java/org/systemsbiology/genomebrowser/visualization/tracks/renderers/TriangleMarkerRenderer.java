@@ -12,8 +12,7 @@ import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.ui.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * A track renderer that plots a triangular marker in some color.

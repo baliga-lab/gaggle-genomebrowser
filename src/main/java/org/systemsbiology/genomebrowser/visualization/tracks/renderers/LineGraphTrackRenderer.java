@@ -8,8 +8,7 @@ import java.util.Iterator;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 public class LineGraphTrackRenderer extends QuantitativeTrackRenderer {
 	float weight = 1.0f;

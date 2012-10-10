@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import static org.systemsbiology.util.StringUtils.toStringSeparateLines;
 

@@ -4,8 +4,7 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Range;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * A base class for renderers of quantitative data tracks.

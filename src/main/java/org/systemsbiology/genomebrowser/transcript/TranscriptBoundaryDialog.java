@@ -25,7 +25,7 @@ import javax.swing.*;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.model.*;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.swing.ArrowKeyListener.IntArrowKeyListener;
 
 

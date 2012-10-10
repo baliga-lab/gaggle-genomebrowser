@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Topology;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 
 public class BasicSequence implements Sequence {

@@ -7,9 +7,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.impl.ScalingQuantitativeMatrixIteratable;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /*
  * 
@@ -21,11 +19,6 @@ import org.systemsbiology.util.Attributes;
  * of the matrix overlaid on each other. It is as-yet untried
  * 
  */
-
-
-
-
-
 
 /**
  * A track that groups together points into blocks. As we zoom

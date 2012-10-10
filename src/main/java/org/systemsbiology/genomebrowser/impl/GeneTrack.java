@@ -13,7 +13,7 @@ import org.systemsbiology.genomebrowser.model.GeneFeature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 
 

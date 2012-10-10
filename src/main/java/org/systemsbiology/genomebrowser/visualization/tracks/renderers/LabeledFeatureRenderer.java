@@ -19,15 +19,13 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.ui.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.HasSelections;
 import org.systemsbiology.util.Selectable;
 
 
 // TODO make a block track renderer
 // this doesn't work
-
-
 /**
  * Renders labeled features as colored blocks with a label if it fits. Centers blocks around x-axis.
  * @author cbare

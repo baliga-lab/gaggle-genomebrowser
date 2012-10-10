@@ -15,7 +15,7 @@ import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.bookmarks.ListBookmarkDataSource;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 
 

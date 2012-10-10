@@ -19,7 +19,7 @@ import org.systemsbiology.genomebrowser.app.ProgressListenerWrapper;
 import org.systemsbiology.genomebrowser.io.LineReader;
 import org.systemsbiology.genomebrowser.io.LineReader.LineProcessor;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.MathUtils;
 

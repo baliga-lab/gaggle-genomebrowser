@@ -11,10 +11,7 @@ import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
 import org.systemsbiology.genomebrowser.util.FeaturePositionComparator;
-import org.systemsbiology.util.Attributes;
-
-
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * An in-memory Bookmark data source based on an ArrayList.

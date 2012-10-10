@@ -9,7 +9,7 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.SequenceFetcher;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 
 public class BasicDataset implements Dataset {

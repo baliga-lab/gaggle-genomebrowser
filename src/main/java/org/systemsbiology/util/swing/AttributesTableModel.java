@@ -6,9 +6,7 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import org.systemsbiology.util.Attributes;
-
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 public class AttributesTableModel extends AbstractTableModel {
 	Attributes attributes;

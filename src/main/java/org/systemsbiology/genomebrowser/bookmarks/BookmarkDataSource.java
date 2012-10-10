@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.ListModel;
 
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 
 /**

@@ -46,7 +46,7 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Topology;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.StringUtils;
 import org.systemsbiology.genomebrowser.io.track.SequenceMapper;

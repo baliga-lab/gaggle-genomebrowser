@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes$;
 
 /**
  * A Bookmark is a specialization of Feature, which can have a text annotation
@@ -183,7 +183,7 @@ public class Bookmark implements Feature {
 	}
 	
 	public Attributes getAttributes() {
-		return Attributes.parse(attributes);
+		return Attributes$.MODULE$.parse(attributes);
 	}
 
 	public String getAttributesString() {

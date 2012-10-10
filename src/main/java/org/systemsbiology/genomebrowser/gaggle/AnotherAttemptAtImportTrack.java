@@ -9,7 +9,7 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.genomebrowser.impl.HeuristicSequenceMapper;
 import org.systemsbiology.genomebrowser.model.Sequence;

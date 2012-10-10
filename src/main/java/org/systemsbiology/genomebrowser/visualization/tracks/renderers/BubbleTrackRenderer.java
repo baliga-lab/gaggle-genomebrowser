@@ -6,9 +6,7 @@ import java.awt.Graphics;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * A track that plots data with a single scalar value

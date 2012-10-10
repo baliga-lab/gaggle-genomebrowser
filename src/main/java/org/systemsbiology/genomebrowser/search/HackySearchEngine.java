@@ -82,11 +82,10 @@ public class HackySearchEngine implements SearchEngine, EventListener {
 				keyword = keyword + "*";
 			
 			// TODO why don't we make one pattern out of all the keys?
-
-			Pattern pattern = new WildcardPattern(keyword);
+			Pattern pattern = new WildcardPattern(keyword, false);
 
 			for(String key : keywordsToFeatures.keySet()) {
-				if (pattern.match(key)) {
+				if (pattern.matches(key)) {
 					temp.addAll(keywordsToFeatures.get(key));
 				}
 			}
@@ -115,10 +114,10 @@ public class HackySearchEngine implements SearchEngine, EventListener {
 
 	// these aren't super efficient, but it is a hacky search engine.
 	public Feature findByName(String name) {
-		Pattern pattern = new WildcardPattern(name);
+      Pattern pattern = new WildcardPattern(name, false);
 
 		for(String key : keywordsToFeatures.keySet()) {
-			if (pattern.match(key)) {
+			if (pattern.matches(key)) {
 				for(Feature feature : keywordsToFeatures.get(key)) {
 					if (feature instanceof NamedFeature) {
 						if (((NamedFeature)feature).getName().equals(name))

@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes$;
 
 /**
  * A dataset is a set of sequences and a set of tracks holding features
@@ -30,7 +30,7 @@ public interface Dataset {
 
 
 	Dataset EMPTY_DATASET = new Dataset() {
-		private Attributes attr = Attributes.EMPTY;
+          private Attributes attr = Attributes$.MODULE$.EMPTY();
 
 		public UUID getUuid() {
 			return null;

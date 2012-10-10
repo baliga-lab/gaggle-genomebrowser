@@ -7,8 +7,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.impl.ScalingQuantitativeIteratable;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
  * A track that groups together points into blocks. As we zoom

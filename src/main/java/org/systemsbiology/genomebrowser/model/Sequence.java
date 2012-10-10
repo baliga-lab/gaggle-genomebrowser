@@ -1,9 +1,8 @@
 package org.systemsbiology.genomebrowser.model;
 
 import java.util.UUID;
-
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes$;
 
 /**
  * A chromosome, replicon, plasmid, or other sequence.
@@ -20,7 +19,7 @@ public interface Sequence {
 
 
 	Sequence NULL_SEQUENCE = new Sequence() {
-		private Attributes attr = Attributes.EMPTY;
+          private Attributes attr = Attributes$.MODULE$.EMPTY();
 
 		public UUID getUuid() {
 			return null;

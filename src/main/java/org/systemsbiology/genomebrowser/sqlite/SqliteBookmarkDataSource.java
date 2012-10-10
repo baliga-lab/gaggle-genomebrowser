@@ -10,8 +10,8 @@ import javax.swing.event.ListDataListener;
 
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.util.Attributes;
-
+import org.systemsbiology.genomebrowser.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes$;
 
 /**
  * A collection of bookmarks backed by a sqlite table.
@@ -121,7 +121,7 @@ public class SqliteBookmarkDataSource implements BookmarkDataSource {
 	}
 
 	public Attributes getAttributes() {
-		return Attributes.EMPTY;
+      return Attributes$.MODULE$.EMPTY();
 	}
 
 	public void sortByPosition() {

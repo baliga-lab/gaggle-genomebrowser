@@ -13,10 +13,8 @@ import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
-import org.systemsbiology.util.Attributes;
+import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Hyperlink;
-
-
 
 /**
  * A class that draws a track of data onto the viewer panel.
