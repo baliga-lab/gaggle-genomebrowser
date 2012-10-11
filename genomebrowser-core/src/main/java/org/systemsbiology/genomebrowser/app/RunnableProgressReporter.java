@@ -23,9 +23,7 @@ public class RunnableProgressReporter implements ProgressReporter, Runnable {
 		progressListenerSupport.removeProgressListener(listener);
 	}
 
-	public void done() {
-		done = true;
-	}
+	public void done() { done = true; }
 
 	public void run() {
 		while (!done) {
@@ -34,13 +32,11 @@ public class RunnableProgressReporter implements ProgressReporter, Runnable {
 			progressListenerSupport.fireProgressEvent(pair.getFirst());
 			try {
 				Thread.sleep(400);
-			}
-			catch (InterruptedException e) {
+			} catch (InterruptedException e) {
 				done = true;
 			}
 
-			if (Thread.currentThread().isInterrupted())
-				done = true;
+			if (Thread.currentThread().isInterrupted())	done = true;
 		}
 		Pair<Integer, Integer> pair = progress.getProgressAndExpected();
 		progressListenerSupport.fireSetExpectedProgressEvent(pair.getSecond());
@@ -48,7 +44,5 @@ public class RunnableProgressReporter implements ProgressReporter, Runnable {
 		progressListenerSupport.fireDoneEvent();
 	}
 
-	public void start() {
-		new Thread(this).start();
-	}
+	public void start() { new Thread(this).start();	}
 }

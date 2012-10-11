@@ -49,6 +49,8 @@ public class SqliteTrackImporter extends SqliteDb implements TrackImporter {
 				log.info(message);
 			}
 			public void incrementProgress(int amount) {}
+			public void init(int expected) {}
+            public void init(int expected, String message) {}
 			public void setExpectedProgress(int expected) {}
 			public void setProgress(int progress) {}
 		});
@@ -1010,8 +1012,6 @@ public class SqliteTrackImporter extends SqliteDb implements TrackImporter {
 
 	// ---- end quantitative segment matrix track functions -------------------
 
-
-
 	public int getFeatureCount(UUID trackUuid) {
 		TrackStub stub = dataSource.loadTrackStub(trackUuid);
 		return dataSource.getFeatureCount(stub.tableName);
@@ -1329,54 +1329,6 @@ public class SqliteTrackImporter extends SqliteDb implements TrackImporter {
 			}
 		}
 	}
-
-//	private Map<String, Integer> createSequenceMap() {
-//		Connection conn = null;
-//		PreparedStatement ps = null;
-//		ResultSet rs = null;
-//
-//		try {
-//			conn = DriverManager.getConnection(connectString);
-//
-//			Map<String, Integer> map = new HashMap<String, Integer>();
-//
-//			ps = conn.prepareStatement("select id, name from sequences;");
-//			rs = ps.executeQuery();
-//			while (rs.next()) {
-//				int id = rs.getInt(1);
-//				String name = rs.getString(2);
-//				map.put(name, id);
-//			}
-//
-//			return map;
-//		}
-//		catch (SQLException e) {
-//			throw new RuntimeException(e);
-//		}
-//		finally {
-//			try {
-//				if (rs != null)
-//					rs.close();
-//			}
-//			catch (Exception e1) {
-//				log.warn("Error closing result set", e1);
-//			}
-//			try {
-//				if (ps != null)
-//					ps.close();
-//			}
-//			catch (Exception e1) {
-//				log.warn("Error closing prepared statement", e1);
-//			}
-//			try {
-//				if (conn != null)
-//					conn.close();
-//			}
-//			catch (Exception e1) {
-//				log.warn("Error closing connection", e1);
-//			}
-//		}
-//	}
 
 	/**
 	 * Make a non-rigorous effort to ensure the given string is a valid sql table name
