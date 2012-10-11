@@ -14,8 +14,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.io.track.CoordinateMapper;
-import org.systemsbiology.genomebrowser.io.track.SequenceMapper;
+import org.systemsbiology.genomebrowser.model.CoordinateMapper;
+import org.systemsbiology.genomebrowser.model.SequenceMapper;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;

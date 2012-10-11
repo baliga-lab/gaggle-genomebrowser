@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Range;

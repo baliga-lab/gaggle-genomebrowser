@@ -1,11 +1,8 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.UUID;
 
-import org.systemsbiology.genomebrowser.model.Sequence;
-import org.systemsbiology.genomebrowser.model.Topology;
 import org.systemsbiology.genomebrowser.util.Attributes;
-
 
 public class BasicSequence implements Sequence {
 	private UUID uuid;

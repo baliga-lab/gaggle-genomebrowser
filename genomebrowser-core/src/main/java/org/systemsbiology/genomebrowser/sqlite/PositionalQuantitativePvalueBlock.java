@@ -2,7 +2,7 @@ package org.systemsbiology.genomebrowser.sqlite;
 
 import java.util.Iterator;
 
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
@@ -10,19 +10,21 @@ import org.systemsbiology.util.Iteratable;
 
 
 /**
- * A block of features with a single coordinate and a quantitative measurement.
+ * A block of features with a single coordinate and a quantitative measurement and a p-value.
  * @author cbare
  */
-public class PositionalBlock implements Block<Feature.Quantitative> {
+public class PositionalQuantitativePvalueBlock implements Block<Feature.QuantitativePvalue> {
 	private final BlockKey key;
 	private int[] positions;
 	private double[] values;
+	private double[] pvalues;
 
 
-	public PositionalBlock(BlockKey key, int[] positions, double[] values) {
+	public PositionalQuantitativePvalueBlock(BlockKey key, int[] positions, double[] values, double[] pvalues) {
 		this.key = key;
 		this.positions = positions;
 		this.values = values;
+		this.pvalues = pvalues;
 	}
 
 	public Sequence getSequence() {
@@ -37,25 +39,25 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iterator<Feature.Quantitative> iterator() {
+	public Iterator<Feature.QuantitativePvalue> iterator() {
 		return features();
 	}
 
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iteratable<Feature.Quantitative> features() {
+	public Iteratable<Feature.QuantitativePvalue> features() {
 		return new FeaturesIteratable();
 	}
 
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iteratable<Feature.Quantitative> features(int start, int end) {
+	public Iteratable<Feature.QuantitativePvalue> features(int start, int end) {
 		return new WindowedFeaturesIteratable(start, end);
 	}
 
-	class FeaturesIteratable implements Iteratable<Feature.Quantitative> {
+	class FeaturesIteratable implements Iteratable<Feature.QuantitativePvalue> {
 		FlyweightFeature feature = new FlyweightFeature();
 		int last = positions.length - 1;
 		int next;
@@ -64,7 +66,7 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 			return next < last;
 		}
 
-		public Feature.Quantitative next() {
+		public Feature.QuantitativePvalue next() {
 			feature.i = next++;
 			return feature;
 		}
@@ -73,12 +75,12 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 			throw new UnsupportedOperationException("remove() not supported.");
 		}
 
-		public Iterator<Feature.Quantitative> iterator() {
+		public Iterator<Feature.QuantitativePvalue> iterator() {
 			return this;
 		}		
 	}
 
-	class WindowedFeaturesIteratable implements Iteratable<Feature.Quantitative> {
+	class WindowedFeaturesIteratable implements Iteratable<Feature.QuantitativePvalue> {
 		FlyweightFeature feature = new FlyweightFeature();
 		int start;
 		int end;
@@ -97,7 +99,7 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 			return (next < positions.length) && positions[next] < end;
 		}
 
-		public Feature.Quantitative next() {
+		public Feature.QuantitativePvalue next() {
 			feature.i = next++;
 			return feature;
 		}
@@ -106,16 +108,20 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 			throw new UnsupportedOperationException("remove() not supported.");
 		}
 
-		public Iterator<Feature.Quantitative> iterator() {
+		public Iterator<Feature.QuantitativePvalue> iterator() {
 			return this;
 		}		
 	}
 
-	class FlyweightFeature implements Feature.Quantitative {
+	class FlyweightFeature implements Feature.QuantitativePvalue {
 		int i;
 
 		public double getValue() {
 			return values[i];
+		}
+		
+		public double getPvalue() {
+			return pvalues[i];
 		}
 
 		public int getCentralPosition() {
@@ -139,7 +145,7 @@ public class PositionalBlock implements Block<Feature.Quantitative> {
 		}
 
 		public String getLabel() {
-			return String.format("%.3f", values[i]);
+			return String.format("%.3f (pval=%.3f)", values[i], pvalues[i]);
 		}
 		
 		public String toString() {

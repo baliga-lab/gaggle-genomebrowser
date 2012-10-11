@@ -2,33 +2,33 @@ package org.systemsbiology.genomebrowser.sqlite;
 
 import java.util.Iterator;
 
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.util.Iteratable;
-
+import org.systemsbiology.util.MathUtils;
 
 /**
- * A block of features with a single coordinate and a quantitative measurement and a p-value.
+ * A contiguous block of quantitative features on the same sequence and strand.
  * @author cbare
  */
-public class PositionalQuantitativePvalueBlock implements Block<Feature.QuantitativePvalue> {
+public class SegmentBlock implements Block<Feature.Quantitative> {
 	private final BlockKey key;
-	private int[] positions;
-	private double[] values;
-	private double[] pvalues;
+	private final int[] starts;
+	private final int[] ends;
+	private final double[] values;
 
 
-	public PositionalQuantitativePvalueBlock(BlockKey key, int[] positions, double[] values, double[] pvalues) {
+	public SegmentBlock(BlockKey key, int[] starts, int[] ends, double[] values) {
 		this.key = key;
-		this.positions = positions;
+		this.starts = starts;
+		this.ends = ends;
 		this.values = values;
-		this.pvalues = pvalues;
 	}
 
 	public Sequence getSequence() {
-		// TODO get Sequence from PositionalBlock
+		// TODO SegmentBlock.getSequence - key only has seqId
 		return null;
 	}
 
@@ -39,34 +39,34 @@ public class PositionalQuantitativePvalueBlock implements Block<Feature.Quantita
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iterator<Feature.QuantitativePvalue> iterator() {
+	public Iterator<Feature.Quantitative> iterator() {
 		return features();
 	}
 
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iteratable<Feature.QuantitativePvalue> features() {
+	public Iteratable<Feature.Quantitative> features() {
 		return new FeaturesIteratable();
 	}
 
 	/**
 	 * @return iterator of flyweight quantitative features
 	 */
-	public Iteratable<Feature.QuantitativePvalue> features(int start, int end) {
+	public Iteratable<Feature.Quantitative> features(int start, int end) {
 		return new WindowedFeaturesIteratable(start, end);
 	}
 
-	class FeaturesIteratable implements Iteratable<Feature.QuantitativePvalue> {
+	class FeaturesIteratable implements Iteratable<Feature.Quantitative> {
 		FlyweightFeature feature = new FlyweightFeature();
-		int last = positions.length - 1;
+		int len = starts.length;
 		int next;
 
 		public boolean hasNext() {
-			return next < last;
+			return next < len;
 		}
 
-		public Feature.QuantitativePvalue next() {
+		public Feature.Quantitative next() {
 			feature.i = next++;
 			return feature;
 		}
@@ -75,13 +75,14 @@ public class PositionalQuantitativePvalueBlock implements Block<Feature.Quantita
 			throw new UnsupportedOperationException("remove() not supported.");
 		}
 
-		public Iterator<Feature.QuantitativePvalue> iterator() {
+		public Iterator<Feature.Quantitative> iterator() {
 			return this;
 		}		
 	}
 
-	class WindowedFeaturesIteratable implements Iteratable<Feature.QuantitativePvalue> {
+	class WindowedFeaturesIteratable implements Iteratable<Feature.Quantitative> {
 		FlyweightFeature feature = new FlyweightFeature();
+		int len = starts.length;
 		int start;
 		int end;
 		int next;
@@ -93,13 +94,13 @@ public class PositionalQuantitativePvalueBlock implements Block<Feature.Quantita
 
 		public boolean hasNext() {
 			// features are sorted by start,end
-			while (next < positions.length && positions[next] < start) {
+			while (next < len && ends[next] < start) {
 				next++;
 			}
-			return (next < positions.length) && positions[next] < end;
+			return (next < len) && starts[next] < end;
 		}
 
-		public Feature.QuantitativePvalue next() {
+		public Feature.Quantitative next() {
 			feature.i = next++;
 			return feature;
 		}
@@ -108,28 +109,24 @@ public class PositionalQuantitativePvalueBlock implements Block<Feature.Quantita
 			throw new UnsupportedOperationException("remove() not supported.");
 		}
 
-		public Iterator<Feature.QuantitativePvalue> iterator() {
+		public Iterator<Feature.Quantitative> iterator() {
 			return this;
 		}		
 	}
 
-	class FlyweightFeature implements Feature.QuantitativePvalue {
+	class FlyweightFeature implements Feature.Quantitative {
 		int i;
 
 		public double getValue() {
 			return values[i];
 		}
-		
-		public double getPvalue() {
-			return pvalues[i];
-		}
 
 		public int getCentralPosition() {
-			return positions[i];
+			return MathUtils.average(starts[i], ends[i]);
 		}
 
 		public int getEnd() {
-			return positions[i];
+			return ends[i];
 		}
 
 		public String getSeqId() {
@@ -137,19 +134,19 @@ public class PositionalQuantitativePvalueBlock implements Block<Feature.Quantita
 		}
 
 		public int getStart() {
-			return positions[i];
+			return starts[i];
 		}
 
 		public Strand getStrand() {
 			return key.getStrand();
 		}
-
-		public String getLabel() {
-			return String.format("%.3f (pval=%.3f)", values[i], pvalues[i]);
-		}
 		
 		public String toString() {
-			return String.format("(Feature: %s%s:%d %.2f)", getSeqId(), getStrand().toAbbreviatedString(), getCentralPosition(), getValue()); 
+			return String.format("(Feature: %s, %s, %d, %d, %.2f)", getSeqId(), getStrand(), starts[i], ends[i], values[i]); 
+		}
+
+		public String getLabel() {
+			return null;
 		}
 	}
 }

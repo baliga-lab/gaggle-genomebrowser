@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Range;
@@ -16,21 +16,25 @@ import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 
 
-public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quantitative> {
+public class PositionalBlockTrack implements Track.Quantitative<Feature.Quantitative> {
 	private BlockIndex index;
 	private UUID uuid;
 	private String name;
-	private Attributes attr = new Attributes();
 	private Range range;
+	private Attributes attr = new Attributes();
 	private SqliteDataSource dataSource;
 
 
-	public SegmentMatrixBlockTrack(UUID uuid, String name, BlockIndex index, Range range, SqliteDataSource dataSource) {
+	public PositionalBlockTrack(UUID uuid, String name, BlockIndex index, Range range, SqliteDataSource dataSource) {
 		this.uuid = uuid;
 		this.name = name;
-		this.index = index;
 		this.range = range;
+		this.index = index;
 		this.dataSource = dataSource;
+	}
+
+	public Class<? extends Feature.Quantitative> getFeatureClass() {
+		return Feature.Quantitative.class;
 	}
 
 	public Attributes getAttributes() {
@@ -49,10 +53,6 @@ public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quant
 		this.name = name;
 	}
 
-	public Class<Feature.Matrix> getFeatureClass() {
-		return Feature.Matrix.class;
-	}
-
 	public Strand[] strands() {
 		Set<Strand> strands = new HashSet<Strand>();
 		for (Feature feature: features()) {
@@ -66,11 +66,11 @@ public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quant
 	}
 
 	public Iteratable<Feature.Quantitative> features() {
-		return new SegmentBlockIteratable(index.keys());
+		return new PositionalBlockIteratable(index.keys());
 	}
 
 	public Iteratable<Feature.Quantitative> features(FeatureFilter filter) {
-		return new FilteredSegmentBlockIteratable(index.keys(filter.sequence.getSeqId(), filter.strand), filter);
+		return new FilteredPositionalBlockIteratable(index.keys(filter.sequence.getSeqId(), filter.strand, filter.start, filter.end), filter);
 	}
 
 	public void featuresAsync(FeatureFilter filter, AsyncFeatureCallback callback) {
@@ -78,16 +78,16 @@ public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quant
 			callback.consumeFeatures(getBlock(key).features(filter.start, filter.end), new FeatureFilter(filter.sequence, key.getStrand(), filter.start, filter.end));
 		}
 	}
-
+	
 	private Block<Feature.Quantitative> getBlock(BlockKey key) {
-		return dataSource.loadSegmentMatrixBlock(key);
+		return dataSource.loadPositionalBlock(key);
 	}
 
-	class SegmentBlockIteratable implements Iteratable<Feature.Quantitative> {
+	class PositionalBlockIteratable implements Iteratable<Feature.Quantitative> {
 		Iterator<BlockKey> keys;
 		Iterator<Feature.Quantitative> features;
 		
-		public SegmentBlockIteratable(Iterator<BlockKey> keys) {
+		public PositionalBlockIteratable(Iterator<BlockKey> keys) {
 			this.keys = keys;
 		}
 
@@ -112,12 +112,12 @@ public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quant
 	}
 
 
-	class FilteredSegmentBlockIteratable implements Iteratable<Feature.Quantitative> {
+	class FilteredPositionalBlockIteratable implements Iteratable<Feature.Quantitative> {
 		Iterator<BlockKey> keys;
 		Iterator<Feature.Quantitative> features;
 		FeatureFilter filter;
 
-		public FilteredSegmentBlockIteratable(Iterator<BlockKey> keys, FeatureFilter filter) {
+		public FilteredPositionalBlockIteratable(Iterator<BlockKey> keys, FeatureFilter filter) {
 			this.keys = keys;
 			this.filter = filter;
 		}
@@ -141,7 +141,6 @@ public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quant
 			return this;
 		}
 	}
-
 
 	public Range getRange() {
 		return range;

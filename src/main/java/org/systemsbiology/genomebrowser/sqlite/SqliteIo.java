@@ -11,7 +11,7 @@ import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.Io;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
 import org.systemsbiology.genomebrowser.model.Dataset;

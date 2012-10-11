@@ -1,13 +1,9 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.Iterator;
 import java.util.List;
 
-import org.systemsbiology.genomebrowser.model.Feature;
-import org.systemsbiology.genomebrowser.model.Sequence;
-import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.util.Iteratable;
-
 
 /**
  * A simple implementation of Block backed by a List of features for use when

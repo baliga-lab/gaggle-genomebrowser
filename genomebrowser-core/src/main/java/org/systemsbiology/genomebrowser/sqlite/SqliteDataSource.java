@@ -24,12 +24,12 @@ import org.systemsbiology.util.Progress;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.bookmarks.ListBookmarkDataSource;
-import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
-import org.systemsbiology.genomebrowser.impl.BasicDataset;
-import org.systemsbiology.genomebrowser.impl.BasicSequence;
-import org.systemsbiology.genomebrowser.impl.Block;
-import org.systemsbiology.genomebrowser.impl.FeatureBlock;
-import org.systemsbiology.genomebrowser.impl.GeneTrack;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
+import org.systemsbiology.genomebrowser.model.BasicDataset;
+import org.systemsbiology.genomebrowser.model.BasicSequence;
+import org.systemsbiology.genomebrowser.model.Block;
+import org.systemsbiology.genomebrowser.model.FeatureBlock;
+import org.systemsbiology.genomebrowser.model.GeneTrack;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
 import org.systemsbiology.genomebrowser.model.Coordinates;
 import org.systemsbiology.genomebrowser.model.Dataset;
@@ -49,7 +49,7 @@ import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.StringUtils;
-import org.systemsbiology.genomebrowser.io.track.SequenceMapper;
+import org.systemsbiology.genomebrowser.model.SequenceMapper;
 
 // proposed changes for version 2 of schema:
 // * add label column to attributes for use in switchable views

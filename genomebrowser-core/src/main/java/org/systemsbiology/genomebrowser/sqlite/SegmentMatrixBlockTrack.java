@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Range;
@@ -16,25 +16,21 @@ import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 
 
-public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitative<Feature.QuantitativePvalue> {
+public class SegmentMatrixBlockTrack implements Track.Quantitative<Feature.Quantitative> {
 	private BlockIndex index;
 	private UUID uuid;
 	private String name;
-	private Range range;
 	private Attributes attr = new Attributes();
+	private Range range;
 	private SqliteDataSource dataSource;
 
 
-	public PositionalQuantitativePvalueBlockTrack(UUID uuid, String name, BlockIndex index, Range range, SqliteDataSource dataSource) {
+	public SegmentMatrixBlockTrack(UUID uuid, String name, BlockIndex index, Range range, SqliteDataSource dataSource) {
 		this.uuid = uuid;
 		this.name = name;
-		this.range = range;
 		this.index = index;
+		this.range = range;
 		this.dataSource = dataSource;
-	}
-
-	public Class<? extends Feature.QuantitativePvalue> getFeatureClass() {
-		return Feature.QuantitativePvalue.class;
 	}
 
 	public Attributes getAttributes() {
@@ -53,6 +49,10 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 		this.name = name;
 	}
 
+	public Class<Feature.Matrix> getFeatureClass() {
+		return Feature.Matrix.class;
+	}
+
 	public Strand[] strands() {
 		Set<Strand> strands = new HashSet<Strand>();
 		for (Feature feature: features()) {
@@ -65,12 +65,12 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 		return index;
 	}
 
-	public Iteratable<Feature.QuantitativePvalue> features() {
-		return new BlockIteratable(index.keys());
+	public Iteratable<Feature.Quantitative> features() {
+		return new SegmentBlockIteratable(index.keys());
 	}
 
-	public Iteratable<Feature.QuantitativePvalue> features(FeatureFilter filter) {
-		return new FilteredBlockIteratable(index.keys(filter.sequence.getSeqId(), filter.strand, filter.start, filter.end), filter);
+	public Iteratable<Feature.Quantitative> features(FeatureFilter filter) {
+		return new FilteredSegmentBlockIteratable(index.keys(filter.sequence.getSeqId(), filter.strand), filter);
 	}
 
 	public void featuresAsync(FeatureFilter filter, AsyncFeatureCallback callback) {
@@ -78,16 +78,16 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 			callback.consumeFeatures(getBlock(key).features(filter.start, filter.end), new FeatureFilter(filter.sequence, key.getStrand(), filter.start, filter.end));
 		}
 	}
-	
-	private Block<Feature.QuantitativePvalue> getBlock(BlockKey key) {
-		return dataSource.loadPositionalQuantitativePvalueBlock(key);
+
+	private Block<Feature.Quantitative> getBlock(BlockKey key) {
+		return dataSource.loadSegmentMatrixBlock(key);
 	}
 
-	class BlockIteratable implements Iteratable<Feature.QuantitativePvalue> {
+	class SegmentBlockIteratable implements Iteratable<Feature.Quantitative> {
 		Iterator<BlockKey> keys;
-		Iterator<Feature.QuantitativePvalue> features;
+		Iterator<Feature.Quantitative> features;
 		
-		public BlockIteratable(Iterator<BlockKey> keys) {
+		public SegmentBlockIteratable(Iterator<BlockKey> keys) {
 			this.keys = keys;
 		}
 
@@ -98,7 +98,7 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 			return (features!= null && features.hasNext());
 		}
 
-		public Feature.QuantitativePvalue next() {
+		public Feature.Quantitative next() {
 			return features.next();
 		}
 
@@ -106,18 +106,18 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 			throw new UnsupportedOperationException("can't remove");
 		}
 
-		public Iterator<Feature.QuantitativePvalue> iterator() {
+		public Iterator<Feature.Quantitative> iterator() {
 			return this;
 		}
 	}
 
 
-	class FilteredBlockIteratable implements Iteratable<Feature.QuantitativePvalue> {
+	class FilteredSegmentBlockIteratable implements Iteratable<Feature.Quantitative> {
 		Iterator<BlockKey> keys;
-		Iterator<Feature.QuantitativePvalue> features;
+		Iterator<Feature.Quantitative> features;
 		FeatureFilter filter;
 
-		public FilteredBlockIteratable(Iterator<BlockKey> keys, FeatureFilter filter) {
+		public FilteredSegmentBlockIteratable(Iterator<BlockKey> keys, FeatureFilter filter) {
 			this.keys = keys;
 			this.filter = filter;
 		}
@@ -129,7 +129,7 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 			return (features!= null && features.hasNext());
 		}
 
-		public Feature.QuantitativePvalue next() {
+		public Feature.Quantitative next() {
 			return features.next();
 		}
 
@@ -137,10 +137,11 @@ public class PositionalQuantitativePvalueBlockTrack implements Track.Quantitativ
 			throw new UnsupportedOperationException("can't remove");
 		}
 
-		public Iterator<Feature.QuantitativePvalue> iterator() {
+		public Iterator<Feature.Quantitative> iterator() {
 			return this;
 		}
 	}
+
 
 	public Range getRange() {
 		return range;

@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.io.track;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,9 +11,9 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
     protected static final Pattern singleChrPattern = Pattern.compile("chr(omosome)?[-_ ]?1?");
     protected static final Pattern plasmidPattern = Pattern.compile("(plasmid[-_ ]?)(.*)");
     protected static final Pattern chrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)(.*)");
-    protected static final Pattern numberedChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?(\\d+)");
+    protected static final Pattern numberedChrPattern =
+        Pattern.compile("(chr(omosome)?[-_ ]?)?(\\d+)");
 
-	
     protected Map<String, T> sequenceMap = new HashMap<String, T>();
     protected Map<String, T> chrMap = new HashMap<String, T>();
     protected Map<String, T> plasmidMap = new HashMap<String, T>();

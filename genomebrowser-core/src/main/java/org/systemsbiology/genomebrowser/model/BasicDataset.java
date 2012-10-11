@@ -1,16 +1,10 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.systemsbiology.genomebrowser.model.Dataset;
-import org.systemsbiology.genomebrowser.model.Feature;
-import org.systemsbiology.genomebrowser.model.Sequence;
-import org.systemsbiology.genomebrowser.model.SequenceFetcher;
-import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.util.Attributes;
-
 
 public class BasicDataset implements Dataset {
 	protected UUID uuid;

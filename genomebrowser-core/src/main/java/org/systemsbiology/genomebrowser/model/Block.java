@@ -1,10 +1,6 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
-import org.systemsbiology.genomebrowser.model.Feature;
-import org.systemsbiology.genomebrowser.model.Sequence;
-import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.util.Iteratable;
-
 
 /**
  * A block is a bunch of contiguous features on the same sequence and
@@ -17,8 +13,8 @@ import org.systemsbiology.util.Iteratable;
  * @see org.systemsbiology.genomebrowser.sqlite.SegmentBlock
  */
 public interface Block<F extends Feature> extends Iterable<F> {
-	Sequence getSequence();
-	Strand getStrand();
-	Iteratable<F> features();
-	Iteratable<F> features(int start, int end);
+    Sequence getSequence();
+    Strand getStrand();
+    Iteratable<F> features();
+    Iteratable<F> features(int start, int end);
 }

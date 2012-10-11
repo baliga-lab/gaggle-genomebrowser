@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.ArrayList;
 import java.util.HashSet;

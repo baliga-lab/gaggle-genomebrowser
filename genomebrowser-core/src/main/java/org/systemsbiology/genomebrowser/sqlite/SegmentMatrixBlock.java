@@ -2,13 +2,12 @@ package org.systemsbiology.genomebrowser.sqlite;
 
 import java.util.Iterator;
 
-import org.systemsbiology.genomebrowser.impl.Block;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.util.Iteratable;
 import org.systemsbiology.util.MathUtils;
-
 
 /**
  * A contiguous block of quantitative features on the same sequence and strand.

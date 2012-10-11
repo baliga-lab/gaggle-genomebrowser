@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.systemsbiology.genomebrowser.sqlite;
 
 import java.util.HashMap;
@@ -8,10 +5,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.systemsbiology.genomebrowser.io.track.AbstractHeuristicSequenceMapper;
+import org.systemsbiology.genomebrowser.model.AbstractHeuristicSequenceMapper;
 import org.systemsbiology.util.Roman;
 import static org.systemsbiology.util.StringUtils.isInteger;
-
 
 /**
  * Tries to guess which sequence (chromosome, plasmid, replicon, etc.) is intended and
@@ -36,7 +32,6 @@ class HeuristicSequenceMapper extends AbstractHeuristicSequenceMapper<Integer> {
     private static final Pattern romanChrPattern = Pattern.compile("(chr(omosome)?[-_ ]?)?([IVXLCD]+)");
 
     protected Pattern romanChrPattern() { return romanChrPattern; }
-    @Override
     protected Matcher romanMatcher(String name) {
         return romanChrPattern().matcher(name);
     }

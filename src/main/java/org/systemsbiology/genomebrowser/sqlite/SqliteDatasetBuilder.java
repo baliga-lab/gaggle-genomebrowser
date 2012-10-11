@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.impl.BasicDataset;
-import org.systemsbiology.genomebrowser.impl.BasicSequence;
+import org.systemsbiology.genomebrowser.model.BasicDataset;
+import org.systemsbiology.genomebrowser.model.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Feature;

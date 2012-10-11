@@ -1,9 +1,8 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.Iterator;
 import java.util.List;
 
-import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.util.Iteratable;
 
 
