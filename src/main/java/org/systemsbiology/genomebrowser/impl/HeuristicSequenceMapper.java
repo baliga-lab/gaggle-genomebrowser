@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.systemsbiology.genomebrowser.io.track.AbstractHeuristicSequenceMapper;
+import org.systemsbiology.genomebrowser.model.AbstractHeuristicSequenceMapper;
 import org.systemsbiology.util.MathUtils;
 import org.systemsbiology.util.Roman;
 

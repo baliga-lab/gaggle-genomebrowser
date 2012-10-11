@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
 import org.systemsbiology.genomebrowser.model.Dataset;
@@ -14,7 +14,6 @@ import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
-
 
 /**
  * Interface to hide dataset CRUD behind.

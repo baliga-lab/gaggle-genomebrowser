@@ -20,7 +20,7 @@ import javax.swing.table.TableColumn;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.EventListener;
 import org.systemsbiology.genomebrowser.app.EventSupport;
-import org.systemsbiology.genomebrowser.impl.BasicTrack;
+import org.systemsbiology.genomebrowser.model.BasicTrack;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.util.StringUtils;

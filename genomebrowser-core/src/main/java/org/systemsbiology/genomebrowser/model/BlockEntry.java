@@ -5,7 +5,7 @@ package org.systemsbiology.genomebrowser.model;
  * overlapping a given feature filter.
  * @author cbare
  */
-class BlockEntry<F extends Feature> {
+public class BlockEntry<F extends Feature> {
     public final FeatureFilter key;
     public final Block<F> block;
 

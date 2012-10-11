@@ -40,10 +40,10 @@ import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.io.CoordinateMapFileIterator;
 import org.systemsbiology.genomebrowser.ui.LoadCoordinateMapDialog;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.SwingGadgets;
-
 
 public class ReceiveBroadcastDialog extends JDialog {
 	private static final long serialVersionUID = 1L;
@@ -355,7 +355,7 @@ public class ReceiveBroadcastDialog extends JDialog {
 			showErrorMessage("You need to select a coordinate mapping in order to connect the broadcasted data with locations on the genome");
 			return;
 		}
-		Result result = new Result(nameTextField.getText().trim(), selectedItem.name, matrixButton.isSelected());
+		Result result = new Result(nameTextField.getText().trim(), selectedItem.getName(), matrixButton.isSelected());
 		close();
 		for (DialogListener listener: listeners) {
 			listener.ok("ok", result);

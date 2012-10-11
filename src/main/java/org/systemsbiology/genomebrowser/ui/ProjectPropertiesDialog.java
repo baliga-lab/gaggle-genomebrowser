@@ -11,12 +11,11 @@ import java.util.UUID;
 
 import javax.swing.*;
 
-import org.systemsbiology.genomebrowser.impl.BasicDataset;
-import org.systemsbiology.genomebrowser.impl.BasicSequence;
+import org.systemsbiology.genomebrowser.model.BasicDataset;
+import org.systemsbiology.genomebrowser.model.BasicSequence;
 import org.systemsbiology.genomebrowser.model.*;
 import org.systemsbiology.util.swing.AttributesTableModel;
 import org.systemsbiology.util.swing.ETable;
-
 
 /**
  * Display properties of a dataset. Eventually this should be made editable.

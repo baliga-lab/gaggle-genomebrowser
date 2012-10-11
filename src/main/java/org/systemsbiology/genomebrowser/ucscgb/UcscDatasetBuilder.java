@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
-import org.systemsbiology.genomebrowser.impl.BasicSequence;
+import org.systemsbiology.genomebrowser.model.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Sequence;

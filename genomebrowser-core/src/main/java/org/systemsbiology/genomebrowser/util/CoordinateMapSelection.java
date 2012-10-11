@@ -12,6 +12,7 @@ public class CoordinateMapSelection implements Comparable<CoordinateMapSelection
         this.name = name;
         this.percentage = percentage;
     }
+    public String getName() { return name; }
 
     @Override
     public String toString() {

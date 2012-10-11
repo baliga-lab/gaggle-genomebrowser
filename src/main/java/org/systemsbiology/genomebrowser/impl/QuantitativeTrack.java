@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import org.systemsbiology.genomebrowser.model.Block;
+import org.systemsbiology.genomebrowser.model.BlockEntry;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Range;

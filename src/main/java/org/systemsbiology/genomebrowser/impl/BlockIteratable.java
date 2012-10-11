@@ -3,11 +3,11 @@ package org.systemsbiology.genomebrowser.impl;
 import java.util.Iterator;
 import java.util.List;
 
+import org.systemsbiology.genomebrowser.model.BlockEntry;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Feature.Quantitative;
 import org.systemsbiology.util.Iteratable;
-
 
 /**
  * For use with in-memory tracks that organize their features into blocks.

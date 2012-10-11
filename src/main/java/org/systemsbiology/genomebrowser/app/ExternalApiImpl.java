@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JToolBar;
 
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
 import org.systemsbiology.genomebrowser.model.Dataset;
@@ -26,7 +26,6 @@ import org.systemsbiology.genomebrowser.util.TrackUtils;
 
 public class ExternalApiImpl implements ExternalAPI {
 	Application app;
-
 
 	public ExternalApiImpl(Application app) {
 		this.app = app;

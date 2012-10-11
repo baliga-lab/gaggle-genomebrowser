@@ -9,7 +9,7 @@ import java.util.UUID;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalog;
-import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
+import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.impl.TextCoordinateMap;
 import org.systemsbiology.genomebrowser.impl.TextPositionalCoordinateMap;
 import org.systemsbiology.genomebrowser.io.Downloader;

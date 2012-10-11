@@ -5,6 +5,7 @@ import java.util.Iterator;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
+import org.systemsbiology.genomebrowser.model.Block;
 import org.systemsbiology.util.Iteratable;
 import org.systemsbiology.util.MathUtils;
 
