@@ -13,16 +13,15 @@ import java.net.URLDecoder;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
-import org.systemsbiology.genomebrowser.app.ProgressListenerWrapper;
 import org.systemsbiology.genomebrowser.io.LineReader;
 import org.systemsbiology.genomebrowser.io.LineReader.LineProcessor;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.MathUtils;
-
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
+import org.systemsbiology.util.ProgressListenerWrapper;
 
 /**
  * Gets lines of text from a GFF file, divides them into fields, and calls a

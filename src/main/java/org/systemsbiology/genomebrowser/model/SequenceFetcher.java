@@ -1,9 +1,7 @@
 package org.systemsbiology.genomebrowser.model;
 
 import java.io.File;
-
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * An interface through which to retrieve sequence from a specific region of

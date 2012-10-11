@@ -2,7 +2,7 @@ package org.systemsbiology.genomebrowser.ui.importtrackwizard;
 
 import java.util.UUID;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
+import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;

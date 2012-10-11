@@ -6,10 +6,9 @@ import java.io.FileReader;
 import java.io.Reader;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
 import org.systemsbiology.util.FileUtils;
-
 
 /**
  * Read a text file line-by-line. Each line is processed by an

@@ -64,6 +64,21 @@ public class RelayProgressListener implements ProgressListener {
 		}
 	}
 
+	public synchronized void setMessage(String message) {
+		this.message = message;
+		for (ProgressListener listener : listeners) {
+			listener.setMessage(message);
+		}
+	}
+
+	public synchronized void setExpectedProgress(int expected) {
+		this.expected = expected;
+		for (ProgressListener listener : listeners) {
+			listener.setExpectedProgress(expected);
+		}
+	}
+
+
 	/**
 	 * The listener may be added while something is already in progress. If
 	 * so, we initialize the listener to the currently elapsed amount of progress.

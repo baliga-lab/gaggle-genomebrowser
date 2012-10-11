@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.Io;
-import org.systemsbiology.genomebrowser.app.RunnableProgressReporter;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.gaggle.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
@@ -20,7 +19,7 @@ import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
-
+import org.systemsbiology.util.RunnableProgressReporter;
 
 public class SqliteIo implements Io {
 	private static final Logger log = Logger.getLogger(SqliteIo.class);

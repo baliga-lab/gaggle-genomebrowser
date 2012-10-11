@@ -8,8 +8,6 @@ import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
 import org.systemsbiology.genomebrowser.impl.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;
@@ -23,7 +21,8 @@ import org.systemsbiology.ucscgb.Chromosome;
 import org.systemsbiology.ucscgb.Gene;
 import org.systemsbiology.ucscgb.Genome;
 import org.systemsbiology.ucscgb.UCSCGB;
-
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
 
 // TODO needs a better name. The dataset builder is a builder. What's the name
 // for the thing that drives that builder? A driver? UcscNewProjectDriver?

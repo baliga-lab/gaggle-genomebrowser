@@ -10,15 +10,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
-import org.systemsbiology.genomebrowser.app.ProgressListenerWrapper;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource.TrackStub;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.StringUtils;
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
+import org.systemsbiology.util.ProgressListenerWrapper;
 
 /**
  * Imports tracks to a dataset stored in a sqlite database

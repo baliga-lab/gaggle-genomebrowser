@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.gaggle.core.datatypes.DataMatrix;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.gaggle.ReceiveBroadcastDialog.Result;
 import org.systemsbiology.genomebrowser.impl.QuantitativeSegmentFeatureFields;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
@@ -25,7 +24,7 @@ import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.LoggingProgressListener;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * Steps to add a track are:

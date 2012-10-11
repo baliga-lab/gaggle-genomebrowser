@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 import javax.swing.*;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.impl.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
@@ -30,7 +29,7 @@ import org.systemsbiology.ucscgb.UCSCGB;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.SwingGadgets;
-
+import org.systemsbiology.util.ProgressListener;
 
 // TODO fix off-by-one error in start position
 

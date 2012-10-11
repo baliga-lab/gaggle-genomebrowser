@@ -11,8 +11,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
 
 /**
  * Read the UCSC GB's output format for the refseq genes table.

@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.util;
 
 public class ProgressListenerWrapper implements ProgressListener {
     private ProgressListenerSupport progressListenerSupport;

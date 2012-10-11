@@ -19,7 +19,7 @@ import org.systemsbiology.genomebrowser.ucscgb.UcscDatasetBuilder;
 import org.systemsbiology.genomebrowser.ui.ConfirmUseCachedFile;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
 import org.systemsbiology.util.FileUtils;
-
+import org.systemsbiology.util.RunnableProgressReporter;
 
 // TODO out of memory error gets logged but not reported to user
 // TODO lots of cleanup needed

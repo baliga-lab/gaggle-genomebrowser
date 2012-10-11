@@ -21,4 +21,9 @@ public interface ProgressListener {
      * Signal that the task has finished.
      */
     void done();
+
+    // These were originally in org.systemsbiology.genomebrowser.app.ProgressListener
+    // which is dead now
+    void setExpectedProgress(int expected);
+    void setMessage(String message);
 }

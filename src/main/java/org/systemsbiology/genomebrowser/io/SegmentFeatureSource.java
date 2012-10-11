@@ -5,11 +5,10 @@ import java.io.File;
 import java.io.FileReader;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
+import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.genomebrowser.impl.QuantitativeSegmentFeatureFields;
 import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
-
 
 public class SegmentFeatureSource implements FeatureSource {
 	private static final Logger log = Logger.getLogger(SegmentFeatureSource.class);

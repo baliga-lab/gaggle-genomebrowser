@@ -1,6 +1,5 @@
 package org.systemsbiology.genomebrowser.util;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +10,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.io.LineReader;
 import org.systemsbiology.genomebrowser.io.StartEndValueDataLoader;
 import org.systemsbiology.genomebrowser.io.dataset.DatasetFileParser;
@@ -32,7 +30,7 @@ import org.systemsbiology.util.MultiHashMap;
 
 import static org.systemsbiology.util.StringUtils.underline;
 import static org.systemsbiology.util.StringUtils.line;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * Utility program to support converting old text format for datasets to the

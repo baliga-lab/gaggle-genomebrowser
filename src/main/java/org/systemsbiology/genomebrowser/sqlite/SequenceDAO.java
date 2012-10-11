@@ -13,12 +13,11 @@ import java.sql.Statement;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-import org.systemsbiology.genomebrowser.app.ProgressListenerSupport;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.SequenceFetcher;
 import org.systemsbiology.genomebrowser.model.Strand;
-
+import org.systemsbiology.util.ProgressListener;
+import org.systemsbiology.util.ProgressListenerSupport;
 
 /**
  * Read and write sequence into SQLite DB.

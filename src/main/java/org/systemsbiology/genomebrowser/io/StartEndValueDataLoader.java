@@ -10,9 +10,8 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.sqlite.FeatureFields;
 import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
+import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.util.MathUtils;
-
 
 /**
  * Expects a tab delimited text file with (at least) three columns - start, end, and value.

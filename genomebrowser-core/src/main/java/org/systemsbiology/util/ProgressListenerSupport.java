@@ -1,9 +1,8 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.util;
 
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
-
 
 /**
  * Support code for a class that provides progress events.

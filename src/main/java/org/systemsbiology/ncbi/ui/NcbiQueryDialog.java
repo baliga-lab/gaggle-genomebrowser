@@ -25,7 +25,6 @@ import org.systemsbiology.ncbi.ui.actions.*;
 import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.util.swing.Spinner;
 
-
 /**
  * Allows the user to download summary information and locations of genes from
  * NCBI's genome projects database. Don't forget to call dispose()!
@@ -104,6 +103,9 @@ public class NcbiQueryDialog extends JFrame {
                 public void done() {
                     spinner.setSpinning(false);
                 }
+                // ignore these for now
+                public void setMessage(String message) { }
+                public void setExpectedProgress(int expected) { }
             });
 
         c.gridx = 0;

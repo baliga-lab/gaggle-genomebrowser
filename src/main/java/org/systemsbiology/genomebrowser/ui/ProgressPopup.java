@@ -13,8 +13,7 @@ import javax.swing.Popup;
 import javax.swing.PopupFactory;
 import javax.swing.border.CompoundBorder;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * Shows a popup containing a progress bar and a message while

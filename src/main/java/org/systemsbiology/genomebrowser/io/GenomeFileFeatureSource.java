@@ -5,13 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.sqlite.FeatureFields;
 import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
 import org.systemsbiology.util.MathUtils;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * 	import a tab-delimited file with these fields:

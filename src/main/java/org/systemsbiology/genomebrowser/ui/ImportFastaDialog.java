@@ -19,13 +19,12 @@ import javax.swing.*;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Options;
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.SequenceFetcher;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.SwingGadgets;
-
+import org.systemsbiology.util.ProgressListener;
 
 public class ImportFastaDialog extends JDialog implements ProgressListener {
     private static final Logger log = Logger.getLogger(ImportFastaDialog.class);

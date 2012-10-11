@@ -3,7 +3,7 @@
  */
 package org.systemsbiology.genomebrowser.sqlite;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
+import org.systemsbiology.util.ProgressListener;
 
 // TODO move FeatureSource
 
@@ -32,9 +32,9 @@ import org.systemsbiology.genomebrowser.app.ProgressListener;
  * here or maybe an Iterator would have worked just as well. 
  */
 public interface FeatureSource {
-	public void processFeatures(FeatureProcessor featureProcessor) throws Exception;
+    void processFeatures(FeatureProcessor featureProcessor) throws Exception;
 
-	// TODO remove progress methods from FeatureSource
-	public void addProgressListener(ProgressListener progressListener);
-	public void removeProgressListener(ProgressListener progressListener);
+    // TODO remove progress methods from FeatureSource
+    void addProgressListener(ProgressListener progressListener);
+    void removeProgressListener(ProgressListener progressListener);
 }

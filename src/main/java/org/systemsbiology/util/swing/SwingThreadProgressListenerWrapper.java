@@ -2,8 +2,7 @@ package org.systemsbiology.util.swing;
 
 import javax.swing.SwingUtilities;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * A wrapper for progressListeners that ensures that all methods will be called

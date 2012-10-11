@@ -2,8 +2,7 @@ package org.systemsbiology.util;
 
 import org.apache.log4j.Logger;
 
-public class LoggingProgressListener
-implements  org.systemsbiology.genomebrowser.app.ProgressListener {
+public class LoggingProgressListener implements  ProgressListener {
 
     private Logger log;
 

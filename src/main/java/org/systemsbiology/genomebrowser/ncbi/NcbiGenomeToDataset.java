@@ -3,7 +3,6 @@ package org.systemsbiology.genomebrowser.ncbi;
 import java.util.List;
 import java.util.UUID;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
@@ -13,7 +12,7 @@ import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
 import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
 import org.systemsbiology.ncbi.NcbiGenome;
 import org.systemsbiology.ncbi.NcbiSequence;
-
+import org.systemsbiology.util.ProgressListener;
 
 /**
  * Takes an NcbiGenome object and creates a dataset representing

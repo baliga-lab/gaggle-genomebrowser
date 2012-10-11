@@ -6,9 +6,8 @@ import java.awt.Insets;
 
 import javax.swing.*;
 
-import org.systemsbiology.genomebrowser.app.ProgressListener;
+import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.util.swing.SwingGadgets;
-
 
 public class LoadFeaturesProgressPanel extends JPanel implements WizardPanel, ProgressListener {
     private WizardMainWindow parent;
