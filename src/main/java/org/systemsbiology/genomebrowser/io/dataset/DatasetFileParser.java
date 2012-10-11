@@ -72,10 +72,10 @@ public class DatasetFileParser {
 	public DatasetInfo parse(Reader r) throws IOException {
 		pbr = new PushbackReader(r, PUSH_BACK_BUFFER_SIZE);
 
-		Map<String, String> attrs = keyValuePairs();
+		Map<String, Object> attrs = keyValuePairs();
 
 		DatasetInfo ds = new DatasetInfo();
-		ds.name = attrs.get("name");
+		ds.name = attrs.get("name").toString();
 		ds.attrs.putAll(attrs);
 		ds.chromosomes = chromosomes();
 
@@ -111,12 +111,12 @@ public class DatasetFileParser {
 		log.debug("chromosome: " + name);
 
 		expect(TokenType.lbrace);
-		Map<String, String> attrs = keyValuePairs();
+		Map<String, Object> attrs = keyValuePairs();
 
 		// length is a required field
 		int length;
 		try {
-			length = Integer.parseInt(removeCommas(attrs.get("length")));
+        length = Integer.parseInt(removeCommas(attrs.get("length").toString()));
 		}
 		catch (NumberFormatException e) {
 			throw new IOException("Parsing failed: length missing for chromosome: " + name + ", length = " + attrs.get("length"));
@@ -158,7 +158,7 @@ public class DatasetFileParser {
 		log.info("track: " + name);
 
 		expect(TokenType.lbrace);
-		Map<String, String> attrs = keyValuePairs();
+		Map<String, Object> attrs = keyValuePairs();
 		expect(TokenType.rbrace);
 
 		// create track
@@ -172,8 +172,8 @@ public class DatasetFileParser {
 	/**
 	 * Parse a series of key value pairs.
 	 */
-	private Map<String, String> keyValuePairs() throws IOException {
-		Map<String, String> attrs = new HashMap<String, String>();
+	private Map<String, Object> keyValuePairs() throws IOException {
+		Map<String, Object> attrs = new HashMap<String, Object>();
 		KeyValuePair p = keyValuePair();
 		while (p != KeyValuePair.NULL) {
 			attrs.put(p.key, p.value);
