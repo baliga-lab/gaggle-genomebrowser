@@ -5,9 +5,41 @@ import java.util.Set;
 
 public class Progress {
     private Set<ProgressListener> listeners = new HashSet<ProgressListener>();
+    private int expected;
     private int totalExpectedProgress;
     private int progress;
+    
+    // From app.Progress
+    public Progress() { }
+    public Progress(int expected) { this.expected = expected; }
+    public synchronized void init(int expected) {
+        this.expected = expected;
+        this.progress = 0;
+    }
 
+    public synchronized int getProgress() {
+        return progress;
+    }
+    public synchronized void setProgress(int progress) {
+        this.progress = progress;
+    }
+    public synchronized void increment() {
+        this.progress++;
+    }
+    public synchronized void add(int amount) {
+        this.progress += amount;
+    }
+    public synchronized int getExpected() {
+        return expected;
+    }
+    public synchronized void setExpected(int expected) {
+        this.expected = expected;
+    }
+    public synchronized Pair<Integer, Integer> getProgressAndExpected() {
+        return new Pair<Integer, Integer>(progress, expected);
+    }
+
+    // Original interface
     public void addProgressListener(ProgressListener listener) {
         // listeners might be added while loading is in progress
         // if UI finishes initializing part way through loading

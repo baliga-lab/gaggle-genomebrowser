@@ -9,8 +9,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Progress;
-
+import org.systemsbiology.util.Progress;
 
 public class Downloader {
 	private static final Logger log = Logger.getLogger(Downloader.class);

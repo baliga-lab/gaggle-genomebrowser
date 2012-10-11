@@ -1,7 +1,7 @@
 package org.systemsbiology.genomebrowser.app;
 
 import org.systemsbiology.util.Pair;
-
+import org.systemsbiology.util.Progress;
 
 public class RunnableProgressReporter implements ProgressReporter, Runnable {
 	private ProgressListenerSupport progressListenerSupport = new ProgressListenerSupport();

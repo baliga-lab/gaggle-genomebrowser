@@ -36,7 +36,6 @@ import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.NiceTuple;
 import org.systemsbiology.util.StringUtils;
 
-
 /**
  * A Genome Browser plugin that provides gaggle connectivity.
  * @author cbare

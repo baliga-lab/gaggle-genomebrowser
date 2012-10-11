@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Progress;
+import org.systemsbiology.util.Progress;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.bookmarks.ListBookmarkDataSource;
