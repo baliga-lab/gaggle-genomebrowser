@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.UUID;
 
-import org.systemsbiology.genomebrowser.impl.AsyncFeatureCallback;
+import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.PeptideFeature;

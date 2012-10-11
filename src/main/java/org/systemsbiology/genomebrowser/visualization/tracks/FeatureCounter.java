@@ -1,14 +1,12 @@
 package org.systemsbiology.genomebrowser.visualization.tracks;
 
-import org.systemsbiology.genomebrowser.impl.AsyncFeatureCallback;
+import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.util.Iteratable;
-
-
 
 /**
  * A utility class to help count features in a frame for performance measurements

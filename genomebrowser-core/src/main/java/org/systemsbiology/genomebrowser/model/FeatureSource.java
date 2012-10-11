@@ -1,11 +1,6 @@
-/**
- * 
- */
-package org.systemsbiology.genomebrowser.sqlite;
+package org.systemsbiology.genomebrowser.model;
 
 import org.systemsbiology.util.ProgressListener;
-
-// TODO move FeatureSource
 
 /**
  * The purpose of this interface is to connect a source of features to

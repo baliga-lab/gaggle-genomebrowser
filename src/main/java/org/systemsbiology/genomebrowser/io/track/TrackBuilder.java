@@ -3,7 +3,7 @@ package org.systemsbiology.genomebrowser.io.track;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 import org.systemsbiology.util.ProgressListener;

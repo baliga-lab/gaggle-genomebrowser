@@ -3,10 +3,6 @@ package org.systemsbiology.genomebrowser.model;
 import java.util.List;
 import java.util.UUID;
 
-// TODO dependency (FeatureSource) outside model package
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
-
-
 /**
  * Interface for building a specific implementation of a genome browser dataset. The
  * process for building a dataset goes like this:

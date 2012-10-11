@@ -1,14 +1,12 @@
 package org.systemsbiology.genomebrowser.visualization;
 
-import org.systemsbiology.genomebrowser.impl.AsyncFeatureCallback;
+import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.util.Iteratable;
 
-
 public class FeatureCallback implements AsyncFeatureCallback {
 	private final RenderingContext context;
-
 
 	public FeatureCallback(RenderingContext context) {
 		this.context = context;

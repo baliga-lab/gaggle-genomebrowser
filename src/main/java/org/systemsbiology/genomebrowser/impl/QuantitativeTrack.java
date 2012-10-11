@@ -11,11 +11,10 @@ import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Range;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
+import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 import org.systemsbiology.util.MultiIteratable;
-
-
 
 /**
  * A basic but inefficient implementation of Track.Quantitative mainly for use in testing.

@@ -6,9 +6,8 @@ import java.util.List;
 import org.systemsbiology.genomebrowser.io.DataPointFeatureSource;
 import org.systemsbiology.genomebrowser.io.GenomeFileFeatureSource;
 import org.systemsbiology.genomebrowser.io.SegmentFeatureSource;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.sqlite.GffLineProcessorAdapter;
-
 
 public class TrackLoaderRegistry {
 	private List<TrackLoaderDescription> loaders = new ArrayList<TrackLoaderDescription>();

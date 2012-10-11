@@ -13,10 +13,9 @@ import org.systemsbiology.genomebrowser.model.GeneFeature;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
+import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
-
-
 
 /**
  * An in-memory track of GeneFeatures backed by a list of Blocks.

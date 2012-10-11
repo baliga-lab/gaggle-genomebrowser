@@ -7,9 +7,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.sqlite.FeatureFields;
-import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureFields;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.util.MathUtils;
 

@@ -7,8 +7,8 @@ import java.io.FileReader;
 import org.apache.log4j.Logger;
 import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.genomebrowser.impl.QuantitativePositionalFeatureFields;
-import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 
 public class DataPointFeatureSource implements FeatureSource {
 	private static final Logger log = Logger.getLogger(DataPointFeatureSource.class);

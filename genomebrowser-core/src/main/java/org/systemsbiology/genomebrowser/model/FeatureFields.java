@@ -1,7 +1,4 @@
-/**
- * 
- */
-package org.systemsbiology.genomebrowser.sqlite;
+package org.systemsbiology.genomebrowser.model;
 
 // TODO should it be FeatureFields responsibility to validate Strand and GeneType values?
 // Those values must come from a restricted set of strings.
@@ -28,13 +25,13 @@ package org.systemsbiology.genomebrowser.sqlite;
  * schema attached to the collection?
  */
 public interface FeatureFields {
-	public String getSequenceName();
-	public String getStrand();
-	public int getStart();
-	public int getEnd();
-	public int getPosition();
-	public double getValue();
-	public String getName();
-	public String getCommonName();
-	public String getGeneType();
+    String getSequenceName();
+    String getStrand();
+    int getStart();
+    int getEnd();
+    int getPosition();
+    double getValue();
+    String getName();
+    String getCommonName();
+    String getGeneType();
 }

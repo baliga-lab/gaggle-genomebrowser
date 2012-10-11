@@ -11,6 +11,9 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.Feature;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureFields;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource.TrackStub;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;

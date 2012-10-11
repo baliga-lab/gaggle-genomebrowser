@@ -6,9 +6,9 @@ import java.io.FileReader;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.genomebrowser.sqlite.FeatureFields;
-import org.systemsbiology.genomebrowser.sqlite.FeatureProcessor;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureFields;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.util.MathUtils;
 import org.systemsbiology.util.ProgressListener;
 

@@ -5,7 +5,7 @@ import java.util.UUID;
 import org.systemsbiology.util.ProgressListener;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
 // TODO move TrackImporter (to app?)
@@ -49,6 +49,4 @@ Where can a new track come from?
 
 backing data store may vary.
 types of features we're storing will definitely vary
-
-
 */

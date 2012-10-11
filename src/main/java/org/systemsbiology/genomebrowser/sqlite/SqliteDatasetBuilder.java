@@ -11,6 +11,7 @@ import org.systemsbiology.genomebrowser.impl.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Feature;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Topology;
 import org.systemsbiology.genomebrowser.model.Track;

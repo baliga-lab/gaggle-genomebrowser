@@ -3,7 +3,6 @@ package org.systemsbiology.genomebrowser.model;
 import java.util.UUID;
 
 // TODO remove dependency outside model package
-import org.systemsbiology.genomebrowser.impl.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
 

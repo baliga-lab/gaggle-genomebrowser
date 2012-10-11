@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.systemsbiology.genomebrowser.sqlite;
 
 import java.io.File;
@@ -16,6 +13,9 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.io.LineReader;
 import org.systemsbiology.genomebrowser.io.LineReader.LineProcessor;
 import org.systemsbiology.genomebrowser.model.Strand;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureFields;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.MathUtils;

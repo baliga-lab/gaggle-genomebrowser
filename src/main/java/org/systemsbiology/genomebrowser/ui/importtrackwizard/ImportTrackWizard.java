@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.impl.BasicDataset;
 import org.systemsbiology.genomebrowser.model.Dataset;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.sqlite.SqliteTrackImporter;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
 import org.systemsbiology.genomebrowser.util.Attributes;

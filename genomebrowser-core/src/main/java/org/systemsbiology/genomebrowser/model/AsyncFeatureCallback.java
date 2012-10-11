@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
@@ -14,7 +14,7 @@ public interface AsyncFeatureCallback {
 	 * @param features an iterator of possibly flyweight features
 	 * @param filter
 	 */
-	public void consumeFeatures(Iteratable<? extends Feature> features, FeatureFilter filter);
+	void consumeFeatures(Iteratable<? extends Feature> features, FeatureFilter filter);
 }
 
 

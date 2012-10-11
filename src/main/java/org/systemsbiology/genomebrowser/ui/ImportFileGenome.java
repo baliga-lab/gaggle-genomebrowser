@@ -20,7 +20,7 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Topology;
-import org.systemsbiology.genomebrowser.sqlite.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.StringUtils;

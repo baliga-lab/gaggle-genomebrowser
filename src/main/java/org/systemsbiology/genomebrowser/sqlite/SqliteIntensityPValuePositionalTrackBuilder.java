@@ -10,10 +10,12 @@ import java.util.UUID;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.Feature;
+import org.systemsbiology.genomebrowser.model.FeatureSource;
+import org.systemsbiology.genomebrowser.model.FeatureProcessor;
+import org.systemsbiology.genomebrowser.model.FeatureFields;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.util.Iteratable;
 import org.systemsbiology.util.NotImplementedException;
-
 
 /**
  * Implementation of TrackBuilder for building tracks which map intensity and pvalue to position
