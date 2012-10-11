@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
+// These Swing dependencies are event-related, so we can keep
+// them in core, since they do not involve Swing UI rendering
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
