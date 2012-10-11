@@ -11,9 +11,8 @@ import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.DialogListener;
-import org.systemsbiology.genomebrowser.impl.HeuristicSequenceMapper;
+import org.systemsbiology.genomebrowser.model.HeuristicSequenceMapper;
 import org.systemsbiology.genomebrowser.model.Sequence;
-
 
 // TODO reorganize import track code
 // TODO import track from a SQL table
@@ -29,8 +28,6 @@ public class AnotherAttemptAtImportTrack {
 	private String tableName;
 	private ExternalAPI api;
 	private Attributes attributes;
-
-
 
 	public AnotherAttemptAtImportTrack(ExternalAPI api) {
 		this.api = api;

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.impl.ScalingQuantitativeIteratable;
+import org.systemsbiology.genomebrowser.model.ScalingQuantitativeIteratable;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.Attributes;

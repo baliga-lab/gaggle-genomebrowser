@@ -13,7 +13,7 @@ import org.systemsbiology.gaggle.core.datatypes.DataMatrix;
 import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.gaggle.ReceiveBroadcastDialog.Result;
-import org.systemsbiology.genomebrowser.impl.QuantitativeSegmentFeatureFields;
+import org.systemsbiology.genomebrowser.model.QuantitativeSegmentFeatureFields;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;
 import org.systemsbiology.genomebrowser.model.Coordinates;
 import org.systemsbiology.genomebrowser.model.Strand;

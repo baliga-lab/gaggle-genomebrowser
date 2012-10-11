@@ -6,7 +6,7 @@ import java.io.FileReader;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.util.ProgressListener;
-import org.systemsbiology.genomebrowser.impl.QuantitativeSegmentFeatureFields;
+import org.systemsbiology.genomebrowser.model.QuantitativeSegmentFeatureFields;
 import org.systemsbiology.genomebrowser.model.FeatureProcessor;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
 

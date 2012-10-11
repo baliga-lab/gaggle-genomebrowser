@@ -1,11 +1,7 @@
-package org.systemsbiology.genomebrowser.impl;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.systemsbiology.genomebrowser.model.CoordinateMap;
-import org.systemsbiology.genomebrowser.model.Coordinates;
-import org.systemsbiology.genomebrowser.model.Strand;
 
 /**
  * Map strings of the form "chr:12345000" or chr+:12345000.

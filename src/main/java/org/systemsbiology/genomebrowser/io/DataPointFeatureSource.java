@@ -6,7 +6,7 @@ import java.io.FileReader;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.util.ProgressListener;
-import org.systemsbiology.genomebrowser.impl.QuantitativePositionalFeatureFields;
+import org.systemsbiology.genomebrowser.model.QuantitativePositionalFeatureFields;
 import org.systemsbiology.genomebrowser.model.FeatureProcessor;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
 
@@ -14,7 +14,6 @@ public class DataPointFeatureSource implements FeatureSource {
 	private static final Logger log = Logger.getLogger(DataPointFeatureSource.class);
 	private File file;
 	private boolean hasColumnHeaders;
-
 
 	public DataPointFeatureSource(File file) {
 		this.file = file;

@@ -4,20 +4,16 @@ import java.awt.Graphics;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.impl.ScalingQuantitativeMatrixIteratable;
+import org.systemsbiology.genomebrowser.model.ScalingQuantitativeMatrixIteratable;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
 /*
- * 
  * NOTES:
- * 
- * 
  * 
  * This was started to display a matrix track as a scaling dot track with the columns
  * of the matrix overlaid on each other. It is as-yet untried
- * 
  */
 
 /**
@@ -43,8 +39,6 @@ public class ScalingMatrixTrackRenderer extends QuantitativeTrackRenderer {
 	 * average width of a data point.
 	 */
 	double aveWidth = 60.0;
-
-
 
 	@Override
 	public void configure(Attributes attr) {

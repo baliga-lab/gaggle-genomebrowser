@@ -23,7 +23,7 @@ import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Plugin;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
-import org.systemsbiology.genomebrowser.impl.BasicPositionalFeature;
+import org.systemsbiology.genomebrowser.model.BasicPositionalFeature;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;

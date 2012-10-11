@@ -7,10 +7,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.impl.BasicQuantitativeFeature;
+import org.systemsbiology.genomebrowser.model.BasicQuantitativeFeature;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-
 
 /**
  * Imports files in the GFF format described here:
