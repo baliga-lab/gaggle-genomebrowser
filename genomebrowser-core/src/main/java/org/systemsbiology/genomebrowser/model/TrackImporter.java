@@ -1,14 +1,13 @@
-package org.systemsbiology.genomebrowser.ui.importtrackwizard;
+package org.systemsbiology.genomebrowser.model;
 
 import java.util.UUID;
 
 import org.systemsbiology.util.ProgressListener;
-import org.systemsbiology.genomebrowser.model.Feature;
-import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
-// TODO move TrackImporter (to app?)
+// Note: This was moved from ui.importtrackwizard where it created UI dependencies
+// Because of the ProgressListener dependency, being in model is not optimal, but
+// it allows for eliminating the UI dependency
 
 /**
  * A track importer is responsible for importing and storing track data.

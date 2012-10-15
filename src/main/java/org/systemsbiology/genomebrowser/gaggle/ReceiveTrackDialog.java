@@ -34,9 +34,9 @@ import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
+import org.systemsbiology.genomebrowser.model.TrackImporter;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
-import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.swing.SwingGadgets;
 

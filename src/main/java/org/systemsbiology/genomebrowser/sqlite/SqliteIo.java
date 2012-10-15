@@ -18,7 +18,7 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
-import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
+import org.systemsbiology.genomebrowser.model.TrackImporter;
 import org.systemsbiology.util.RunnableProgressReporter;
 
 public class SqliteIo implements Io {

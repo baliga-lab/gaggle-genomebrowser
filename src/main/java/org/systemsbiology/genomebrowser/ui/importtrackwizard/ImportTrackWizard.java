@@ -13,6 +13,7 @@ import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.model.BasicDataset;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
+import org.systemsbiology.genomebrowser.model.TrackImporter;
 import org.systemsbiology.genomebrowser.sqlite.SqliteTrackImporter;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
 import org.systemsbiology.genomebrowser.util.Attributes;

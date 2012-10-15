@@ -13,7 +13,7 @@ import org.systemsbiology.genomebrowser.model.DatasetBuilder;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
-import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
+import org.systemsbiology.genomebrowser.model.TrackImporter;
 
 /**
  * Interface to hide dataset CRUD behind.

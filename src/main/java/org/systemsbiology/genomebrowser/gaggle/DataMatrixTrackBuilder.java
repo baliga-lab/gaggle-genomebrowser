@@ -20,7 +20,7 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.FeatureProcessor;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.sqlite.MatrixFeatureFields;
-import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
+import org.systemsbiology.genomebrowser.model.TrackImporter;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.LoggingProgressListener;
