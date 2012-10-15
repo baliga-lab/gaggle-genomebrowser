@@ -11,7 +11,7 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.ui.HasTooltips;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**
@@ -35,7 +35,6 @@ public class TriangleMarkerRenderer extends TrackRenderer implements HasTooltips
 //		outline = true;
 	}
 
-	@Override
 	@SuppressWarnings("unchecked")
 	public void draw(Graphics g, Iterable<? extends Feature> features, Strand strand) {
 		int x;

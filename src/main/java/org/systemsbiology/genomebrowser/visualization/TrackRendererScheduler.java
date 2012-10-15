@@ -15,8 +15,7 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.ui.GenomeViewPanel;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
-
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 
 /**
  * Coordinate rendering to an off screen image.

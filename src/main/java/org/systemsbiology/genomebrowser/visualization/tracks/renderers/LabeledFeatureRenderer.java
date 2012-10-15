@@ -18,7 +18,7 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.ui.HasTooltips;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.HasSelections;
 import org.systemsbiology.util.Selectable;

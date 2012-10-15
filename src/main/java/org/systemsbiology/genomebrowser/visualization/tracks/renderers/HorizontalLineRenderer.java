@@ -8,9 +8,8 @@ import java.awt.Stroke;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.util.Attributes;
-
 
 public class HorizontalLineRenderer extends TrackRenderer {
 	private int thickness = 2;

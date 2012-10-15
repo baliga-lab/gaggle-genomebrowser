@@ -5,9 +5,7 @@ import java.awt.Graphics;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
-
-
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 
 /**
  * A Renderer for highlighting regions of the genome.

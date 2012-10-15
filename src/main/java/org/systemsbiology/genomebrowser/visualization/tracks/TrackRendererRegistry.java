@@ -19,8 +19,8 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.util.FeatureUtils;
 import org.systemsbiology.genomebrowser.visualization.ColorScaleRegistry;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.tracks.renderers.*;
-
 
 /**
  * Maps tracks to track renderers in a configurable manner.

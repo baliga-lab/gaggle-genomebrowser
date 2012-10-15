@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks;
+package org.systemsbiology.genomebrowser.visualization;
 
 import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 import org.systemsbiology.genomebrowser.model.Feature;

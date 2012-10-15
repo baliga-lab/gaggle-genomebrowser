@@ -53,7 +53,7 @@ import org.systemsbiology.genomebrowser.util.FeatureUtils;
 import org.systemsbiology.genomebrowser.util.InvertionUtils;
 import org.systemsbiology.genomebrowser.visualization.TrackRendererScheduler;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
-import org.systemsbiology.genomebrowser.visualization.tracks.FeatureCounter;
+import org.systemsbiology.genomebrowser.visualization.FeatureCounter;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
 import org.systemsbiology.ncbi.NcbiGenome;
 import org.systemsbiology.ncbi.ui.NcbiQueryDialog;

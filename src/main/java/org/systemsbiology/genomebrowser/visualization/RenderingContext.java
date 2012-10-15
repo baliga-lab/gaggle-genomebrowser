@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
 
 /**
  * A blob of references needed to render a block of track data.

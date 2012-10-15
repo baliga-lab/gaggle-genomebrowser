@@ -3,7 +3,7 @@ package org.systemsbiology.genomebrowser.visualization.tracks.renderers;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Range;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
 /**

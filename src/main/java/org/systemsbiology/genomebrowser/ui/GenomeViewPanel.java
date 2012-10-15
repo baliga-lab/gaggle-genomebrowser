@@ -31,7 +31,7 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.tracks.renderers.TypedGeneTrackRenderer;
 import org.systemsbiology.util.Hyperlink;
 

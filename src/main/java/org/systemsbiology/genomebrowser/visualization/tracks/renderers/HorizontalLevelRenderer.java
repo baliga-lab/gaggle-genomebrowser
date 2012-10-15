@@ -7,7 +7,6 @@ import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
-
 public class HorizontalLevelRenderer extends QuantitativeTrackRenderer {
 
 	@Override

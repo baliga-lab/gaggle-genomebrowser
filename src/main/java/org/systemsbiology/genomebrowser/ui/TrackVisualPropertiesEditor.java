@@ -28,7 +28,7 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
 import org.systemsbiology.genomebrowser.util.TrackUtils;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
 import org.systemsbiology.util.ActionListenerSupport;
 import org.systemsbiology.util.StringUtils;

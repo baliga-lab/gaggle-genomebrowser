@@ -17,9 +17,9 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.GeneFeature;
 import org.systemsbiology.genomebrowser.model.Track;
+import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.tracks.renderers.GeneTrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.tracks.renderers.TypedGeneTrackRenderer;
-
 
 /**
  * The most important task of the TrackManager is to hold a set of renderers
