@@ -133,7 +133,7 @@ public class MainWindow extends JFrame {
 		// TODO move initialization of scheduler
 		// this seems like totally the wrong place to do this
 		TrackRendererScheduler scheduler = new TrackRendererScheduler();
-		scheduler.setGenomeViewPanel(genomeView);
+		scheduler.setView(genomeView);
 		scheduler.setTrackManager(ui.app.trackManager);
 		ui.scheduler = scheduler;
 		ui.getViewParameters().addViewParametersListener(scheduler);

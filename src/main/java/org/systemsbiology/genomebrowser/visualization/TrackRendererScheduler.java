@@ -12,7 +12,7 @@ import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.ui.GenomeViewPanel;
+import org.systemsbiology.genomebrowser.visualization.View;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
 import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
@@ -34,19 +34,11 @@ public class TrackRendererScheduler implements ViewParametersListener {
 
 	private TrackManager trackManager;
 	
-	private GenomeViewPanel panel;
+	private View view;
 	private TaskRunner taskRunner;
 
-
-
-	// dependency
-//	public void setQueue(Queue<Runnable> queue) {
-//		this.queue = queue;
-//	}
-
-	// dependency
-	public void setGenomeViewPanel(GenomeViewPanel panel) {
-		this.panel = panel;
+	public void setView(View view) {
+		this.view = view;
 	}
 
 	// dependency
@@ -88,10 +80,10 @@ public class TrackRendererScheduler implements ViewParametersListener {
 
 		// creating this buffer every time is probably slow. Maybe we could just recreate when
 		// panel size changes? Or just create one big enough for the whole screen?
-		final Image offScreenImage = panel.createImage(panel.getWidth(), panel.getHeight());
+		final Image offScreenImage = view.createImage(view.getWidth(), view.getHeight());
 		Graphics g = offScreenImage.getGraphics();
 		g.setColor(Color.WHITE);
-		g.fillRect(0, 0, panel.getWidth(), panel.getHeight());
+		g.fillRect(0, 0, view.getWidth(), view.getHeight());
 
 
 		for (TrackRenderer renderer: renderers) {
@@ -128,7 +120,7 @@ public class TrackRendererScheduler implements ViewParametersListener {
 		queue.add(new Runnable() {
 			public void run() {
 				if (frame!=getCurrentFrame()) return;
-				panel.updateImage(offScreenImage);
+				view.updateImage(offScreenImage);
 				
 				// rendering timing
 				//log.info("frame rendered in " + (System.currentTimeMillis()-startMillis) + " milliseconds");
@@ -140,7 +132,7 @@ public class TrackRendererScheduler implements ViewParametersListener {
 //					SwingUtilities.invokeAndWait(new Runnable() {
 //						public void run() {
 //							if (frame!=getCurrentFrame()) return;
-//							panel.updateImage(offScreenImage);
+//							view.updateImage(offScreenImage);
 //						}
 //					});
 //				} catch (Exception e) {

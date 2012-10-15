@@ -28,6 +28,7 @@ import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Strand;
+import org.systemsbiology.genomebrowser.visualization.View;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
 import org.systemsbiology.genomebrowser.visualization.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
@@ -41,7 +42,8 @@ import org.systemsbiology.util.Hyperlink;
  * A JPanel subclass that plots data against coordinates along a stretch
  * of nucleic acid, usually position on a chromosome or plasmid.
  */
-public class GenomeViewPanel extends JPanel implements ViewParametersListener, WindowFocusListener {
+public class GenomeViewPanel extends JPanel
+implements View, ViewParametersListener, WindowFocusListener {
 	public static final Logger log = Logger.getLogger(GenomeViewPanel.class);
 	//private TrackRendererScheduler scheduler;
 
