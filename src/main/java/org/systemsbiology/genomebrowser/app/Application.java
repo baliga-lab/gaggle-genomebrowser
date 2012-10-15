@@ -17,6 +17,7 @@ import org.systemsbiology.genomebrowser.model.TextCoordinateMap;
 import org.systemsbiology.genomebrowser.model.TextPositionalCoordinateMap;
 import org.systemsbiology.genomebrowser.io.Downloader;
 import org.systemsbiology.genomebrowser.model.*;
+import org.systemsbiology.genomebrowser.search.SearchEngine;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
 import org.systemsbiology.genomebrowser.ucscgb.UcscDatasetBuilder;
 import org.systemsbiology.genomebrowser.ui.ConfirmUseCachedFile;

@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.event.EventSupport;
-import org.systemsbiology.genomebrowser.app.SearchEngine;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.GeneFeature;

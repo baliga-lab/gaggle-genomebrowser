@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.genomebrowser.search;
 
 import java.util.List;
 
