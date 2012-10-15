@@ -14,7 +14,6 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.visualization.View;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
 import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 
 /**

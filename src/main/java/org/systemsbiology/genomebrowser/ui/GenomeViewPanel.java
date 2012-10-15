@@ -32,7 +32,7 @@ import org.systemsbiology.genomebrowser.visualization.View;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
 import org.systemsbiology.genomebrowser.visualization.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
+import org.systemsbiology.genomebrowser.visualization.TrackManager;
 import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.renderers.TypedGeneTrackRenderer;
 import org.systemsbiology.util.Hyperlink;

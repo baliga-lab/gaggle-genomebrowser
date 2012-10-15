@@ -15,7 +15,7 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
 import org.systemsbiology.genomebrowser.model.TrackImporter;
 import org.systemsbiology.genomebrowser.sqlite.SqliteTrackImporter;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
+import org.systemsbiology.genomebrowser.visualization.TrackRendererRegistry;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.StringUtils;
 import org.systemsbiology.util.ProgressListener;

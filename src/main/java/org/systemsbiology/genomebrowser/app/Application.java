@@ -21,7 +21,7 @@ import org.systemsbiology.genomebrowser.search.SearchEngine;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
 import org.systemsbiology.genomebrowser.ucscgb.UcscDatasetBuilder;
 import org.systemsbiology.genomebrowser.ui.ConfirmUseCachedFile;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
+import org.systemsbiology.genomebrowser.visualization.TrackManager;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.RunnableProgressReporter;
 

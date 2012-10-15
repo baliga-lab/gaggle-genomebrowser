@@ -13,8 +13,8 @@ import org.systemsbiology.genomebrowser.ui.ExternalUiController;
 import org.systemsbiology.genomebrowser.ui.FilterToolBar;
 import org.systemsbiology.genomebrowser.ui.UI;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
-import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
+import org.systemsbiology.genomebrowser.visualization.TrackManager;
+import org.systemsbiology.genomebrowser.visualization.TrackRendererRegistry;
 
 /**
  * Default configuration for the Genome Browser app.

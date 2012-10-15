@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks;
+package org.systemsbiology.genomebrowser.visualization;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -17,7 +17,6 @@ import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.GeneFeature;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.renderers.GeneTrackRenderer;
 import org.systemsbiology.genomebrowser.visualization.renderers.TypedGeneTrackRenderer;
 

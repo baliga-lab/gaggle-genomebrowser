@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks;
+package org.systemsbiology.genomebrowser.visualization;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
