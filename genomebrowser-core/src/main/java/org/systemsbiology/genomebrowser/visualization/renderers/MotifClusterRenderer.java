@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks.renderers;
+package org.systemsbiology.genomebrowser.visualization.renderers;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

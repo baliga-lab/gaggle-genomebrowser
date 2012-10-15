@@ -29,10 +29,11 @@ import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
+import org.systemsbiology.genomebrowser.visualization.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters.ViewParametersListener;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
 import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
-import org.systemsbiology.genomebrowser.visualization.tracks.renderers.TypedGeneTrackRenderer;
+import org.systemsbiology.genomebrowser.visualization.renderers.TypedGeneTrackRenderer;
 import org.systemsbiology.util.Hyperlink;
 
 

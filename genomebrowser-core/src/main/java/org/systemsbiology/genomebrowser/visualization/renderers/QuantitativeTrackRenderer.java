@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks.renderers;
+package org.systemsbiology.genomebrowser.visualization.renderers;
 
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Range;

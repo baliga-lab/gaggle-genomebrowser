@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.visualization.tracks.renderers;
+package org.systemsbiology.genomebrowser.visualization.renderers;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -16,7 +16,7 @@ import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
 import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.ui.HasTooltips;
+import org.systemsbiology.genomebrowser.visualization.HasTooltips;
 import org.systemsbiology.genomebrowser.visualization.TrackRenderer;
 import org.systemsbiology.util.HasSelections;
 import org.systemsbiology.util.Selectable;
