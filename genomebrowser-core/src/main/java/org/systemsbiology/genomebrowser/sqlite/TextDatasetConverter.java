@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.util;
+package org.systemsbiology.genomebrowser.sqlite;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -22,8 +22,6 @@ import org.systemsbiology.genomebrowser.model.Topology;
 import org.systemsbiology.genomebrowser.model.FeatureFields;
 import org.systemsbiology.genomebrowser.model.FeatureProcessor;
 import org.systemsbiology.genomebrowser.model.FeatureSource;
-import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource;
-import org.systemsbiology.genomebrowser.sqlite.SqliteDatasetBuilder;
 import org.systemsbiology.util.CaseInsensitiveKey;
 import org.systemsbiology.util.MathUtils;
 import org.systemsbiology.util.MultiHashMap;
