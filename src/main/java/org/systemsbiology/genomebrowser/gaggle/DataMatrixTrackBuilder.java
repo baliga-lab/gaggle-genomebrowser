@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.gaggle.core.datatypes.DataMatrix;
-import org.systemsbiology.genomebrowser.app.Event;
+import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.gaggle.ReceiveBroadcastDialog.Result;
 import org.systemsbiology.genomebrowser.model.QuantitativeSegmentFeatureFields;

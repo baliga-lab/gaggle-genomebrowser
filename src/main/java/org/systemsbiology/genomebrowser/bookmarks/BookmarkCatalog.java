@@ -6,12 +6,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.util.StringUtils;
-
-
 
 /**
  * Holds several sets of bookmarks. A BookmarkDataSource represents a collection of bookmarks.

@@ -3,6 +3,7 @@ package org.systemsbiology.genomebrowser.app;
 import java.lang.reflect.Method;
 
 import org.apache.log4j.Logger;
+import org.systemsbiology.genomebrowser.event.Event;
 
 
 /**

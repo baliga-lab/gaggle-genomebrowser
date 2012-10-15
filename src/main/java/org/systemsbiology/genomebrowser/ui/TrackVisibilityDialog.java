@@ -17,9 +17,9 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.TableColumn;
 
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
-import org.systemsbiology.genomebrowser.app.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.EventSupport;
 import org.systemsbiology.genomebrowser.model.BasicTrack;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Track;

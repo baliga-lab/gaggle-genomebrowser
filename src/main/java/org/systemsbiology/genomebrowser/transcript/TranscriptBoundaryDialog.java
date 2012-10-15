@@ -28,7 +28,6 @@ import org.systemsbiology.genomebrowser.model.*;
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.swing.ArrowKeyListener.IntArrowKeyListener;
 
-
 /**
  * Dialog for annotating transcription start and stop sites, based on the new-bookmark dialog.
  */

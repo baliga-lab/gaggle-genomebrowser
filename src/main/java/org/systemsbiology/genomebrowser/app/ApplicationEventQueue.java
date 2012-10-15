@@ -4,6 +4,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import org.systemsbiology.genomebrowser.event.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
 
 import org.apache.log4j.Logger;
 

@@ -31,9 +31,9 @@ import javax.swing.*;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
-import org.systemsbiology.genomebrowser.app.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.EventSupport;
 import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
 import org.systemsbiology.genomebrowser.app.ProjectDescription.SequenceDescription;
@@ -225,7 +225,7 @@ public class NewProjectWizard extends JDialog {
 		// is set to "My own data". We want to get events from dataSourcePanel so
 		// we know whether to enable or disable those panels.
 		dataSourcePanel.addEventListener(new EventListener() {
-			public void receiveEvent(org.systemsbiology.genomebrowser.app.Event event) {
+			public void receiveEvent(Event event) {
 				if ("select-datasource".equals(event.getAction()) && currentPanel==dataSourcePanel) {
 					nextAction.setEnabled(ProjectDescription.LOCAL_DATA_LABEL.equals(event.getData()));
 				}

@@ -20,8 +20,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import javax.swing.*;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;

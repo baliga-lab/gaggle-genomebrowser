@@ -3,7 +3,7 @@ package org.systemsbiology.genomebrowser.ui.importtrackwizard;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import org.systemsbiology.genomebrowser.app.Event;
+import org.systemsbiology.genomebrowser.event.Event;
 
 public class WizardStateListenerSupport {
 	Set<WizardStateListener> listeners = new CopyOnWriteArraySet<WizardStateListener>();

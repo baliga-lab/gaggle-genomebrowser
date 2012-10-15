@@ -20,7 +20,7 @@ import org.systemsbiology.gaggle.geese.common.GaggleConnectionListener;
 import org.systemsbiology.gaggle.geese.common.RmiGaggleConnector;
 import org.systemsbiology.gaggle.geese.common.actions.ConnectToBossAction;
 import org.systemsbiology.gaggle.geese.common.actions.DisconnectFromBossAction;
-import org.systemsbiology.genomebrowser.app.Event;
+import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Plugin;
 import org.systemsbiology.genomebrowser.gaggle.GaggleToolbar.GaggleBroadcastData;

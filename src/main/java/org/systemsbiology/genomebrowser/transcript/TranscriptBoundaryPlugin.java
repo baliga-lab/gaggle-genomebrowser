@@ -18,7 +18,7 @@ import javax.swing.Action;
 import javax.swing.KeyStroke;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Event;
+import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Plugin;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;

@@ -21,6 +21,9 @@ import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
 
 // TODO should all access to components go through ExternalAPI? just plugins?
 // TODO ability to add a TrackRenderer as a plugin

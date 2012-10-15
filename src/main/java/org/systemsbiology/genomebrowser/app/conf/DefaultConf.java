@@ -1,7 +1,7 @@
 package org.systemsbiology.genomebrowser.app.conf;
 
+import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.EventListener;
 import org.systemsbiology.genomebrowser.app.Selections;
 import org.systemsbiology.genomebrowser.app.Configurator.ConfStrategy;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalog;
@@ -16,11 +16,8 @@ import org.systemsbiology.genomebrowser.visualization.ViewParameters;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackManager;
 import org.systemsbiology.genomebrowser.visualization.tracks.TrackRendererRegistry;
 
-
 /**
  * Default configuration for the Genome Browser app.
- * 
- * @author cbare
  */
 public class DefaultConf implements ConfStrategy {
 

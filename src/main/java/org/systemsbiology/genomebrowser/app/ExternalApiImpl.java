@@ -22,6 +22,8 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.model.Feature.NamedFeature;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackImporter;
 import org.systemsbiology.genomebrowser.util.TrackUtils;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.Event;
 
 
 public class ExternalApiImpl implements ExternalAPI {

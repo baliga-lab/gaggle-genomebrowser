@@ -1,5 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
-
+package org.systemsbiology.genomebrowser.event;
 
 // TODO: write a script to find all event action strings
 

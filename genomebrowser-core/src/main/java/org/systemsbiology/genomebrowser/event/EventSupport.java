@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.genomebrowser.event;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;

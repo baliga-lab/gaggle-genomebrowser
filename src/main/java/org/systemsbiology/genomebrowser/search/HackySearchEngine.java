@@ -9,9 +9,9 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
-import org.systemsbiology.genomebrowser.app.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.EventSupport;
 import org.systemsbiology.genomebrowser.app.SearchEngine;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Feature;
@@ -22,7 +22,6 @@ import org.systemsbiology.util.MultiHashMap;
 
 import cbare.stringsearch.Pattern;
 import cbare.stringsearch.WildcardPattern;
-
 
 // replace HackySearchEngine with DB drive search
 

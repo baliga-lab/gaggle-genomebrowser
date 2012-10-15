@@ -1,5 +1,7 @@
 package org.systemsbiology.genomebrowser.app;
 
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.Event;
 
 /**
  * When a search is done, we want the results to appear in the bookmarks panel.

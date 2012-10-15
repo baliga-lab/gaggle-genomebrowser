@@ -8,7 +8,7 @@ import java.util.UUID;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.Event;
+import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.Io;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;

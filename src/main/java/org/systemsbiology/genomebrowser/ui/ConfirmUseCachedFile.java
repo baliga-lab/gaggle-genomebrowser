@@ -13,9 +13,9 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
-import org.systemsbiology.genomebrowser.app.EventSupport;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
+import org.systemsbiology.genomebrowser.event.EventSupport;
 import org.systemsbiology.util.swing.SwingGadgets;
 
 

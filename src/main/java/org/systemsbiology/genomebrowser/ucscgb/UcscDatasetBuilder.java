@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
+import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.Event;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
 import org.systemsbiology.genomebrowser.model.BasicSequence;
 import org.systemsbiology.genomebrowser.model.Dataset;

@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.genomebrowser.event;
 
 // might use this to tag components that produce events
 // the underscore is an attempt to flag dependency methods?

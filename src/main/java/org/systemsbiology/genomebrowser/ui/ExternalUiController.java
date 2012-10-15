@@ -8,8 +8,8 @@ import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 
 import org.apache.log4j.Logger;
-import org.systemsbiology.genomebrowser.app.Event;
-import org.systemsbiology.genomebrowser.app.EventListener;
+import org.systemsbiology.genomebrowser.event.Event;
+import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.app.UiController;
 import org.systemsbiology.genomebrowser.model.Dataset;
