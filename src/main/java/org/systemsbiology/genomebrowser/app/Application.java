@@ -155,7 +155,6 @@ public class Application implements EventListener, BrowserApp {
 	public void setDataset(Dataset dataset) {
 		this.dataset = dataset;
 		publishEvent(new Event(this, "set dataset", dataset));
-//		selectInitialSequence();
 	}
 
 	// hack: need to unify new dataset code
@@ -173,8 +172,7 @@ public class Application implements EventListener, BrowserApp {
 		try {
 			if ("file".equals(FileUtils.getUrlScheme(path))) {
 				loadDataset(new File(path));
-			}
-			else {
+			}	else {
 				queue.enqueue(new Runnable() {
 					public void run() {
 						File file;
@@ -188,8 +186,7 @@ public class Application implements EventListener, BrowserApp {
 				});
 				
 			}
-		}
-		catch (Exception e) {
+		}	catch (Exception e) {
 			reportException("Error loading dataset: \"" + path + "\"", e);
 		}
 	}
@@ -197,12 +194,9 @@ public class Application implements EventListener, BrowserApp {
 	public void loadDataset(final File file) {
 		try {
 			queue.enqueue(new Runnable() {
-				public void run() {
-					_loadDataset(file);
-				}
+				public void run() {	_loadDataset(file);	}
 			});
-		}
-		catch (InterruptedException e) {
+		}	catch (InterruptedException e) {
 			log.error(e);
 			throw new RuntimeException(e);
 		}
@@ -220,16 +214,13 @@ public class Application implements EventListener, BrowserApp {
 					guess = new File(options.dataDirectory, file.toString());
 					log.info("trying file \"" + guess + "\"");
 				}
-				if (guess.exists()) {
-					file = guess;
-				}
+				if (guess.exists()) {	file = guess;	}
 			}
 			if (!file.exists()) {
 				throw new RuntimeException("Can't find file \"" + file + "\"");
 			}
 			setDataset(io.loadDataset(file));
-		}
-		catch (Exception e) {
+		}	catch (Exception e) {
 			reportException("Problem loading dataset: " + file.getName(), e);
 		}
 	}
@@ -251,13 +242,11 @@ public class Application implements EventListener, BrowserApp {
 
 	public void reloadDataset() {
 		if (options.datasetUrl != null) {
-
 			// TODO do this w/ ApplicationListener?
 			if (bookmarkCatalog.isDirty()) {
 				if (!ui.confirm("You have unsaved bookmarks. Continue anyway?", "Confirm Reload"))
 					return;
 			}
-			
 			log.info("reloading dataset: " + this.options.datasetUrl);
 			this.loadDataset(options.datasetUrl);
 		}
@@ -277,16 +266,13 @@ public class Application implements EventListener, BrowserApp {
 			if (file.exists()) {
 				if (options.overwrite) {
 					log.warn("--overwrite -> overwritting file: " + file);
-				}
-				else {
+				}	else {
 					String result = ConfirmUseCachedFile.confirmUseCachedFile(file.getPath());
 					if (ConfirmUseCachedFile.NEW_FILE.equals(result)) {
 						file = FileUtils.uniquify(file);
-					}
-					else if (ConfirmUseCachedFile.OVERWRITE.equals(result)) {
+					}	else if (ConfirmUseCachedFile.OVERWRITE.equals(result)) {
 						log.warn("user chose to overwrite file: " + file);
-					}
-					else {
+					}	else {
 						log.info("using cached file: " + file);
 						return file;
 					}
@@ -294,17 +280,14 @@ public class Application implements EventListener, BrowserApp {
 			}
 
 			log.info("downloading " + url + " to " + file);
-
 			Downloader downloader = new Downloader();
 			progressReporter = new RunnableProgressReporter(downloader.getProgress());
 			progressReporter.start();
 			publishEvent(new Event(this, "download started", progressReporter));
 			downloader.download(url, file);
 			return file;
-		}
-		finally {
-			if (progressReporter != null)
-				progressReporter.done();
+		}	finally {
+			if (progressReporter != null) 	progressReporter.done();
 		}
 	}
 
@@ -321,22 +304,18 @@ public class Application implements EventListener, BrowserApp {
 		try {
 			queue.enqueue(new Runnable() {
 				public void run() {
-					
 					File file = getProjectDefaults().getDefaultFile(genome);
 
 					if (file.exists()) {
 						if (options.overwrite) {
 							log.warn("--overwrite -> overwritting file: " + file);
-						}
-						else {
+						}	else {
 							String result = ConfirmUseCachedFile.confirmUseCachedFile(file.getPath());
 							if (ConfirmUseCachedFile.NEW_FILE.equals(result)) {
 								file = FileUtils.uniquify(file);
-							}
-							else if (ConfirmUseCachedFile.OVERWRITE.equals(result)) {
+							} else if (ConfirmUseCachedFile.OVERWRITE.equals(result)) {
 								log.warn("user chose to overwrite file: " + file);
-							}
-							else {
+							}	else {
 								log.info("using cached file: " + file);
 								loadDataset(file);
 								return;
@@ -353,24 +332,19 @@ public class Application implements EventListener, BrowserApp {
 						if ("UCSC".equals(projectDescription.getDataSource())) {
 							UcscDatasetBuilder builder = new UcscDatasetBuilder();
 							builder.drive(projectDescription, Application.this);
-						}
-						else if ("NCBI".equals(projectDescription.getDataSource())) {
+						}	else if ("NCBI".equals(projectDescription.getDataSource())) {
 							showErrorMessage("Import from NCBI not implemented yet");
-						}
-						else if ("local files".equals(projectDescription.getDataSource())) {
+						}	else if ("local files".equals(projectDescription.getDataSource())) {
 							showErrorMessage("Import from local files not implemented yet");
-						}
-						else {
+						}	else {
 							showErrorMessage("Unknown datasource " + projectDescription.getDataSource() + " Can't get here. This shouldn't happen.");
 						}
-					}
-					catch (Exception e) {
+					}	catch (Exception e) {
 						reportException("Error creating dataset", e);
 					}
 				}
 			});
-		}
-		catch (InterruptedException e) {
+		}	catch (InterruptedException e) {
 			log.error(e);
 			throw new RuntimeException(e);
 		}
@@ -387,8 +361,7 @@ public class Application implements EventListener, BrowserApp {
 	public void registerPlugin(Class<? extends Plugin> pluginClass) {
 		try {
 			registerPlugin(pluginClass.newInstance());
-		}
-		catch (Exception e) {
+		}	catch (Exception e) {
 			log.error("Failed to create instance of plugin " + pluginClass.getName(), e);
 		}
 	}
@@ -397,8 +370,7 @@ public class Application implements EventListener, BrowserApp {
 	public void registerPlugin(String pluginClassName) {
 		try {
 			registerPlugin((Class<? extends Plugin>)Class.forName(pluginClassName));
-		}
-		catch (Exception e) {
+		}	catch (Exception e) {
 			log.error("Failed to create instance of plugin " + pluginClassName, e);
 		}
 	}
@@ -407,8 +379,7 @@ public class Application implements EventListener, BrowserApp {
 	public Plugin getPlugin(String type) {
 		if (type==null) return null;
 		for (Plugin plugin : plugins) {
-			if (type.equals(plugin.getClass().getSimpleName()))
-				return plugin;
+			if (type.equals(plugin.getClass().getSimpleName()))	return plugin;
 		}
 		return null;
 	}
@@ -418,12 +389,10 @@ public class Application implements EventListener, BrowserApp {
 	public void publishEvent(Event event) {
 		try {
 			queue.enqueue(event);
-		}
-		catch (InterruptedException e) {
+		}	catch (InterruptedException e) {
 			log.error("Event dropped due to interruption: " + event.getAction(), e);
 		}
 	}
-
 
 	public void addEventListener(EventListener listener) {
 		eventSupport.addEventListener(listener);
@@ -433,30 +402,25 @@ public class Application implements EventListener, BrowserApp {
 		eventSupport.removeEventListener(listener);
 	}
 
-
 	// TODO should App listen to events from components, rather than components calling publishEvent?
 
 	/**
 	 * receive and forward events from components
 	 */
-	public void receiveEvent(Event event) {
-		publishEvent(event);
-	}
+	public void receiveEvent(Event event) {	publishEvent(event);	}
 
 	// ---- Coordinate Maps ---------------------------------------------------
 
 	public List<CoordinateMapSelection> findCoordinateMaps(String[] names) {
 		List<CoordinateMapSelection> maps = new ArrayList<CoordinateMapSelection>();
-
 		// test for names of the form <sequence>[+/-]:<start>-<end> where strand is
 		// indicated by which of start or end is greater
-		maps.add(new CoordinateMapSelection("Identifiers encode coordinates", TextCoordinateMap.checkNames(names)));
-		
+		maps.add(new CoordinateMapSelection("Identifiers encode coordinates",
+                                        TextCoordinateMap.checkNames(names)));
 		// do the same for names of the form <sequence>[+/-]:<position>
-		maps.add(new CoordinateMapSelection("Identifiers encode positions", TextPositionalCoordinateMap.checkNames(names)));
-
+		maps.add(new CoordinateMapSelection("Identifiers encode positions",
+                                        TextPositionalCoordinateMap.checkNames(names)));
 		maps.addAll(io.findCoordinateMaps(names));
-
 		return maps;
 	}
 
@@ -470,10 +434,7 @@ public class Application implements EventListener, BrowserApp {
 		return io.loadCoordinateMap(name);
 	}
 
-
-	public boolean datasetIsLoaded() {
-		return options.datasetUrl != null;
-	}
+	public boolean datasetIsLoaded() { return options.datasetUrl != null;	}
 
 	// TODO deleteTrack belongs on Dataset
 	public void deleteTrack(UUID uuid) {
@@ -481,9 +442,7 @@ public class Application implements EventListener, BrowserApp {
 		reloadDataset();
 	}
 	public void deleteTracks(List<UUID> uuids) {
-		for (UUID uuid : uuids) {
-			io.deleteTrack(uuid);
-		}
+		for (UUID uuid : uuids) io.deleteTrack(uuid);
 		reloadDataset();
 	}
 }
