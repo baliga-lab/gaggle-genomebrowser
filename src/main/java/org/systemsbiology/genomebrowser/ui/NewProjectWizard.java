@@ -895,14 +895,11 @@ class DataSourcePanel extends NewProjectWizardPanel {
 		JEditorPane instructions = SwingGadgets.createHtmlTextPane(this, INSTRUCTIONS_HTML, SwingGadgets.getStyleSheet());
 		instructions.setOpaque(false);
 
-		dataSourceChooser = new JComboBox(new String[] {"NCBI", "UCSC", ProjectDescription.LOCAL_DATA_LABEL});
+		dataSourceChooser = new JComboBox(new String[] {"UCSC", ProjectDescription.LOCAL_DATA_LABEL});
 		dataSourceChooser.setSelectedIndex(1);
 		dataSourceChooser.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				if (e.getStateChange()==ItemEvent.SELECTED) {
-					if ("NCBI".equals(e.getItem())) {
-						JOptionPane.showMessageDialog(DataSourcePanel.this, String.valueOf(e.getItem()) + " not implemented yet!", "Doh!", JOptionPane.WARNING_MESSAGE);
-					}
 					eventSupport.fireEvent(DataSourcePanel.this, "select-datasource", (String)e.getItem());
 				}
 			}

@@ -32,7 +32,6 @@ import org.systemsbiology.genomebrowser.model.Sequence;
 import org.systemsbiology.genomebrowser.model.SequenceFetcher;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.genomebrowser.model.Track;
-import org.systemsbiology.genomebrowser.ncbi.NcbiGenomeToDataset;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.Application;
@@ -44,7 +43,6 @@ import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDatasetBuilder;
 import org.systemsbiology.genomebrowser.sqlite.TrackSaver;
 import org.systemsbiology.genomebrowser.transcript.TranscriptBoundaryPlugin;
-import org.systemsbiology.genomebrowser.ucscgb.ImportUcscGenome;
 import org.systemsbiology.genomebrowser.ucscgb.UcscDatasetBuilder;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.ImportTrackWizard;
 import org.systemsbiology.genomebrowser.ui.importtrackwizard.TrackLoaderRegistry;
@@ -55,8 +53,6 @@ import org.systemsbiology.genomebrowser.visualization.TrackRendererScheduler;
 import org.systemsbiology.genomebrowser.visualization.ViewParameters;
 import org.systemsbiology.genomebrowser.visualization.FeatureCounter;
 import org.systemsbiology.genomebrowser.visualization.TrackRendererRegistry;
-import org.systemsbiology.ncbi.NcbiGenome;
-import org.systemsbiology.ncbi.ui.NcbiQueryDialog;
 import org.systemsbiology.ucscgb.Category;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
@@ -400,9 +396,6 @@ public class UI {
 	 * Respond to "sequence selected" event. Notify the UI that a new sequence
 	 * has been selected
 	 */
-	// public void sequenceSelected(Sequence seq) {
-	// }
-
 	public void setSelectedSequence(String sequenceName, boolean restore) {
 		if (sequenceName != null)
 			setSelectedSequence(app.getDataset().getSequence(sequenceName),
@@ -700,11 +693,6 @@ public class UI {
 					if ("UCSC".equals(projectDescription.getDataSource())) {
 						UcscDatasetBuilder builder = new UcscDatasetBuilder();
 						builder.drive(projectDescription, app);
-					} else if ("NCBI"
-							.equals(projectDescription.getDataSource())) {
-						showStatusMessage(
-								"Import from NCBI not implemented yet",
-								"Not implemented yet");
 					} else if (LOCAL_DATA_LABEL.equals(projectDescription
 							.getDataSource())) {
 						SqliteDatasetBuilder builder = new SqliteDatasetBuilder(
@@ -739,8 +727,6 @@ public class UI {
 						}
 						// TODO unify new dataset code
 						app.setDataset(builder.getDataset(), projectDescription.getFile());
-//						app.options.datasetUrl = projectDescription.getFile()
-//								.getAbsolutePath();
 					} else {
 						log.error("unrecognized datasource: "
 								+ projectDescription.getDataSource());
@@ -933,38 +919,8 @@ public class UI {
 		mainWindow.setExtendedState(JFrame.ICONIFIED);
 	}
 
-	public void showImportNcbiGenomeDialog(final String filename) {
-		log.info("showImportNcbiGenomeDialog()");
-		final NcbiQueryDialog dialog = new NcbiQueryDialog();
-		dialog
-				.addNcbiQueryDialogListener(new NcbiQueryDialog.NcbiQueryDialogListener() {
-					public void genomeProjectDownloaded(NcbiGenome genome) {
-						dialog.setVisible(false);
-						dialog.dispose();
-						log.info("downloaded genome project ("
-								+ genome.getProjectId() + ")"
-								+ genome.getOrganismName());
-						NcbiGenomeToDataset ngtd = new NcbiGenomeToDataset(
-								app.io.getDatasetBuilder(new File(filename)));
-						app.setDataset(ngtd.convert(genome), new File(filename));
-//						app.options.datasetUrl = filename;
-					}
-
-					public void canceled() {
-						dialog.setVisible(false);
-						dialog.dispose();
-					}
-
-					public void error(String title, String message, Exception e) {
-						dialog.setVisible(false);
-						dialog.dispose();
-						showExtendedErrorDialog(title, message, e);
-					}
-				});
-		dialog.setVisible(true);
-	}
-
 	// no longer used? see showNewProjectWizard instead
+    /*
 	public void showImportUcscGenomeDialog(final String filename) {
 		log.info("showImportUcscGenomeDialog");
 		final ImportUcscGenome dialog = new ImportUcscGenome();
@@ -994,7 +950,7 @@ public class UI {
 			}
 		});
 		dialog.setVisible(true);
-	}
+    }*/
 
 	public void showImportFileGenomeDialog(final String filename) {
 		log.info("showImportFileGenomeDialog");
@@ -1012,7 +968,6 @@ public class UI {
 			public void ok(String action, Object result) {
 				Dataset dataset = (Dataset) result;
 				app.setDataset(dataset, new File(filename));
-//				app.options.datasetUrl = filename;
 			}
 		});
 		dialog.setVisible(true);
@@ -1057,11 +1012,6 @@ public class UI {
 				}
 			}
 		});
-	}
-
-	public void importNcbiGenomeAfterGuiCreated(String species) {
-		// TODO importNcbiGenomeAfterGuiCreated
-		log.info("importNcbiGenomeAfterGuiCreated()");
 	}
 
 	public void importTrack() {
