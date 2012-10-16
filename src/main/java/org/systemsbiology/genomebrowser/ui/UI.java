@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JToolBar;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import javax.swing.UIManager.*;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.io.CoordinateMapFileIterator;
@@ -107,15 +108,28 @@ public class UI {
 	// to the system properties are made early enough to count. It
 	// needs to happen before we touch any Swing classes.
 	static {
-		if (MacOsx.isOSX())
-			MacOsx.setSystemProperties();
+		if (MacOsx.isOSX()) MacOsx.setSystemProperties();
 		else {
-			try {
-				UIManager.setLookAndFeel(UIManager
-						.getSystemLookAndFeelClassName());
-			} catch (Exception e) {
-				log.warn("Error setting Swing PLaF", e);
-			}
+        boolean nimbusSet = false;
+        try {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    nimbusSet = true;
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
+        }
+        // make the user interface look a little more modern
+        if (!nimbusSet) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception e) {
+                log.warn("Error setting Swing PLaF", e);
+            }
+        }
 		}
 	}
 
@@ -194,23 +208,14 @@ public class UI {
 		mainWindow.insertMenu(title, actions);
 	}
 
-	Actions getActions() {
-		return actions;
-	}
+	Actions getActions() { return actions; }
 
 	// for about dialog
-	Options getOptions() {
-		return app.options;
-	}
+	Options getOptions() { return app.options; }
 
 	// called by GenomeViewPanel and SideBar
-	ViewParameters getViewParameters() {
-		return viewParameters;
-	}
-
-	Segment getVisibleSegment() {
-		return viewParameters.getVisibleSegment();
-	}
+	ViewParameters getViewParameters() { return viewParameters; }
+	Segment getVisibleSegment() {	return viewParameters.getVisibleSegment(); }
 
 	void refresh() {
 		app.trackManager.refresh();
@@ -607,26 +612,16 @@ public class UI {
 				return;
 		}
 
-		JFileChooser chooser = DatasetFileChooser
-				.getDatasetFileChooser(app.options.dataDirectory);
-
+		JFileChooser chooser = DatasetFileChooser.getDatasetFileChooser(app.options.dataDirectory);
 		int returnVal = chooser.showOpenDialog(mainWindow);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			loadDataset(chooser.getSelectedFile());
 		}
 	}
 
-	public void loadDataset(File file) {
-		app.loadDataset(file);
-	}
-
-	public void loadDataset(String path) {
-		app.loadDataset(path);
-	}
-
-	public void reloadDataset() {
-		app.reloadDataset();
-	}
+	public void loadDataset(File file) { app.loadDataset(file);	}
+	public void loadDataset(String path) { app.loadDataset(path);	}
+	public void reloadDataset() {	app.reloadDataset(); }
 
 	public void setDataset(Dataset newDataset) {
 		try {
@@ -905,9 +900,7 @@ public class UI {
 		mainWindow.sideBar.setCursorTool(tool);
 	}
 
-	public void exit(int status) {
-		app.shutdown(status);
-	}
+	public void exit(int status) { app.shutdown(status); }
 
 	public void bringToFront() {
 		mainWindow.setExtendedState(JFrame.NORMAL);
@@ -918,39 +911,6 @@ public class UI {
 	public void minimize() {
 		mainWindow.setExtendedState(JFrame.ICONIFIED);
 	}
-
-	// no longer used? see showNewProjectWizard instead
-    /*
-	public void showImportUcscGenomeDialog(final String filename) {
-		log.info("showImportUcscGenomeDialog");
-		final ImportUcscGenome dialog = new ImportUcscGenome();
-		dialog.setDatasetBuilder(app.io.getDatasetBuilder(new File(filename)));
-		dialog.addDialogListener(new DialogListener() {
-			public void ok(String action, Object result) {
-				dialog.setVisible(false);
-				dialog.dispose();
-				Dataset dataset = (Dataset) result;
-				log.info("downloaded genome from UCSC " + dataset.getName()
-						+ " (" + dataset.getAttributes().getString("dbName")
-						+ ")");
-				// TODO unify new dataset code
-				app.setDataset(dataset, new File(filename));
-//				app.options.datasetUrl = filename;
-			}
-
-			public void cancel() {
-				dialog.setVisible(false);
-				dialog.dispose();
-			}
-
-			public void error(String message, Exception e) {
-				dialog.setVisible(false);
-				dialog.dispose();
-				showErrorMessage(message, e);
-			}
-		});
-		dialog.setVisible(true);
-    }*/
 
 	public void showImportFileGenomeDialog(final String filename) {
 		log.info("showImportFileGenomeDialog");

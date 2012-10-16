@@ -90,8 +90,6 @@ public class Application implements EventListener, BrowserApp {
 	// add components to UI
 	// respond to UI events
 	// respond to app events: startup, shutdown, new dataset, etc.
-
-
 	public Application(Options options) {
 		this.options = options;
 	}
@@ -266,23 +264,6 @@ public class Application implements EventListener, BrowserApp {
 	}
 
 	/**
-	 * If there is a cached local copy of the dataset, use that. Otherwise,
-	 * download the dataset from the given URL.
-	 */
-//	private File downloadIfNotCached(URL url) throws IOException {
-//		File file = toCachedLocalFile(url);
-//		if (file.exists()) {
-//			// TODO download updated datasets
-//			// check a hash of the remote file against the local file
-//			// to detect updates to the remote file?
-//			log.info("Using cached dataset file: " + file);
-//			return file;
-//		}
-//		else
-//			return download(url);
-//	}
-
-	/**
 	 * Download a dataset from the given URL and store it in the
 	 * user's hbgb data directory.
 	 * @see org.systemsbiology.genomebrowser.app.Options
@@ -394,45 +375,6 @@ public class Application implements EventListener, BrowserApp {
 			throw new RuntimeException(e);
 		}
 	}
-	
-
-//	public void selectInitialSequence() {
-//		Sequence seq;
-//		if (dataset == null || dataset.getSequences().size() == 0)
-//			seq = Sequence.NULL_SEQUENCE;
-//		else {
-//			String initialSeq = dataset.getAttributes().getString("initial.sequence");
-//			if (initialSeq != null) {
-//				seq = dataset.getSequence(initialSeq);
-//			}
-//			else
-//				seq = dataset.getSequences().get(0);
-//		}
-//		selectSequence(seq);
-//	}
-//
-//	public void selectSequence(String seqId) {
-//		Sequence seq;
-//		if (dataset == null)
-//			seq = Sequence.NULL_SEQUENCE;
-//		if (seqId==null || seqId.equals(sequence.getSeqId()))
-//			return;
-//		// may throw runtime exception if seqId doesn't exist
-//		seq = dataset.getSequence(seqId);
-//		selectSequence(seq);
-//	}
-//
-//	public void selectSequence(Sequence sequence) {
-//		this.sequence = sequence == null ? Sequence.NULL_SEQUENCE : sequence;
-//		publishEvent(new Event(this, "sequence selected", this.sequence));
-//	}
-//
-//	/**
-//	 * @return the currently selected sequence or NULL_SEQUENCE if there is none.
-//	 */
-//	public Sequence getSelectedSequence() {
-//		return sequence;
-//	}
 
 	// ---- Plugins -----------------------------------------------------------
 
@@ -503,21 +445,6 @@ public class Application implements EventListener, BrowserApp {
 
 	// ---- Coordinate Maps ---------------------------------------------------
 
-	// TODO does findCoordinateMap belong in Dataset?
-//	public CoordinateMap findCoordinateMap(String[] names) {
-//		// test for names of the form <sequence><+/->:<start>-<end>
-//		if (StrandedTextCoordinateMap.checkNames(names))
-//			return new StrandedTextCoordinateMap();
-//
-//		// test for names of the form <sequence>:<start>-<end> where strand is
-//		// indicated by which of start or end is greater
-//		if (TextCoordinateMap.checkNames(names))
-//			return new TextCoordinateMap();
-//
-//		// test for names matching the identifiers in the genes track
-//		return io.findCoordinateMap(names);
-//	}
-
 	public List<CoordinateMapSelection> findCoordinateMaps(String[] names) {
 		List<CoordinateMapSelection> maps = new ArrayList<CoordinateMapSelection>();
 
@@ -547,7 +474,6 @@ public class Application implements EventListener, BrowserApp {
 	public boolean datasetIsLoaded() {
 		return options.datasetUrl != null;
 	}
-
 
 	// TODO deleteTrack belongs on Dataset
 	public void deleteTrack(UUID uuid) {

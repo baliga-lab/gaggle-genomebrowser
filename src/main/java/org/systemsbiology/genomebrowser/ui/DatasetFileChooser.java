@@ -20,19 +20,13 @@ public class DatasetFileChooser {
 			public boolean accept(File f) {
 				return f.getName().endsWith(".dataset") || f.getName().endsWith(".hbgb");
 			}
-			public String getDescription() {
-				return "Genome Browser Datasets";
-			}
+			public String getDescription() { return "Genome Browser Datasets"; }
 		});
 
 		fileChooser.addChoosableFileFilter(fileChooser.getAcceptAllFileFilter());
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-
-		if (workingDirectory != null)
-			fileChooser.setCurrentDirectory(workingDirectory);
-		else
-			fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		
+		if (workingDirectory != null)	fileChooser.setCurrentDirectory(workingDirectory);
+		else fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));		
 		return fileChooser;
 	}
 
@@ -55,5 +49,4 @@ public class DatasetFileChooser {
 
 		return fileChooser;
 	}
-
 }
