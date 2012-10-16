@@ -7,12 +7,11 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalog;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.io.BookmarkReader;
 import org.systemsbiology.genomebrowser.io.BookmarkWriter;
-
 
 /**
  * Handles dialogs for loading and saving bookmarks.

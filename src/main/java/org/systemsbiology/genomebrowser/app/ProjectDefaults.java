@@ -6,7 +6,7 @@ import org.systemsbiology.ucscgb.UCSCGB;
 import org.systemsbiology.util.FileUtils;
 import static org.systemsbiology.util.StringUtils.isNullOrEmpty;
 import static org.systemsbiology.genomebrowser.app.ProjectDescription.DEFAULT_PROJECT_NAME;
-
+import org.systemsbiology.genomebrowser.Options;
 
 /**
  * Helps the user by setting defaults for a newly created project where the

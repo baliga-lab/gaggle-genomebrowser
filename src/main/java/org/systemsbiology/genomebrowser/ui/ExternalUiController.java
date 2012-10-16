@@ -10,7 +10,7 @@ import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.app.UiController;
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Segment;

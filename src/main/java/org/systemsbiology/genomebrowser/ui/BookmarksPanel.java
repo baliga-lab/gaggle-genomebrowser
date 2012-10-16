@@ -30,7 +30,7 @@ import javax.swing.text.View;
 
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.Io;
+import org.systemsbiology.genomebrowser.Io;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalog;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkCatalogListener;
@@ -780,7 +780,7 @@ public class BookmarksPanel extends JPanel implements BookmarkCatalogListener, C
 
 		public void actionPerformed(ActionEvent e) {
 			Io io = app.io;
-			UUID datasetUuid = app.getDataset().getUuid();
+			UUID datasetUuid = app.dataset().getUuid();
 			int count = io.countBookmarks(dataSource.getName(), datasetUuid);
 			if (count==0 || app.getUi().confirm("OK to overwrite existing " + count + " bookmarks?", "Confirm?")) {
 				io.writeBookmarks(dataSource, datasetUuid);
@@ -800,7 +800,7 @@ public class BookmarksPanel extends JPanel implements BookmarkCatalogListener, C
 
 		public void actionPerformed(ActionEvent e) {
 			Io io = app.io;
-			UUID datasetUuid = app.getDataset().getUuid(); 
+			UUID datasetUuid = app.dataset().getUuid(); 
 			int count = io.countBookmarks(dataSource.getName(), datasetUuid);
 			if (count==0 || app.getUi().confirm("OK to delete " + count + " bookmarks?", "Confirm delete?")) {
 				io.deleteBookmarks(dataSource.getName(), datasetUuid);

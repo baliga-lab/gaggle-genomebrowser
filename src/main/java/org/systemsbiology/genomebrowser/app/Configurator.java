@@ -1,5 +1,7 @@
 package org.systemsbiology.genomebrowser.app;
 
+import org.systemsbiology.genomebrowser.Options;
+
 public class Configurator {
 	private Options options;
 	private ConfStrategy strategy;

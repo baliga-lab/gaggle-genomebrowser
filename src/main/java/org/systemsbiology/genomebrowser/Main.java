@@ -5,7 +5,6 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.app.Configurator;
-import org.systemsbiology.genomebrowser.app.Options;
 import org.systemsbiology.genomebrowser.app.conf.*;
 import org.systemsbiology.genomebrowser.sqlite.SqliteDataSource;
 import org.systemsbiology.util.StringUtils;

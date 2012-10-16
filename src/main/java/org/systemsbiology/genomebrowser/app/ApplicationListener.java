@@ -2,8 +2,7 @@ package org.systemsbiology.genomebrowser.app;
 
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Sequence;
-
-
+import org.systemsbiology.genomebrowser.Options;
 
 public interface ApplicationListener {
 

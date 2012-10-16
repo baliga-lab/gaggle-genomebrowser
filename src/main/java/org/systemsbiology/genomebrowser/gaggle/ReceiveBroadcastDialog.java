@@ -37,7 +37,7 @@ import org.systemsbiology.gaggle.core.datatypes.GaggleData;
 import org.systemsbiology.gaggle.core.datatypes.GaggleTuple;
 import org.systemsbiology.gaggle.core.datatypes.Namelist;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.io.CoordinateMapFileIterator;
 import org.systemsbiology.genomebrowser.ui.LoadCoordinateMapDialog;
 import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;

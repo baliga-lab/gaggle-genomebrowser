@@ -8,6 +8,7 @@ import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JToolBar;
 
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
@@ -40,10 +41,7 @@ public class ExternalApiImpl implements ExternalAPI {
 		app.publishEvent(event);
 	}
 
-
-	public Dataset getDataset() {
-		return app.getDataset();
-	}
+	public Dataset getDataset() { return app.dataset(); }
 
 	public void updateTrack(Track<Feature> track) {
 		app.updateTrack(track);
@@ -58,9 +56,9 @@ public class ExternalApiImpl implements ExternalAPI {
 	}
 
 	public String getSpecies() {
-		String species = app.getDataset().getAttributes().getString("species");
+		String species = app.dataset().getAttributes().getString("species");
 		if (species==null)
-			species = app.getDataset().getAttributes().getString("organism");
+			species = app.dataset().getAttributes().getString("organism");
 		if (species==null)
 			species = "unknown";
 		return species;
@@ -116,7 +114,7 @@ public class ExternalApiImpl implements ExternalAPI {
 	}
 
 	public void addTrack(Track<? extends Feature> track) {
-		app.getDataset().addTrack(track);
+		app.dataset().addTrack(track);
 		refresh();
 	}
 
@@ -141,7 +139,7 @@ public class ExternalApiImpl implements ExternalAPI {
 	}
 
 	public UUID getDatasetUuid() {
-		return app.getDataset().getUuid();
+		return app.dataset().getUuid();
 	}
 
 	public void refresh() {
@@ -178,7 +176,7 @@ public class ExternalApiImpl implements ExternalAPI {
 	}
 
 	public List<GeneFeature> getGenesIn(Sequence sequence, Strand strand, int start, int end) {
-		return TrackUtils.findGenesIn(app.getDataset(), sequence, strand, start, end);
+		return TrackUtils.findGenesIn(app.dataset(), sequence, strand, start, end);
 	}
 
 }

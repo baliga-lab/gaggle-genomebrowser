@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
+import org.systemsbiology.genomebrowser.BrowserApp;
+import org.systemsbiology.genomebrowser.Options;
+import org.systemsbiology.genomebrowser.Io;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.event.EventSupport;
 import org.systemsbiology.genomebrowser.event.Event;
@@ -41,7 +44,7 @@ import org.systemsbiology.util.RunnableProgressReporter;
  *
  * @author cbare
  */
-public class Application implements EventListener {
+public class Application implements EventListener, BrowserApp {
 	private static final Logger log = Logger.getLogger(Application.class);
 
 	private EventSupport eventSupport = new EventSupport();
@@ -93,6 +96,7 @@ public class Application implements EventListener {
 		this.options = options;
 	}
 
+    public Options options() { return options; }
 
 	public void setUi(UiController ui) {
 		this.ui = ui;
@@ -162,7 +166,7 @@ public class Application implements EventListener {
 		io.setDatasetFile(file);
 	}
 
-	public Dataset getDataset() {
+	public Dataset dataset() {
 		return dataset;
 	}
 

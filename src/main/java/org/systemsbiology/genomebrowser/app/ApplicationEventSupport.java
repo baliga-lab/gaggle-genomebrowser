@@ -5,6 +5,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 import org.systemsbiology.genomebrowser.model.Dataset;
 import org.systemsbiology.genomebrowser.model.Sequence;
+import org.systemsbiology.genomebrowser.Options;
 
 class ApplicationEventSupport {
 	private Set<ApplicationListener> listeners = new CopyOnWriteArraySet<ApplicationListener>();

@@ -16,7 +16,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 import javax.swing.*;
 
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.util.DialogListener;
 import org.systemsbiology.util.FileUtils;
 import org.systemsbiology.util.swing.SwingGadgets;

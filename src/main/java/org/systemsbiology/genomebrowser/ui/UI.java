@@ -35,7 +35,7 @@ import org.systemsbiology.genomebrowser.model.Track;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.Application;
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
 import org.systemsbiology.genomebrowser.app.ProjectDescription.SequenceDescription;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
@@ -360,7 +360,7 @@ public class UI {
 
 	public void previousSequence() {
 		int i;
-		List<Sequence> sequences = app.getDataset().getSequences();
+		List<Sequence> sequences = app.dataset().getSequences();
 		if (sequences.size() == 0)
 			return;
 		Sequence selected = viewParameters.getSequence();
@@ -377,7 +377,7 @@ public class UI {
 
 	public void nextSequence() {
 		int i;
-		List<Sequence> sequences = app.getDataset().getSequences();
+		List<Sequence> sequences = app.dataset().getSequences();
 		if (sequences.size() == 0)
 			return;
 		Sequence selected = viewParameters.getSequence();
@@ -398,7 +398,7 @@ public class UI {
 	 */
 	public void setSelectedSequence(String sequenceName, boolean restore) {
 		if (sequenceName != null)
-			setSelectedSequence(app.getDataset().getSequence(sequenceName),
+			setSelectedSequence(app.dataset().getSequence(sequenceName),
 					restore);
 	}
 
@@ -440,7 +440,7 @@ public class UI {
 	}
 
 	public void zoomOutAll() {
-		for (Sequence seq : app.getDataset().getSequences()) {
+		for (Sequence seq : app.dataset().getSequences()) {
 			seq.getAttributes().put("_display.start", 0);
 			seq.getAttributes().put("_display.end", seq.getLength());
 		}
@@ -840,7 +840,7 @@ public class UI {
 
 	public void showProjectPropertiesDialog() {
 		ProjectPropertiesDialog dialog = new ProjectPropertiesDialog(
-				mainWindow, app.getDataset(), app.options.datasetUrl);
+				mainWindow, app.dataset(), app.options.datasetUrl);
 		dialog.setVisible(true);
 	}
 
@@ -860,7 +860,7 @@ public class UI {
 	public void showInUcscGenomeBrowser() {
 		// TODO move URL construction to UCSC package
 		// ucsc.db.name, domain, ucsc.clade, ucsc.gene.table
-		Dataset dataset = app.getDataset();
+		Dataset dataset = app.dataset();
 		if (dataset != null) {
 			String db = dataset.getAttributes().getString("ucsc.db.name");
 			String domain = dataset.getAttributes().getString("domain");
@@ -989,7 +989,7 @@ public class UI {
 		final ImportTrackWizard wiz = new ImportTrackWizard();
 		wiz.setOptions(getOptions());
 		wiz.setTrackImporter(app.io.getTrackImporter());
-		wiz.setDataset(app.getDataset());
+		wiz.setDataset(app.dataset());
 		wiz.setTrackReaderInfos(TrackLoaderRegistry.newInstance().getLoaders());
 		wiz.setTrackTypes(trackRendererRegistry.getTrackTypes());
 		wiz.setTrackTypeToRenderersMap(trackRendererRegistry
@@ -1074,7 +1074,7 @@ public class UI {
 
 	public void showTrackVisibilityDialog() {
 		final TrackVisibilityDialog dialog = new TrackVisibilityDialog(
-				mainWindow, app.getDataset().getTracks());
+				mainWindow, app.dataset().getTracks());
 		dialog.addEventListener(new EventListener() {
 			public void receiveEvent(Event event) {
 				if ("update".equals(event.getAction())) {
@@ -1127,7 +1127,7 @@ public class UI {
 				CoordinateMapFileIterator cmfi = null;
 				try {
 					cmfi = new CoordinateMapFileIterator(file);
-					app.io.createCoordinateMapping(app.getDataset().getUuid(),
+					app.io.createCoordinateMapping(app.dataset().getUuid(),
 							FileUtils.stripExtension(file.getName()), cmfi);
 				} catch (Exception e) {
 					showErrorMessage("Error loading file " + file.getName()
@@ -1172,7 +1172,7 @@ public class UI {
 
 	public void showFastaDialog() {
 		SequenceFetcher sequenceFetcher = app.getSequenceFetcher();
-		List<Sequence> sequences = app.getDataset().getSequences();
+		List<Sequence> sequences = app.dataset().getSequences();
 		ImportFastaDialog dialog = new ImportFastaDialog(mainWindow, app.options, sequences, sequenceFetcher);
 		dialog.setVisible(true);
 	}

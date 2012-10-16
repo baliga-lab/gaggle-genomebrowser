@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.app;
+package org.systemsbiology.genomebrowser;
 
 import java.io.File;
 import java.util.List;

@@ -34,7 +34,7 @@ import org.systemsbiology.genomebrowser.app.Application;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.event.EventSupport;
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.app.ProjectDescription;
 import org.systemsbiology.genomebrowser.app.ProjectDescription.SequenceDescription;
 import org.systemsbiology.genomebrowser.model.Topology;

@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.event.EventListener;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
-import org.systemsbiology.genomebrowser.app.Options;
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
 import org.systemsbiology.genomebrowser.model.CoordinateMap;

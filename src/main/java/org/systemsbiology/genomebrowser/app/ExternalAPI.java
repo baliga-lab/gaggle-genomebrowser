@@ -8,6 +8,7 @@ import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JToolBar;
 
+import org.systemsbiology.genomebrowser.Options;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.util.CoordinateMapSelection;
 import org.systemsbiology.genomebrowser.io.track.TrackBuilder;
@@ -32,6 +33,8 @@ import org.systemsbiology.genomebrowser.event.Event;
 /**
  * Components and plug-ins access application-wide functionality through
  * the external API interface.
+ * WW: There are some similarities to the BrowserApp interface, but ExternalAPI
+ * has Swing dependencies.
  */
 public interface ExternalAPI {
 
