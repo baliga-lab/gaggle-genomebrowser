@@ -12,7 +12,6 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
     private final int[] ends;
     private final double[] values;
 
-
     public BasicQuantitativeBlock(Sequence sequence, Strand strand, int[] starts, int[] ends, double[] values) {
         this.sequence = sequence;
         this.strand = strand;
@@ -21,60 +20,29 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
         this.values = values;
     }
 
-    public Sequence getSequence() {
-        return sequence;
-    }
-
-    public Strand getStrand() {
-        return strand;
-    }
-
-    public Iteratable<F> features() {
-        return new FeaturesIteratable();
-    }
-
+    public Sequence getSequence() { return sequence; }
+    public Strand getStrand() { return strand; }
+    public Iteratable<F> features() { return new FeaturesIteratable(); }
     public Iteratable<F> features(int start, int end) {
         return new WindowedFeaturesIteratable(start, end);
     }
-
-    public Iterator<F> iterator() {
-        return features();
-    }
+    public Iterator<F> iterator() { return features(); }
 
     private class FlyweightQuantitativeFeature implements Feature.Quantitative {
         int i;
 
-        public double getValue() {
-            return values[i];
-        }
-
+        public double getValue() { return values[i]; }
         public int getCentralPosition() {
             return MathUtils.average(starts[i], ends[i]);
         }
-
-        public int getEnd() {
-            return ends[i];
-        }
-
-        public String getSeqId() {
-            return sequence.getSeqId();
-        }
-
-        public int getStart() {
-            return starts[i];
-        }
-
-        public Strand getStrand() {
-            return strand;
-        }
-		
+        public int getEnd() { return ends[i]; }
+        public String getSeqId() { return sequence.getSeqId(); }
+        public int getStart() { return starts[i]; }
+        public Strand getStrand() { return strand; }
         public String toString() {
             return String.format("(Feature: %s, %s, %d, %d, %.2f)", getSeqId(), getStrand(), starts[i], ends[i], values[i]); 
         }
-
-        public String getLabel() {
-            return String.format("%.2f", values[i]);
-        }
+        public String getLabel() { return String.format("%.2f", values[i]); }
     }
 
     class FeaturesIteratable implements Iteratable<F> {
@@ -82,9 +50,7 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
         int len = starts.length;
         int next;
 
-        public boolean hasNext() {
-            return next < len;
-        }
+        public boolean hasNext() { return next < len; }
 
         @SuppressWarnings("unchecked")
             public F next() {
@@ -96,9 +62,7 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
             throw new UnsupportedOperationException("remove() not supported.");
         }
 
-        public Iterator<F> iterator() {
-            return this;
-        }		
+        public Iterator<F> iterator() { return this; }		
     }
 
     class WindowedFeaturesIteratable implements Iteratable<F> {
@@ -122,7 +86,7 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
         }
 
         @SuppressWarnings("unchecked")
-            public F next() {
+        public F next() {
             feature.i = next++;
             return (F)feature;
         }
@@ -130,10 +94,6 @@ public class BasicQuantitativeBlock<F extends Feature.Quantitative> implements B
         public void remove() {
             throw new UnsupportedOperationException("remove() not supported.");
         }
-
-        public Iterator<F> iterator() {
-            return this;
-        }		
+        public Iterator<F> iterator() { return this; }		
     }
-
 }
