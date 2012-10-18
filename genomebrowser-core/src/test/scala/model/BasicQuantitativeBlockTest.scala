@@ -22,7 +22,7 @@ class BasicQuantitativeBlockSpec extends FlatSpec with ShouldMatchers {
 
 		var numFeatures1 = 0
     val blockFeatures1 = block.iterator
-		while(blockFeatures1.hasNext) {
+		while (blockFeatures1.hasNext) {
       val fq = blockFeatures1.next
       fq.getSeqId should be ("MySeq")
       fq.getStrand should be (Strand.forward)
@@ -38,13 +38,11 @@ class BasicQuantitativeBlockSpec extends FlatSpec with ShouldMatchers {
 		// should iterate features i=2,(401,500) and i=3,(601,700)
     var numFeatures2 = 0
     val blockFeatures2 = block.features(400, 700)
-		while(blockFeatures2.hasNext) {
+		while (blockFeatures2.hasNext) {
       val fq = blockFeatures2.next
-
       fq.getStart should be (starts(2 + numFeatures2))
       fq.getEnd should be (ends(2 + numFeatures2))
       fq.getValue should be (values(2 + numFeatures2))
-
       numFeatures2 += 1
     }
     numFeatures2 should be (2)
