@@ -107,6 +107,6 @@ public abstract class AbstractHeuristicSequenceMapper<T> implements SequenceMapp
             if (chrCount==1 && num==1)
                 return singleChrId;
         }
-        throw new RuntimeException("Unkown sequence: \"" + name + "\"");
+        throw new RuntimeException("Unknown sequence: \"" + name + "\"");
     }
 }
