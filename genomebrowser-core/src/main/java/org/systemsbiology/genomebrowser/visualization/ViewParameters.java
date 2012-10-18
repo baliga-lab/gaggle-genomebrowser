@@ -6,17 +6,12 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Sequence;
 
-
-
-
 // TODO changing chromosomes when you're zoomed way out doesn't rescale properly
 // TODO convert from device to genome coordinates in one place
-
 
 // This class should serve as model for position and zoom, updating listeners
 // upon changes. It is unsynchronized and should be owned by the ui package and
 // accessed only from the swing event thread.
-
 
 /**
  * Relates screen coordinates with genome position.
@@ -28,8 +23,6 @@ import org.systemsbiology.genomebrowser.model.Sequence;
  * The object is "owned" by the UI package, and generally shouldn't be touched
  * outside that package. The exception to this is the renderers, whose paint
  * methods are called on the ui thread.
- *
- * @author cbare
  */
 public class ViewParameters {
 	
@@ -37,58 +30,39 @@ public class ViewParameters {
 	private double scale;
 	private int start;
 	private int end;
-
 	private int deviceHeight;
-	private int deviceWidth;
-	
+	private int deviceWidth;	
 	private int defaultViewSize = 20000;
 
-
-
-	public ViewParameters() {
-	}
-
+	public ViewParameters() { }
 
 	/**
 	 * scaling factor in pixels per base-pair
 	 */
-	public double getScale() {
-		return scale;
-	}
+	public double getScale() { return scale; }
 
 	/**
 	 * start of displayed range of chromosome
 	 */
-	public int getStart() {
-		return start;
-	}
+	public int getStart() { return start; }
 
 	/**
 	 * end of displayed range of chromosome
 	 * (inclusive)
 	 */
-	public int getEnd() {
-		return end;
-	}
+	public int getEnd() { return end; }
 
-	public int getWidth() {
-		return end - start + 1;
-	}
+	public int getWidth() { return end - start + 1; }
 
 	/**
 	 * height of the component in pixels
 	 */
-	public int getDeviceHeight() {
-		return deviceHeight;
-	}
+	public int getDeviceHeight() { return deviceHeight; }
 
 	/**
 	 * width of the component in pixels
 	 */
-	public int getDeviceWidth() {
-		return deviceWidth;
-	}
-
+	public int getDeviceWidth() { return deviceWidth; }
 
 	public int toGenomeCoordinate(int screenX) {
 		return ((int)(screenX / scale)) + start;
@@ -110,14 +84,12 @@ public class ViewParameters {
 			if (width / scale > getSequenceLength()) {
 				scale = ((double)width) / ((double)getSequenceLength());
 			}
-
 			// the end can't be past the end of the chromosome.
 			end = start + (int)(width / scale);
 			if (end > getSequenceLength()) {
 				start = Math.max(0, start - end + getSequenceLength());
 				end = getSequenceLength();
-			}
-	
+			}	
 			fireViewParametersChangeEvent();
 		}
 	}
@@ -130,8 +102,7 @@ public class ViewParameters {
 		// get current width
 		int w = end - start;
 		int start = position - (w >>> 1);
-		if (start < 0)
-			start = 0;
+		if (start < 0) start = 0;
 		int end = start + w;
 		if (end > getSequenceLength()) {
 			start -= (end - getSequenceLength());
@@ -151,8 +122,7 @@ public class ViewParameters {
 	public void moveRight(int x) {
 		int w = end - start;
 		end += x;
-		if (end > getSequenceLength())
-			end = getSequenceLength();
+		if (end > getSequenceLength()) end = getSequenceLength();
 		start = end - w;
 		fireViewParametersChangeEvent();
 	}
@@ -160,8 +130,7 @@ public class ViewParameters {
 	public void moveLeft(int x) {
 		int w = end - start;
 		start -= x;
-		if (start < 0)
-			start = 0;
+		if (start < 0) start = 0;
 		end = start + w;
 		fireViewParametersChangeEvent();
 	}
@@ -185,7 +154,6 @@ public class ViewParameters {
 			fireViewParametersChangeEvent();
 		}
 	}
-
 
 	public int getSequenceLength() {
 		return sequence == null ? 0 : sequence.getLength();
@@ -212,15 +180,13 @@ public class ViewParameters {
 		}
 	}
 
-	public Sequence getSequence() {
-		return sequence;
-	}
+	public Sequence getSequence() { return sequence; }
 
 	public void initViewParams(Sequence sequence) { //changed dmartinez+rvencio 2012-01-03
 		int len = sequence == null ? 0 : sequence.getLength();
 		if( start == 0 && end == 0 ){ //if no previous view to preserve, use default
 			initViewParams(sequence, 0, Math.min(len, defaultViewSize));
-		}else{
+		} else {
 			initViewParams(sequence, start, end); //preserve previous view parameters
 		}
 	}
@@ -234,12 +200,10 @@ public class ViewParameters {
 	 * @param zoom between 0.0 and 1.0 inclusive
 	 */
 	public void setZoom(double zoom) {
-		if (zoom > 1.0)
-			zoom = 1.0;
+		if (zoom > 1.0) zoom = 1.0;
 
 		// max zoom in to 12 pixels per base pair
 		int bps = Math.max(deviceWidth/12, (int)Math.round(getSequenceLength() * zoom));
-
 		setWidthInBasePairs(bps);
 	}
 
@@ -260,10 +224,7 @@ public class ViewParameters {
 	 * @return the min of bps and sequence.getLength()
 	 */
 	public int setWidthInBasePairs(int bps) {
-
-		if (bps > getSequenceLength()) {
-			bps = getSequenceLength();
-		}
+		if (bps > getSequenceLength()) bps = getSequenceLength();
 
 		// zoom in or out around the midpoint of the visible region
 		double mid = (start + end) / 2.0;
@@ -277,12 +238,10 @@ public class ViewParameters {
 			start = getSequenceLength() - bps;
 			end = getSequenceLength();
 		}
-
 		this.scale = (double)deviceWidth / (double)bps;
 		setStartAndEnd(start, end);
 		
 		// listeners notified by setStartAndEnd()
-
 		return bps;
 	}
 
@@ -324,7 +283,6 @@ public class ViewParameters {
 		}
 	}
 
-
 	/**
 	 * @param x 0 <= x <= 1000
 	 * @return a logarithmically scaled number between 0 and 1 (inclusive)
@@ -333,10 +291,7 @@ public class ViewParameters {
 		return Math.pow(1000, (x / 1000.0)) / 1000.0;
 	}
 
-
 	public int inverseTweak(double y) {
 		return (int) (Math.log( y * 1000) / Math.log(1000) * 1000.0);
-	}
-
-	
+	}	
 }

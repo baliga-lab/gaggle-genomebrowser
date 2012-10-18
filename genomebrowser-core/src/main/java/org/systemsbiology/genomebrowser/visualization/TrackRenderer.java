@@ -18,7 +18,6 @@ import org.systemsbiology.util.Hyperlink;
 
 /**
  * A class that draws a track of data onto the viewer panel.
- * @author cbare
  */
 public abstract class TrackRenderer {
 
@@ -34,7 +33,6 @@ public abstract class TrackRenderer {
 	 * height of track expressed in a percentage
 	 */
 	protected double height;
-
 	protected Color color = new Color(0x80336699, true);
 	protected boolean outline = false;
 
@@ -44,47 +42,18 @@ public abstract class TrackRenderer {
 	 */
 	protected ViewParameters params;
 
-
+	// dependency
+	public void setTrack(Track<? extends Feature> track) { this.track = track; }
 
 	// dependency
-	public void setTrack(Track<? extends Feature> track) {
-		this.track = track;
-	}
-
-	// dependency
-	public void setViewParameters(ViewParameters p) {
-		this.params = p;
-	}
-
-	public Track<? extends Feature> getTrack() {
-		return track;
-	}
-
-	public void setColor(Color color) {
-		if (color != null)
-			this.color = color;
-	}
-
-	public Color getColor() {
-		return this.color;
-	}
-
-	public void setTop(double top) {
-		this.top = top;
-	}
-
-	public double getTop() {
-		return top;
-	}
-
-	public void setHeight(double height) {
-		this.height = height;
-	}
-
-	public double getHeight() {
-		return height;
-	}
-
+	public void setViewParameters(ViewParameters p) { this.params = p; }
+	public Track<? extends Feature> getTrack() { return track; }
+	public void setColor(Color color) { if (color != null) this.color = color; }
+	public Color getColor() { return this.color; }
+	public void setTop(double top) { this.top = top; }
+	public double getTop() { return top; }
+	public void setHeight(double height) { this.height = height; }
+	public double getHeight() { return height; }
 	public void configure(Attributes attr) {
 		// set renderer attributes
 		if (track.getAttributes().containsKey("color")) {
@@ -112,18 +81,12 @@ public abstract class TrackRenderer {
 	 * For example, clicking on a PFAM domain might take you to
 	 * the relevant page in the PFAM database.
 	 */
-	public List<Hyperlink> getLinks(int x, int y) {
-		return Collections.emptyList();
-	}
-
-	public void deselect() {};
-
+	public List<Hyperlink> getLinks(int x, int y) { return Collections.emptyList(); }
+	public void deselect() { }
 	public boolean containsPoint(Point p) {
-		int t = (int)(top * params.getDeviceHeight());
-		if (p.y < t)
-			return false;
-		if (p.y > (t + height * params.getDeviceHeight()))
-			return false;
+		int t = (int) (top * params.getDeviceHeight());
+		if (p.y < t) return false;
+		if (p.y > (t + height * params.getDeviceHeight())) return false;
 		return true;
 	}
 }

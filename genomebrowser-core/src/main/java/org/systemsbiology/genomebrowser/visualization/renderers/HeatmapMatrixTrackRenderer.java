@@ -10,9 +10,8 @@ import org.systemsbiology.genomebrowser.visualization.ColorScale;
 import org.systemsbiology.genomebrowser.visualization.ColorScaleRegistry;
 import org.systemsbiology.genomebrowser.util.Attributes;
 
-
 public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
-	int thickness = 2;
+	private int thickness = 2;
 	private double gamma = 0.8;
 	private boolean overlap;
 	private Color outlineColor = new Color(0x33666666, true);
@@ -21,7 +20,6 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 	// ColorScale is the strategy for converting values into colors
 	private ColorScale colorScale;
 	private ColorScaleRegistry colorScaleRegistry;
-
 
 	public void configure(Attributes attr) {
 		super.configure(attr);
@@ -37,9 +35,7 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 		this.colorScaleRegistry = colorScaleRegistry;
 	}
 
-	public void setThickness(int thickness) {
-		this.thickness = thickness;
-	}
+	public void setThickness(int thickness) { this.thickness = thickness; }
 
 	@Override
 	@SuppressWarnings("unchecked")
@@ -72,14 +68,12 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 				if (iterator.hasNext()) {
 					nextFeature = iterator.next();
 					x2 = params.toScreenX(nextFeature.getStart());
-				}
-				else {
+				} else {
 					nextFeature = null;
 					x2 = params.toScreenX(feature.getEnd());
 				}
 				
 				int w = Math.max(1, x2 - x1);
-
 				double[] values = feature.getValues();
 
 				double yv; // the y coordinate for the value
@@ -102,8 +96,7 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 				g.drawRect(x1, y, w, h);
 				feature=nextFeature;
 			}
-		}
-		else {
+		} else {
 			while (iterator.hasNext()) {
 				feature=iterator.next();
 				x1 = params.toScreenX(feature.getStart());
@@ -128,7 +121,6 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 					yvni = (int)Math.round(yvn);
 					g.fillRect(x1, yvi, w, yvni-yvi+1);
 				}
-
 				g.setColor(outlineColor);
 				g.drawRect(x1, y, w, h);
 			}
@@ -137,13 +129,11 @@ public class HeatmapMatrixTrackRenderer extends QuantitativeTrackRenderer {
 
 	public void setGamma(double gamma) {
 		this.gamma  = gamma;
-		if (colorScale != null)
-			colorScale.setGamma(gamma);
+		if (colorScale != null) colorScale.setGamma(gamma);
 	}
 
 	public void setRange(double min, double max) {
 		super.setRange(min, max);
-		if (colorScale != null)
-			colorScale.setRange(range);
+		if (colorScale != null) colorScale.setRange(range);
 	}
 }

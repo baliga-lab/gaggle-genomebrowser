@@ -61,13 +61,10 @@ public interface Track<F extends Feature> {
 
 
 	public interface Quantitative<Q extends Feature.Quantitative> extends Track<Q> {
-//		public Iteratable<Q> features();
-//		public Iteratable<Q> features(int blockSize, int start, int end);
 		public Range getRange();
 	}
 
 	public interface Gene<G extends GeneFeature> extends Track<G> {
-//		public Iteratable<G> features();
-		public G getFeatureAt(Sequence sequence, Strand strand, int coord);
+      public G getFeatureAt(Sequence sequence, Strand strand, int coord);
 	}
 }

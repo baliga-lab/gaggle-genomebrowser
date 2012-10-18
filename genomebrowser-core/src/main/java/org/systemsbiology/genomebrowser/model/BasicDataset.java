@@ -15,57 +15,24 @@ public class BasicDataset implements Dataset {
 	protected SequenceFetcher sequenceFetcher = null;
 
 	public BasicDataset() {}
-	
 	public BasicDataset(UUID uuid, String name) {
 		this.name = name;
 		this.uuid = uuid;
 	}
-
-	public UUID getUuid() {
-		return uuid;
-	}
-
-	public void setUuid(UUID uuid) {
-		this.uuid = uuid;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Attributes getAttributes() {
-		return attributes;
-	}
-
-	public void setAttributes(Attributes attributes) {
-		this.attributes = attributes;
-	}
-
-	public List<Sequence> getSequences() {
-		return sequences;
-	}
-
-	public void setSequences(List<Sequence> sequences) {
-		this.sequences = sequences;
-	}
-
-	public void addSequence(Sequence sequence) {
-		sequences.add(sequence);
-	}
-
-	public List<Track<Feature>> getTracks() {
-		return tracks;
-	}
+	public UUID getUuid() { return uuid; }
+	public void setUuid(UUID uuid) { this.uuid = uuid; }
+	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
+	public Attributes getAttributes() { return attributes; }
+	public void setAttributes(Attributes attributes) { this.attributes = attributes; }
+	public List<Sequence> getSequences() { return sequences; }
+	public void setSequences(List<Sequence> sequences) { this.sequences = sequences; }
+	public void addSequence(Sequence sequence) { sequences.add(sequence); }
+	public List<Track<Feature>> getTracks() { return tracks; }
 
 	public Track<Feature> getTrack(String name) {
 		for (Track<Feature> track: tracks) {
-			if (name.equals(track.getName())) {
-				return track;
-			}
+			if (name.equals(track.getName())) return track;
 		}
 		return null;
 	}
@@ -89,17 +56,11 @@ public class BasicDataset implements Dataset {
 		}
 		return null;
 	}
-
-	public SequenceFetcher getSequenceFetcher() {
-		return sequenceFetcher;
-	}
-
+	public SequenceFetcher getSequenceFetcher() { return sequenceFetcher; }
 	public void setSequenceFetcher(SequenceFetcher sequenceFetcher) {
 		this.sequenceFetcher = sequenceFetcher;
 	}
 
 	@Override
-	public String toString() {
-		return "{Dataset: " + name + "}";
-	}
+	public String toString() { return "{Dataset: " + name + "}"; }
 }
