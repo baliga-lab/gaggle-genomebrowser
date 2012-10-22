@@ -14,117 +14,117 @@ import org.systemsbiology.genomebrowser.util.Attributes$;
  * features in general. Instances of NamedFeature have a name
  */
 public class Bookmark implements Feature {
-	private String seqId;
-	private Strand strand;
-	private int start;
-	private int end;
-	private String label;
-	private String annotation;	
-	private String sequence; //new var for seq value (dmartinez)
-	private String[] associatedFeatureName;
+    private String seqId;
+    private Strand strand;
+    private int start;
+    private int end;
+    private String label;
+    private String annotation;	
+    private String sequence; //new var for seq value (dmartinez)
+    private String[] associatedFeatureName;
 
-	// attributes field of the form "key1=value1;key2=value2;"
-	// to be used by specialized bookmarks (ex: transcript boundaries)
-	private String attributes;	
+    // attributes field of the form "key1=value1;key2=value2;"
+    // to be used by specialized bookmarks (ex: transcript boundaries)
+    private String attributes;	
 
-	public Bookmark() { }
+    public Bookmark() { }
 
-	/**
-	 * Create a bookmark from the given feature. If the feature is a named
-	 * feature, we associate that feature with the bookmark by recording its
-	 * name.
-	 */
-	public Bookmark(Feature feature) {
-		if (feature != null) {
-			this.seqId = feature.getSeqId();
-			this.strand = feature.getStrand();
-			this.start = feature.getStart();
-			this.end = feature.getEnd();
-			this.label = feature.getLabel();
-			if (feature instanceof NamedFeature)
-				this.setAssociatedFeatureNames(((NamedFeature)feature).getName());
-			else if (feature instanceof Bookmark) {
-				this.annotation = ((Bookmark)feature).annotation;
-				this.sequence = ((Bookmark)feature).sequence; // copy as annotation (dmartinez)
-				this.setAssociatedFeatureNames(((Bookmark)feature).getAssociatedFeatureNames());
-				this.attributes = ((Bookmark)feature).attributes;
-			}
-		}
-	}
+    /**
+     * Create a bookmark from the given feature. If the feature is a named
+     * feature, we associate that feature with the bookmark by recording its
+     * name.
+     */
+    public Bookmark(Feature feature) {
+        if (feature != null) {
+            this.seqId = feature.getSeqId();
+            this.strand = feature.getStrand();
+            this.start = feature.getStart();
+            this.end = feature.getEnd();
+            this.label = feature.getLabel();
+            if (feature instanceof NamedFeature)
+                this.setAssociatedFeatureNames(((NamedFeature)feature).getName());
+            else if (feature instanceof Bookmark) {
+                this.annotation = ((Bookmark)feature).annotation;
+                this.sequence = ((Bookmark)feature).sequence; // copy as annotation (dmartinez)
+                this.setAssociatedFeatureNames(((Bookmark)feature).getAssociatedFeatureNames());
+                this.attributes = ((Bookmark)feature).attributes;
+            }
+        }
+    }
 
-	public Bookmark(String seqId, int start, int end) {
-      this(seqId, Strand.none, start, end);
-	}
+    public Bookmark(String seqId, int start, int end) {
+        this(seqId, Strand.none, start, end);
+    }
 
-	public Bookmark(String seqId, Strand strand, int start, int end) {
-      this(seqId, strand, start, end, null, null, null, null);
-	}
+    public Bookmark(String seqId, Strand strand, int start, int end) {
+        this(seqId, strand, start, end, null, null, null, null);
+    }
 
-	public Bookmark(String seqId, Strand strand, int start, int end, String label,
-                  String annotation) {
-      this(seqId, strand, start, end, label, annotation, null, null);
-	}
+    public Bookmark(String seqId, Strand strand, int start, int end, String label,
+                    String annotation) {
+        this(seqId, strand, start, end, label, annotation, null, null);
+    }
 
-	public Bookmark(String seqId, Strand strand, int start, int end, String label,
-                  String annotation, String attributes) {
-      this(seqId, strand, start, end, label, annotation, attributes, null);
-	}
+    public Bookmark(String seqId, Strand strand, int start, int end, String label,
+                    String annotation, String attributes) {
+        this(seqId, strand, start, end, label, annotation, attributes, null);
+    }
 
-	// new Bookmark-one with sequence (dmartinez)
-	public Bookmark(String seqId, Strand strand, int start, int end, String label,
-                  String annotation, String attributes, String sequence) {
-		this.seqId = seqId;
-		this.strand = strand;
-		this.start = start;
-		this.end = end;
-		this.label = label;
-		this.annotation = annotation;
-		this.attributes = attributes;
-		this.sequence = sequence;
-	}
+    // new Bookmark-one with sequence (dmartinez)
+    public Bookmark(String seqId, Strand strand, int start, int end, String label,
+                    String annotation, String attributes, String sequence) {
+        this.seqId = seqId;
+        this.strand = strand;
+        this.start = start;
+        this.end = end;
+        this.label = label;
+        this.annotation = annotation;
+        this.attributes = attributes;
+        this.sequence = sequence;
+    }
 
-	public int getStart() {	return start;	}
-	public void setStart(int start) {	this.start = start; }
-	public int getEnd() {	return end; }
-	public void setEnd(int end) {	this.end = end;	}
-	public int getCentralPosition() {
-		// overflow-safe integer average
-		return (start + end) >>> 1;
-	}
-	public String getAnnotation() { return annotation == null ? "" : annotation; }
-	public void setAnnotation(String annotation) { this.annotation = annotation; }
+    public int getStart() {	return start;	}
+    public void setStart(int start) {	this.start = start; }
+    public int getEnd() {	return end; }
+    public void setEnd(int end) {	this.end = end;	}
+    public int getCentralPosition() {
+        // overflow-safe integer average
+        return (start + end) >>> 1;
+    }
+    public String getAnnotation() { return annotation == null ? "" : annotation; }
+    public void setAnnotation(String annotation) { this.annotation = annotation; }
 	
-	// getter 'n setter of sequence var (dmartinez)
-	public String getSequence() {	return sequence == null ? "" : sequence; }
-	public void setSequence(String sequence) { this.sequence = sequence; }
-	public Strand getStrand() { return strand == null ? Strand.none : strand; }
-	public void setStrand(Strand strand) { this.strand = strand; }
-	public String getSeqId() { return seqId; }
-	public void setSeqId(String seqId) { this.seqId = seqId; }
-	public String getLabel() {
-		return label == null ? "[" + getStart() + ", " + getEnd() + "]" : label;
-	}
-	public void setLabel(String label) { this.label = label; }
-	public String getToolTip() { return annotation; }
-	public void setAssociatedFeatureNames(String... associatedFeatureName) {
-		this.associatedFeatureName = associatedFeatureName;
-	}
+    // getter 'n setter of sequence var (dmartinez)
+    public String getSequence() {	return sequence == null ? "" : sequence; }
+    public void setSequence(String sequence) { this.sequence = sequence; }
+    public Strand getStrand() { return strand == null ? Strand.none : strand; }
+    public void setStrand(Strand strand) { this.strand = strand; }
+    public String getSeqId() { return seqId; }
+    public void setSeqId(String seqId) { this.seqId = seqId; }
+    public String getLabel() {
+        return label == null ? "[" + getStart() + ", " + getEnd() + "]" : label;
+    }
+    public void setLabel(String label) { this.label = label; }
+    public String getToolTip() { return annotation; }
+    public void setAssociatedFeatureNames(String... associatedFeatureName) {
+        this.associatedFeatureName = associatedFeatureName;
+    }
 
-	/**
-	 * Associated features are the names of features associated with this
-	 * bookmark.
-	 */
-	public String[] getAssociatedFeatureNames() {
-		return associatedFeatureName;
-	}
-	public Attributes getAttributes() {
-		return Attributes$.MODULE$.parse(attributes);
-	}
-	public String getAttributesString() {	return attributes; }
-	public void setAttributes(String attributes) {
-		this.attributes = attributes;
-	}
-	public boolean hasAttributes() { return this.attributes != null; }
+    /**
+     * Associated features are the names of features associated with this
+     * bookmark.
+     */
+    public String[] getAssociatedFeatureNames() {
+        return associatedFeatureName;
+    }
+    public Attributes getAttributes() {
+        return Attributes$.MODULE$.parse(attributes);
+    }
+    public String getAttributesString() {	return attributes; }
+    public void setAttributes(String attributes) {
+        this.attributes = attributes;
+    }
+    public boolean hasAttributes() { return this.attributes != null; }
 
     @Override
     public int hashCode() {
