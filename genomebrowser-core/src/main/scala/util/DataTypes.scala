@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.util
+package org.systemsbiology.util
 
 import scala.reflect.BeanProperty
 
@@ -8,6 +8,11 @@ extends RuntimeException(message, cause) {
   def this() = this("", null)
   def this(message: String) = this(message, null)
   def this(cause: Throwable) = this("", cause)
+}
+
+trait Selectable {
+  def selected: Boolean
+  def setSelected(selected: Boolean)
 }
 
 /**

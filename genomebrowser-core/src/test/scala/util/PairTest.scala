@@ -1,4 +1,4 @@
-package org.systemsbiology.genomebrowser.util
+package org.systemsbiology.util
 
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
