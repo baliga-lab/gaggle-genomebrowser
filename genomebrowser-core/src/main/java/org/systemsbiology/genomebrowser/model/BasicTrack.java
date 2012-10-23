@@ -15,6 +15,7 @@ import org.systemsbiology.genomebrowser.model.AsyncFeatureCallback;
 
 import org.systemsbiology.genomebrowser.util.Attributes;
 import org.systemsbiology.util.Iteratable;
+import org.systemsbiology.util.IteratableWrapper;
 
 /**
  * Simple but slow implementation of track.
@@ -77,7 +78,7 @@ public class BasicTrack<F extends Feature> implements Track<F> {
 	}
 
 	public Iteratable<F> features() {
-		return new Iteratable.Wrapper<F>(features.iterator());
+		return new IteratableWrapper<F>(features.iterator());
 	}
 
 	public Iteratable<F> features(final FeatureFilter filter) {

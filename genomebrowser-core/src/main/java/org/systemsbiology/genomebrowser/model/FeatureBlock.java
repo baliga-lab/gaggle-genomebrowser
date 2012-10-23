@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.systemsbiology.util.Iteratable;
+import org.systemsbiology.util.IteratableWrapper;
 
 /**
  * A simple implementation of Block backed by a List of features for use when
@@ -30,7 +31,7 @@ public class FeatureBlock<F extends Feature> implements Block<F> {
 	}
 
 	public Iteratable<F> features() {
-		return new Iteratable.Wrapper<F>(features.iterator());
+		return new IteratableWrapper<F>(features.iterator());
 	}
 
 	public Iteratable<F> features(int start, int end) {

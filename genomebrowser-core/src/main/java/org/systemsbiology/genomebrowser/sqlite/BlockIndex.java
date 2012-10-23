@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.model.Strand;
 import org.systemsbiology.util.Iteratable;
+import org.systemsbiology.util.IteratableWrapper;
 import org.systemsbiology.util.MultiHashMap;
 import org.systemsbiology.util.Pair;
 
@@ -41,7 +42,7 @@ public class BlockIndex {
 	}
 
 	public Iteratable<BlockKey> keys() {
-		return new Iteratable.Wrapper<BlockKey>(keyMap.getAllValues().iterator());
+		return new IteratableWrapper<BlockKey>(keyMap.getAllValues().iterator());
 	}
 
 	public Iteratable<BlockKey> keys(String seqId, Strand strand) {
@@ -54,7 +55,7 @@ public class BlockIndex {
 		else {
 			keys.addAll(keyMap.getList(new Pair<String, Strand>(seqId, strand)));
 		}
-		return new Iteratable.Wrapper<BlockKey>(keys.iterator());
+		return new IteratableWrapper<BlockKey>(keys.iterator());
 	}
 
 	public Iteratable<BlockKey> keys(String seqId, Strand strand, int start, int end) {
