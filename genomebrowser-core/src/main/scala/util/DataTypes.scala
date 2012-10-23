@@ -15,6 +15,10 @@ trait Selectable {
   def setSelected(selected: Boolean)
 }
 
+trait HasSelections {
+  def getSelections: java.util.List[String]
+}
+
 /**
  * class to hold the link text and address (url) of a hyperlink.
  */

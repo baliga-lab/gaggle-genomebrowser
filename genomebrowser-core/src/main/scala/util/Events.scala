@@ -22,3 +22,15 @@ trait DialogListener {
   def cancel
   def error(message: String, e: Exception)
 }
+
+trait ProgressListener {
+  def init(totalExpectedProgress: Int, message: String)
+  def init(totalExpectedProgress: Int)
+  def setProgress(progress: Int)
+  def incrementProgress(amount: Int)
+  def done: Unit
+  // WW: These were originally in org.systemsbiology.genomebrowser.app.ProgressListener
+  // which is dead now
+  def setExpectedProgress(expected: Int)
+  def setMessage(message: String)
+}
