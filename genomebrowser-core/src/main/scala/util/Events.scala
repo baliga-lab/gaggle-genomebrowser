@@ -34,3 +34,8 @@ trait ProgressListener {
   def setExpectedProgress(expected: Int)
   def setMessage(message: String)
 }
+
+trait ProgressReporter {
+  def addProgressListener(listener: ProgressListener)
+  def removeProgressListener(listener: ProgressListener)
+}

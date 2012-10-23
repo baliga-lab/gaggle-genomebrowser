@@ -110,7 +110,7 @@ class TestData {
 
 					// store block in track
 					track.putFeatures(new FeatureFilter(sequence, strand, start, end),
-							              new BasicQuantitativeBlock[Feature.Quantitative](sequence, strand, starts, ends, values))
+							              new BasicQuantitativeBlock[Feature#Quantitative](sequence, strand, starts, ends, values))
 				}
 			}
 		}

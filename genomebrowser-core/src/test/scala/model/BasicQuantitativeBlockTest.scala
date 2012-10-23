@@ -2,8 +2,6 @@ package org.systemsbiology.genomebrowser.model
 
 import java.util.UUID
 
-import org.systemsbiology.genomebrowser.model._
-
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 import org.junit.runner.RunWith
@@ -16,7 +14,7 @@ class BasicQuantitativeBlockSpec extends FlatSpec with ShouldMatchers {
 		val starts = Array(1, 201, 401, 601, 801)
 		val ends   = Array(100, 300, 500, 700, 900)
 		val values = Array(0.5, 0.75, 0.875, 0.9375, 0.96875)
-		val block = new BasicQuantitativeBlock[Feature.Quantitative](
+		val block = new BasicQuantitativeBlock[Feature#Quantitative](
 			new BasicSequence(UUID.randomUUID, "MySeq", 100000, Topology.circular),
 			Strand.forward,	starts, ends, values)
 

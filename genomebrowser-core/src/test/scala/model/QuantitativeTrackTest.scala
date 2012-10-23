@@ -13,12 +13,12 @@ import org.scalatest.junit.JUnitRunner
 class QuantitativeTrackSpec extends FlatSpec with ShouldMatchers {
 
 	// create a block of 5 quantitative features.
-	private def makeBlock(i: Int, seq: Sequence, strand: Strand): Block[Feature.Quantitative] = {
+	private def makeBlock(i: Int, seq: Sequence, strand: Strand): Block[Feature#Quantitative] = {
 		val offset = 1000 * i
 		val starts = Array(1 + offset, 201 + offset, 401 + offset, 601 + offset, 801 + offset)
 		val ends   = Array(100 + offset, 300 + offset, 500 + offset, 700 + offset, 900 + offset)
 		val values = Array(0.5, 0.75, 0.875, 0.9375, 0.96875)
-		new BasicQuantitativeBlock[Feature.Quantitative](seq, strand, starts, ends, values)
+		new BasicQuantitativeBlock[Feature#Quantitative](seq, strand, starts, ends, values)
 	}
 
   "QuantitativeTrack" should "be created" in {
