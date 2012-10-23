@@ -25,6 +25,7 @@ import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.model.BasicPositionalFeature;
 import org.systemsbiology.genomebrowser.model.Dataset;
+import org.systemsbiology.genomebrowser.model.Datasets;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.GeneFeatureImpl;
@@ -248,7 +249,7 @@ public class TranscriptBoundaryPlugin implements Plugin {
 	 * Entry point if used to delimit a single transcript
 	 */
 	public synchronized void bookmarkTranscriptBoundary() {
-		if (api.getDataset()==null || api.getDataset()==Dataset.EMPTY_DATASET)
+      if (api.getDataset()==null || api.getDataset()==Datasets.EMPTY_DATASET())
 			return;
 		Sequence sequence = api.getDataset().getSequence(api.getVisibleSegment().seqId);
 		computeSnaps(api.getDataset(), sequence);

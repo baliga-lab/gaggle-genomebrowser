@@ -25,6 +25,7 @@ import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Plugin;
 import org.systemsbiology.genomebrowser.gaggle.GaggleToolbar.GaggleBroadcastData;
 import org.systemsbiology.genomebrowser.model.Dataset;
+import org.systemsbiology.genomebrowser.model.Datasets;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.FeatureFilter;
 import org.systemsbiology.genomebrowser.model.GeneFeature;
@@ -511,7 +512,7 @@ public class GenomeBrowserGoose implements Goose, GaggleConnectionListener, Plug
 	private void resetGaggleBroadcastData() {
 		toolbar.clearBroadcastMenu();
 		Dataset dataset = api.getDataset();
-		if (dataset != Dataset.EMPTY_DATASET) {
+		if (dataset != Datasets.EMPTY_DATASET()) {
 			toolbar.addGaggleData(GaggleToolbar.SELECTED_GENES);
 			toolbar.addGaggleData(new GaggleBroadcastData("Coordinates", "coordinates"));
 			toolbar.addGaggleData(new GaggleBroadcastData("Description of dataset: " + dataset.getName(), "dataset"));

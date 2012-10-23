@@ -27,6 +27,7 @@ import org.apache.log4j.Logger;
 import org.systemsbiology.genomebrowser.io.CoordinateMapFileIterator;
 import org.systemsbiology.genomebrowser.io.GenomeFileFeatureSource;
 import org.systemsbiology.genomebrowser.model.Dataset;
+import org.systemsbiology.genomebrowser.model.Datasets;
 import org.systemsbiology.genomebrowser.model.Feature;
 import org.systemsbiology.genomebrowser.model.Segment;
 import org.systemsbiology.genomebrowser.model.Sequence;
@@ -612,7 +613,7 @@ public class UI {
 			
             // load any associated bookmarks
             // TODO fix this smelly hack
-            if (newDataset != Dataset.EMPTY_DATASET) {
+            if (newDataset != Datasets.EMPTY_DATASET()) {
                 List<String> bookmarkCollectionNames = app.io.getBookmarkCollectionNames(newDataset.getUuid());
                 log.info("Loading bookmark sets: " + bookmarkCollectionNames);
                 for (String name : bookmarkCollectionNames) {

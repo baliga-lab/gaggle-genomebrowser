@@ -64,7 +64,7 @@ public class TrackUtils {
 	 * @return genes within the given coordinates or an empty list if none can be found.
 	 */
 	public static List<GeneFeature> findGenesIn(Dataset dataset, Sequence sequence, Strand strand, int start, int end) {
-		if (dataset==null || dataset==Dataset.EMPTY_DATASET)
+      if (dataset==null || dataset==Datasets.EMPTY_DATASET())
 			return Collections.emptyList();
 		List<GeneFeature> results = new ArrayList<GeneFeature>();
 		Track<GeneFeature> track = findGenomeTrack(dataset);

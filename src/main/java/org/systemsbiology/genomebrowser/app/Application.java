@@ -52,7 +52,7 @@ public class Application implements EventListener, BrowserApp {
 	private ExternalAPI api = new ExternalApiImpl(this);
 
 	// ----- application state -------------------------------------------------
-	private Dataset dataset = Dataset.EMPTY_DATASET;
+    private Dataset dataset = Datasets.EMPTY_DATASET();
 	// TODO fix ownership of current viewing area
 	// Selected sequence is part of the viewing area, along with start, end and
 	// zoom level (scale). As a (possibly premature) performance tweak, that's
