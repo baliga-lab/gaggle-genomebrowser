@@ -25,11 +25,11 @@ class BlockIteratable implements Iteratable<Feature.Quantitative> {
     public boolean hasNext() {
         while ((features==null || !features.hasNext()) && b < blocks.size()) {
             BlockEntry<Feature.Quantitative> entry = blocks.get(b++);
-            if (filter.overlaps(entry.key)) {
-                features = entry.block.features(filter.start, filter.end);
+            if (filter.overlaps(entry.key())) {
+                features = entry.block().features(filter.start, filter.end);
             }
         }
-        return features==null ? false : features.hasNext();
+        return features == null ? false : features.hasNext();
     }
 
     public Feature.Quantitative next() {
@@ -40,7 +40,5 @@ class BlockIteratable implements Iteratable<Feature.Quantitative> {
         throw new UnsupportedOperationException("remove not supported");
     }
 
-    public Iterator<Quantitative> iterator() {
-        return this;
-    }
+    public Iterator<Quantitative> iterator() { return this; }
 }

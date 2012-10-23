@@ -67,8 +67,9 @@ public class QuantitativeTrack implements Track.Quantitative<Feature.Quantitativ
 
     public void featuresAsync(FeatureFilter filter, AsyncFeatureCallback callback) {
         for (BlockEntry<Feature.Quantitative> entry : blocks) {
-            if (filter.overlaps(entry.key)) {
-                callback.consumeFeatures(entry.block.features(filter.start, filter.end), entry.key);
+            if (filter.overlaps(entry.key())) {
+                callback.consumeFeatures(entry.block().features(filter.start, filter.end),
+                                         entry.key());
             }
         }
     }
@@ -76,7 +77,7 @@ public class QuantitativeTrack implements Track.Quantitative<Feature.Quantitativ
     public Iteratable<Feature.Quantitative> features() {
         List<Block<Feature.Quantitative>> blocks = new ArrayList<Block<Feature.Quantitative>>(); 
         for (BlockEntry<Feature.Quantitative> entry : this.blocks) {
-            blocks.add(entry.block);
+            blocks.add(entry.block());
         }
         return new MultiIteratable<Feature.Quantitative>(blocks);
     }

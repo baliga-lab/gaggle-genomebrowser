@@ -79,8 +79,8 @@ public class GeneTrack<G extends GeneFeature> implements Track.Gene<G> {
 
 	public G getFeatureAt(Sequence sequence, Strand strand, int coord) {
 		for (BlockEntry<G> entry : blocks) {
-			if (entry.key.overlaps(sequence, strand, coord)) {
-				for (G feature: entry.block) {
+        if (entry.key().overlaps(sequence, strand, coord)) {
+            for (G feature: entry.block()) {
 					if (feature.getStart() <= coord && feature.getEnd() >= coord)
 						return feature;
 				}
@@ -92,12 +92,12 @@ public class GeneTrack<G extends GeneFeature> implements Track.Gene<G> {
 
 	public void featuresAsync(FeatureFilter filter, AsyncFeatureCallback callback) {
 		for (BlockEntry<G> entry : blocks) {
-			if (entry.key.overlaps(filter)) {
-				callback.consumeFeatures(entry.block.features(filter.start, filter.end), entry.key);
+        if (entry.key().overlaps(filter)) {
+            callback.consumeFeatures(entry.block().features(filter.start, filter.end),
+                                     entry.key());
 			}
 		}
 	}
-
 
 	public Iteratable<G> features() {
 		return new GeneFeatureIteratable();
@@ -117,7 +117,7 @@ public class GeneTrack<G extends GeneFeature> implements Track.Gene<G> {
 
 		public boolean hasNext() {
 			while ((features==null || !features.hasNext()) && entries.hasNext()) {
-				features = entries.next().block.features();
+          features = entries.next().block().features();
 			}
 			return (features!=null && features.hasNext());
 		}
@@ -147,8 +147,8 @@ public class GeneTrack<G extends GeneFeature> implements Track.Gene<G> {
 		public boolean hasNext() {
 			while ((features==null || !features.hasNext()) && entries.hasNext()) {
 				BlockEntry<G> entry = entries.next();
-				if (entry.key.overlaps(filter))
-					features = entry.block.features(filter.start, filter.end);
+				if (entry.key().overlaps(filter))
+            features = entry.block().features(filter.start, filter.end);
 			}
 			return (features!=null && features.hasNext());
 		}

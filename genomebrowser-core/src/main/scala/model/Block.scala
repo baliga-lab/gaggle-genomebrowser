@@ -55,3 +55,9 @@ trait Block[F <: Feature] extends java.lang.Iterable[F] {
   def features: Iteratable[F]
   def features(start: Int, end: Int): Iteratable[F]
 }
+
+/**
+ * An entry in a list that can be quickly searched for blocks
+ * overlapping a given feature filter.
+ */
+class BlockEntry[F <: Feature](val key: FeatureFilter, val block: Block[F])
