@@ -67,7 +67,7 @@ public class HeuristicSequenceMapper extends AbstractHeuristicSequenceMapper<Str
       }
 
       // how many chromosomes does it look like we have?
-      chrCount = MathUtils.max(romansCount, numCount, chrMap.size());
+      chrCount = MathUtils.max(new int[] {romansCount, numCount, chrMap.size()});
 
       // if we have only one chromosome like most prokaryotes, we want to interpret
       // any reference to 'chromosome' or 'chromosome 1' or 'chr1' etc. to the one and only chromosome.
