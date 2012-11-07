@@ -13,3 +13,23 @@ class IteratableWrapper[T](iter: java.util.Iterator[T]) extends Iteratable[T] {
   def remove = iter.remove
   def iterator = iter
 }
+
+class MultiIteratable[E](iterables: java.lang.Iterable[_ <: java.lang.Iterable[_ <: E]])
+extends Iteratable[E] {
+
+  val ii = iterables.iterator
+  var _iterator: java.util.Iterator[_ <: E] = null
+
+  def hasNext: Boolean = {
+    while (_iterator==null || !_iterator.hasNext) {
+      if (!ii.hasNext) return false;
+      _iterator = ii.next.iterator
+    }
+    return _iterator != null && _iterator.hasNext
+  }
+  def next = _iterator.next
+  def remove {
+    throw new UnsupportedOperationException("remove() not supported.");
+  }
+  def iterator: java.util.Iterator[E] = this
+}
