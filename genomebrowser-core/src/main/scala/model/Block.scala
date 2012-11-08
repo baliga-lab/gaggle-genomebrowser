@@ -1,7 +1,8 @@
 package org.systemsbiology.genomebrowser.model
 
-import org.systemsbiology.util.Iteratable
-import java.util.List
+import scala.reflect.BeanProperty
+import org.systemsbiology.util.{Iteratable, IteratableWrapper}
+import java.util.{List, Iterator}
 
 /**
  * A Feature is anything that has a start and end coordinate on a sequence.
@@ -61,3 +62,18 @@ trait Block[F <: Feature] extends java.lang.Iterable[F] {
  * overlapping a given feature filter.
  */
 class BlockEntry[F <: Feature](val key: FeatureFilter, val block: Block[F])
+
+/**
+ * A simple implementation of Block backed by a List of features for use when
+ * holding in memory all features in a track is desirable for performance and
+ * not prohibitively large. (Gene tracks.)
+ */
+class FeatureBlock[F <: Feature](@BeanProperty val sequence: Sequence,
+                                 @BeanProperty val strand: Strand,
+                                 _features: List[F]) extends Block[F] {
+
+	def features: Iteratable[F] = new IteratableWrapper[F](_features.iterator)
+	def features(start: Int, end: Int): Iteratable[F] =
+    new FeatureIteratable[F](_features, start, end)
+	def iterator = _features.iterator
+}
