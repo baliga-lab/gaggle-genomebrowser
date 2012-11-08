@@ -150,73 +150,51 @@ extends Iterable[ProgressListener] with ProgressReporter with ProgressListener {
   def setMessage(message: String) = fireMessageEvent(message)
 }
 
-/*
-class ProgressListenerWrapper extends ProgressListener {
-  private ProgressListenerSupport progressListenerSupport;
-    private int start;
-    private int width;
-    private int expected = 100;
+class ProgressListenerWrapper(progressListenerSupport: ProgressListenerSupport)
+extends ProgressListener {
+  private var start    = 0
+  private var width    = 0
+  private var expected = 100
 
-    public ProgressListenerWrapper() {
-        progressListenerSupport = new ProgressListenerSupport();
-    }
+  def this() = this(new ProgressListenerSupport())
 
-    public ProgressListenerWrapper(ProgressListenerSupport progressListenerSupport) {
-        this.progressListenerSupport = progressListenerSupport;
-    }
+  /**
+   * Scale the progress reporting to fit within a subinterval of
+   * the progress of a larger process. Let's say we have a 5 step
+   * process. Step 2 reports its own progress on a scale of 0-100.
+   * We want to adapt the progress of step 2 to cover the range of
+   * 20-20
+   * @param start
+   * @param end
+   */
+  def scaleProgressToFit(start: Int, end: Int) {
+    this.start = start
+    this.width = end - start
+  }
+  def done = progressListenerSupport.fireDoneEvent
+  def incrementProgress(amount: Int) =
+    progressListenerSupport.fireIncrementProgressEvent(amount)
 
-    /**
-     * Scale the progress reporting to fit within a subinterval of
-     * the progress of a larger process. Let's say we have a 5 step
-     * process. Step 2 reports its own progress on a scale of 0-100.
-     * We want to adapt the progress of step 2 to cover the range of
-     * 20-20
-     * @param start
-     * @param end
-     */
-    public void scaleProgressToFit(int start, int end) {
-        this.start = start;
-        this.width = end - start;
-    }
-
-    public void done() {
-        progressListenerSupport.fireDoneEvent();
-    }
-
-    public void incrementProgress(int amount) {
-        progressListenerSupport.fireIncrementProgressEvent(amount);
-    }
-
-    public void init(int expected) {
-        this.expected = expected;
-        progressListenerSupport.fireInitEvent(expected);
-    }
-    public void init(int expected, String message) {
-        this.expected = expected;
-        progressListenerSupport.fireInitEvent(expected, message);
-    }
-
-    public void setExpectedProgress(int expected) {
-        this.expected = expected;
-        if (width <= 0)	progressListenerSupport.fireSetExpectedProgressEvent(expected);
-    }
-
-    public void setMessage(String message) {
-        progressListenerSupport.fireMessageEvent(message);
-    }
-
-    public void setProgress(int progress) {
-        int scaledProgress = width > 0 ?
-            (int)(start + ((double)progress) / ((double)expected) * width) :  progress;
-        progressListenerSupport.fireProgressEvent(scaledProgress);
-    }
-
-    public void addProgressListener(ProgressListener listener) {
-        progressListenerSupport.addProgressListener(listener);
-    }
-
-    public void removeProgressListener(ProgressListener listener) {
-        progressListenerSupport.removeProgressListener(listener);
-    }
+  def init(expected: Int) {
+    this.expected = expected
+    progressListenerSupport.fireInitEvent(expected)
+  }
+  def init(expected: Int, message: String) {
+    this.expected = expected
+    progressListenerSupport.fireInitEvent(expected, message)
+  }
+  def setExpectedProgress(expected: Int) {
+    this.expected = expected;
+    if (width <= 0)	progressListenerSupport.fireSetExpectedProgressEvent(expected)
+  }
+  def setMessage(message: String) = progressListenerSupport.fireMessageEvent(message)
+  def setProgress(progress: Int) {
+    val scaledProgress = if (width > 0)
+      (start + progress.toDouble / expected.toDouble * width).toInt
+                         else progress
+    progressListenerSupport.fireProgressEvent(scaledProgress)
+  }
+  def addProgressListener(l: ProgressListener) = progressListenerSupport.addProgressListener(l)
+  def removeProgressListener(l: ProgressListener) =
+    progressListenerSupport.removeProgressListener(l)
 }
-*/
