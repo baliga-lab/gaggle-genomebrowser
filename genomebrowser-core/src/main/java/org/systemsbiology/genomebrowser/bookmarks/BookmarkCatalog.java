@@ -137,7 +137,7 @@ public class BookmarkCatalog implements Iterable<BookmarkDataSource>, EventListe
 	public BookmarkDataSource getResultsAsBookmarks(Iterable<Feature> features) {
 		List<Bookmark> list = new ArrayList<Bookmark>();
 		for (Feature feature : features) {
-			list.add(new Bookmark(feature));
+			list.add(BookmarkFactory.createBookmark(feature));
 		}
 		ListBookmarkDataSource dataSource = new ListBookmarkDataSource("Search Results");
 		dataSource.addAll(list);

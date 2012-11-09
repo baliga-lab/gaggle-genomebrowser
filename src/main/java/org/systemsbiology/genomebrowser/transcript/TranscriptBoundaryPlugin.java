@@ -22,6 +22,7 @@ import org.systemsbiology.genomebrowser.event.Event;
 import org.systemsbiology.genomebrowser.app.ExternalAPI;
 import org.systemsbiology.genomebrowser.app.Plugin;
 import org.systemsbiology.genomebrowser.bookmarks.Bookmark;
+import org.systemsbiology.genomebrowser.bookmarks.BookmarkFactory;
 import org.systemsbiology.genomebrowser.bookmarks.BookmarkDataSource;
 import org.systemsbiology.genomebrowser.model.BasicPositionalFeature;
 import org.systemsbiology.genomebrowser.model.Dataset;
@@ -305,7 +306,7 @@ public class TranscriptBoundaryPlugin implements Plugin {
 		}
 
 		oldBookmark = bookmark;
-		this.bookmark = new Bookmark(bookmark);
+		this.bookmark = BookmarkFactory.createBookmark(bookmark);
 
 		showTranscriptBoundaryDialog();
 	}
@@ -369,7 +370,7 @@ public class TranscriptBoundaryPlugin implements Plugin {
 		Feature feature = entry.getValue();
 		bookmark = new Bookmark(feature.getSeqId(), feature.getStrand(), feature.getStart(), feature.getEnd());
 		if (feature instanceof NamedFeature) {
-			bookmark.setAssociatedFeatureNames(((NamedFeature)feature).getName());
+        bookmark.setAssociatedFeatureNames(new String[] {((NamedFeature)feature).getName()});
 			bookmark.setLabel(((NamedFeature)feature).getName());
 		}
 		guessTranscriptBoundaries();
@@ -540,7 +541,7 @@ public class TranscriptBoundaryPlugin implements Plugin {
 	}
 
 	public synchronized Bookmark getBookmark() {
-		return new Bookmark(bookmark);
+		return BookmarkFactory.createBookmark(bookmark);
 	}
 
 	public synchronized void done(TranscriptBoundaryDialog dialog) {
@@ -549,7 +550,6 @@ public class TranscriptBoundaryPlugin implements Plugin {
 		this.bookmark = null;
 		this.oldBookmark = null;
 	}
-
 
 	class BookmarkTranscriptBoundaryAction extends AbstractAction {
 		public BookmarkTranscriptBoundaryAction() {
