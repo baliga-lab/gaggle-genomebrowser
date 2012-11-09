@@ -122,3 +122,41 @@ class BasicFeature(@BeanProperty var seqId: String,
   def setLabel(label: String) { this.label = label }
   def getCentralPosition: Int = MathUtils.average(start, end)
 }
+
+class BasicPositionalFeature(@BeanProperty var seqId: String,
+                             @BeanProperty var strand: Strand,
+                             position: Int)
+extends Feature {
+  def this() = this(null, null, 0)
+  def this(feature: Feature) = this(feature.getSeqId, feature.getStrand,
+                                    feature.getCentralPosition)
+  def getStart = position
+  def getEnd = position
+  def getCentralPosition = position
+  def getLabel =
+    "%s%s:%d".format(seqId, strand.toAbbreviatedString, position)
+}
+
+/**
+ * A simple implementation of a quantitative feature. In practice,
+ * quantitative features will usually be implemented using Flyweights
+ * backed by primitive arrays. This implementation exists for small
+ * quantities of data and for testing.
+ */
+/*
+class BasicQuantitativeFeature(@BeanProperty val seqId: String,
+                               @BeanProperty val strand: Strand,
+                               @BeanProperty val start: Int,
+                               @BeanProperty val end: Int,
+                               @BeanProperty val value: Double)
+extends Quantitative {
+
+  // average without overflow
+  def getCentralPosition: Int = (start + end) >>> 1
+  def getLabel = "%.2f".format(value)
+  override def toString = {
+    "Feature(" + seqId + ", " + strand.toAbbreviatedString() + ", " + start + ", " +
+    end + ", " + value + ")"
+  }
+}
+*/
